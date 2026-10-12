@@ -1,0 +1,440 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>EN LIGNE · Vitrine</title>
+<meta name="description" content="Programme associatif Form'Com : formation financée, semaine découverte sans engagement, parcours en 4 niveaux.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+/* Concept : une page, un message par écran, beaucoup d'air, un seul appel à l'action (WhatsApp). */
+:root{
+  --bg:#FFFFFF; --bg2:#F3F5FA; --fg:#0E1330; --muted:#566079; --line:#DDE0EA; --card:#FFFFFF;
+  --blue:#1536C9; --blue-ink:#FFFFFF; --red:#D91E2B;
+  --bronze:#B87333; --silver:#8A8D98; --gold:#C99700;
+  --font:"Figtree",-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,5vw,48px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A0D1E; --bg2:#11152B; --fg:#F2F4FB; --muted:#A3ABC6; --line:#262B47; --card:#161A33;
+  --blue:#7C93FF; --blue-ink:#0A0D1E; --red:#FF5C66;
+  --bronze:#D58E4E; --silver:#B4B7C2; --gold:#E8B923; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A0D1E; --bg2:#11152B; --fg:#F2F4FB; --muted:#A3ABC6; --line:#262B47; --card:#161A33;
+  --blue:#7C93FF; --blue-ink:#0A0D1E; --red:#FF5C66;
+  --bronze:#D58E4E; --silver:#B4B7C2; --gold:#E8B923; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:18px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(64px,10vw,120px);scroll-margin-top:60px}
+.alt{background:var(--bg2)}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(38px,7.4vw,78px);font-weight:900}
+h2{font-size:clamp(32px,5.6vw,56px);font-weight:800}
+h3{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+p{margin:0;text-wrap:pretty}
+.lead{font-size:clamp(18px,2.4vw,23px);color:var(--muted);max-width:34em;margin-top:18px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;transition:transform .15s,filter .15s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--blue);color:var(--blue-ink)}
+.btn-main:hover{filter:brightness(1.1)}
+.btn-red{background:var(--red);color:#fff}
+.btn-ghost{border-color:var(--line);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--fg)}
+.btn-white{background:#fff;color:#1536C9}
+svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
+.logo{font-weight:900;font-style:italic;font-size:22px;letter-spacing:-.04em;text-decoration:none;white-space:nowrap}
+.logo b{color:var(--red);font-style:normal}
+.logo small{font-style:normal;font-weight:500;font-size:13px;color:var(--muted);letter-spacing:0;margin-left:6px}
+.links{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--muted)}
+.links a{text-decoration:none}.links a:hover{color:var(--fg)}
+nav.top .btn{min-height:40px;padding:0 20px;font-size:15px}
+@media(max-width:860px){.links{display:none}.logo small{display:none}}
+/* hero */
+.hero{padding-block:clamp(56px,10vw,120px) clamp(48px,7vw,90px);text-align:center}
+.hero .eyebrow{color:var(--red)}
+.hero h1{max-width:13em;margin-inline:auto}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lead{margin-inline:auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.alt-link{margin-top:20px;font-size:16px;font-weight:600;color:var(--muted)}
+.alt-link a{color:var(--blue)}
+.trust{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-size:15px;font-weight:600;color:var(--muted)}
+.trust span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:8px}
+.shelf{display:block;width:100%;height:auto;overflow:visible}
+.hero .shelf{max-width:500px;margin:44px auto 0}
+.photo{display:block;width:100%;height:auto;border-radius:24px;box-shadow:0 24px 60px -24px rgba(14,19,48,.45)}
+.hero-photo{max-width:560px;margin:44px auto 0}
+.gallery{margin:0 auto;max-width:760px}
+.gallery figcaption{margin-top:14px;text-align:center;font-size:15px;color:var(--muted)}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 16px;margin-inline:calc(var(--gutter) * -1);-webkit-overflow-scrolling:touch}
+.rail img{flex:0 0 min(76vw,340px);width:min(76vw,340px);height:auto;border-radius:24px;scroll-snap-align:center;box-shadow:0 18px 40px -22px rgba(14,19,48,.5)}
+.orga{margin:22px auto 0;max-width:34em;font-size:16px;font-weight:600;color:var(--muted)}
+.legal-mini{margin-top:14px;font-size:14px;color:var(--muted)}
+/* titres de section */
+.head{max-width:760px;margin-bottom:48px}
+.head.c{margin-inline:auto;text-align:center}
+.head.c .lead{margin-inline:auto}
+/* pour qui */
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.path{border-radius:32px;padding:36px 30px;color:#fff;display:flex;flex-direction:column;gap:16px;min-width:0;scroll-margin-top:84px}
+.path.a{background:#1536C9}
+.path.b{background:#D91E2B}
+.path svg.i{width:46px;height:46px;stroke-width:1.6}
+.path p{opacity:.92;font-size:18px}
+.path ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.path li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:17px;line-height:1.3}
+.path li svg{width:20px;height:20px;stroke-width:2.6;margin-top:2px}
+.path .btn{align-self:flex-start;margin-top:auto}
+.path.b .btn-white{color:#D91E2B}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:12px;min-width:0;scroll-margin-top:84px}
+.card .ic{color:var(--blue)}
+.card p{color:var(--muted);font-size:17px}
+.card a.more{margin-top:auto;padding-top:8px;font-weight:700;color:var(--blue);text-decoration:none}
+.card a.more:hover{text-decoration:underline}
+.give{margin-top:16px;border-radius:28px;background:var(--bg2);border:1px solid var(--line);padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:20px}
+.give div{display:flex;gap:12px;align-items:center;font-weight:700;font-size:16px;line-height:1.25}
+.give svg{color:var(--blue);width:30px;height:30px}
+/* parcours */
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.lvl{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.medal{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:22px;color:#fff;margin-bottom:14px}
+.num{font-size:clamp(56px,8vw,76px);font-weight:900;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.unit{color:var(--muted);font-size:16px;font-weight:600}
+.lvl p{margin-top:12px;color:var(--muted);font-size:16px}
+.note{margin-top:26px;color:var(--muted);font-size:16px;max-width:46em}
+/* parfums */
+.perf{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,118px),1fr));gap:14px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px 8px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.pcard svg{width:78px;height:auto;overflow:visible}
+.pcard span{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.combo{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.combo div{border-radius:20px;background:var(--bg2);padding:18px 20px;font-weight:700;line-height:1.25}
+.combo b{display:block;font-size:30px;letter-spacing:-.03em;color:var(--blue)}
+.combo small{display:block;margin-top:2px;font-weight:600;color:var(--muted);font-size:14px}
+/* qui sommes-nous */
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:start}
+.who p{color:var(--muted);font-size:19px;margin-top:18px}
+.who p b{color:var(--fg)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px}
+.nolist{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.nolist li{display:flex;gap:12px;align-items:flex-start;font-size:19px;font-weight:700;line-height:1.3}
+.nolist svg{color:var(--blue);width:26px;height:26px;stroke-width:2.6;margin-top:1px}
+.eng{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.eng div{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:26px}
+.eng b{font-size:20px;display:block;margin-bottom:6px}
+.eng span{color:var(--muted);font-size:17px}
+/* faq */
+.faq{max-width:760px;margin-inline:auto}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-size:20px;font-weight:700;position:relative;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-52%);font-size:30px;font-weight:400;color:var(--blue);transition:transform .2s}
+details[open] summary::after{transform:translateY(-52%) rotate(45deg)}
+details p{padding:0 0 26px;color:var(--muted);font-size:17px;max-width:38em}
+/* contact */
+.contact{text-align:center;background:var(--blue);color:var(--blue-ink)}
+.contact .eyebrow{color:inherit;opacity:.75}
+.contact .lead{color:inherit;opacity:.88;margin-inline:auto}
+.contact .btn-main{background:var(--blue-ink);color:var(--blue)}
+.contact .btn-ghost{border-color:color-mix(in srgb,var(--blue-ink) 45%,transparent);color:var(--blue-ink)}
+.tel{margin-top:22px;font-size:17px;opacity:.92;user-select:all}
+footer{padding-block:44px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:16px}
+footer details{border:0}
+footer summary{font-size:14px;padding:0;color:var(--fg)}
+footer summary::after{display:none}
+footer details p{padding:12px 0 0;font-size:14px;max-width:60em}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<!-- icônes et coffrets de parfum (illustrations sans aucune marque) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.2 8.6c-.2 2.8 3 6 6 6l.9-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 3c4 2 6 6 6 10l-3 3H9l-3-3c0-4 2-8 6-10z"/><circle cx="12" cy="10" r="2"/><path d="M9 16l-2 4M15 16l2 4"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 9v6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.3 12 20 12 20z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c.5-3.5 3-5 6-5s5.5 1.5 6 5M15 15c3 0 5 1.5 6 4"/></symbol>
+
+    <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+    <linearGradient id="sheen" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="pclip"><rect width="60" height="190" rx="4"/></clipPath>
+    <filter id="soft" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="3.5"/></filter>
+    <g id="pbox">
+      <ellipse cx="30" cy="193" rx="36" ry="6" fill="#000" opacity=".28" filter="url(#soft)"/>
+      <g clip-path="url(#pclip)">
+        <rect width="60" height="190" style="fill:var(--c1)"/>
+        <rect y="108" width="60" height="82" style="fill:var(--c2)"/>
+        <rect x="12" y="24" width="36" height="64" rx="2" fill="#fff" opacity=".8"/>
+        <rect x="15" y="27" width="30" height="58" rx="1" fill="none" stroke="#000" stroke-opacity=".18"/>
+        <rect x="24" y="118" width="12" height="9" rx="2" fill="#fff" opacity=".55"/>
+        <rect x="19" y="126" width="22" height="46" rx="6" fill="#000" opacity=".26"/>
+        <rect x="22" y="130" width="4" height="36" rx="2" fill="#fff" opacity=".35"/>
+        <rect width="60" height="190" fill="url(#shade)"/>
+        <rect width="60" height="190" fill="url(#sheen)"/>
+      </g>
+    </g>
+    <g id="shelf8">
+      <use href="#pbox" x="12"  y="6" style="--c1:#F0883A;--c2:#2E9BC4"/>
+      <use href="#pbox" x="90"  y="6" style="--c1:#F2B25C;--c2:#1C1B1F"/>
+      <use href="#pbox" x="168" y="6" style="--c1:#D9485A;--c2:#8C8F96"/>
+      <use href="#pbox" x="246" y="6" style="--c1:#7A1B2A;--c2:#5E1220"/>
+      <use href="#pbox" x="324" y="6" style="--c1:#2A2A2E;--c2:#141417"/>
+      <use href="#pbox" x="402" y="6" style="--c1:#E7B3C8;--c2:#D98FAE"/>
+      <use href="#pbox" x="480" y="6" style="--c1:#3F9EA3;--c2:#2B7C84"/>
+      <use href="#pbox" x="558" y="6" style="--c1:#EBD3C8;--c2:#D9B7A8"/>
+    </g>
+  </defs>
+</svg>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="LEVEL UP by Form'Com, haut de page">LEVEL <b>UP</b><small>by Form'Com</small></a>
+    <div class="links"><a href="#pour-qui">Pour qui</a><a href="#parcours">Parcours</a><a href="#parfums">Parfums</a><a href="#qui">Qui sommes-nous</a><a href="#faq">Questions</a></div>
+    <a class="btn btn-main" href="#contact">Je me lance</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ACCUEIL -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Gagner, en faisant gagner.</p>
+    <h1>Tu veux gagner de l'argent <em>ou financer ton projet ?</em></h1>
+    <p class="lead">LEVEL UP te forme, t'accompagne et te donne les moyens de le faire, sans rien avancer. Tu fais découvrir des parfums de qualité : chaque parfum diffusé compte.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#revenu">Je veux gagner de l'argent</a>
+      <a class="btn btn-main" href="#projet">Je veux financer mon projet</a>
+    </div>
+    <p class="alt-link"><a href="#etudiant">Je suis étudiant</a> · <a href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Calculer mon niveau</a></p>
+    <p class="orga">Form'Com est une association et un organisme de formation spécialisés dans la communication. Elle accompagne des projets, notamment des projets professionnels, de personnes de tous horizons et de tous âges.</p>
+    <div class="trust"><span>Formation financée</span><span>Zéro engagement</span><span>Tu choisis ton rythme</span></div>
+    <img class="photo hero-photo" src="parfums.jpg" width="1300" height="1133" alt="8 parfums en coffret de 35 ml, de couleurs différentes, alignés">
+    <p class="legal-mini">Montants indicatifs, non garantis.</p>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section class="alt" id="pour-qui">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Pour qui</p>
+      <h2>Deux parcours. Une même opportunité.</h2>
+      <p class="lead">Choisis celui qui te ressemble. Le détail t'est expliqué en entretien.</p>
+    </div>
+    <div class="paths">
+      <article class="path a" id="revenu">
+        <svg class="i"><use href="#i-coins"/></svg>
+        <h3 style="font-size:30px;letter-spacing:-.02em">Gagner un revenu</h3>
+        <p>En auto-entrepreneur, tu touches une commission par parfum, facturée chaque mois.</p>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Commission par parfum diffusé</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Horaires et rythme libres</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Paiement par virement chaque mois</li>
+        </ul>
+        <a class="btn btn-white" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20un%20revenu%20(source%20%3A%20site)" target="_blank" rel="noopener">Je me lance</a>
+      </article>
+      <article class="path b" id="projet">
+        <svg class="i"><use href="#i-rocket"/></svg>
+        <h3 style="font-size:30px;letter-spacing:-.02em">Financer mon projet</h3>
+        <p>L'association prend en charge les factures liées à ton projet, jusqu'au montant atteint. Ce n'est pas un salaire.</p>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Formation, permis, activité</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Prise en charge de tes factures</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Suivi personnalisé</li>
+        </ul>
+        <a class="btn btn-white" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)" target="_blank" rel="noopener">Je me lance</a>
+      </article>
+    </div>
+    <div class="mini">
+      <article class="card" id="etudiant">
+        <svg class="i ic"><use href="#i-grad"/></svg>
+        <h3>Je suis étudiant</h3>
+        <p>Un planning adapté à tes cours, une prime de parrainage, une attestation de compétences. Dès 16 ans avec l'autorisation écrite d'un parent.</p>
+        <a class="more" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20en%20tant%20qu'%C3%A9tudiant%20(source%20%3A%20site)" target="_blank" rel="noopener">Je me lance</a>
+      </article>
+      <article class="card">
+        <svg class="i ic"><use href="#i-heart"/></svg>
+        <h3>Être bénévole</h3>
+        <p>Sans rémunération, sans objectif, en toute liberté. Tu gagnes des compétences, un réseau et une attestation.</p>
+        <a class="more" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20veux%20aider%20en%20tant%20que%20b%C3%A9n%C3%A9vole%20(source%20%3A%20site)" target="_blank" rel="noopener">Je veux aider</a>
+      </article>
+    </div>
+    <div class="give">
+      <div><svg class="i"><use href="#i-cap"/></svg>Formation financée</div>
+      <div><svg class="i"><use href="#i-box"/></svg>Kit et stock de parfums</div>
+      <div><svg class="i"><use href="#i-card"/></svg>Paiement et encaissement</div>
+      <div><svg class="i"><use href="#i-shirt"/></svg>Tenue réglementaire</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Le parcours</p>
+      <h2>Quatre niveaux. Tu montes quand tu es prêt.</h2>
+      <p class="lead">Tout commence par une semaine découverte : 3 jours de formation en salle, puis le terrain avec un coach.</p>
+    </div>
+    <div class="levels">
+      <article class="lvl">
+        <div class="medal" style="background:var(--fg);color:var(--bg)" aria-hidden="true">0</div>
+        <h3>Mode démo</h3>
+        <div class="num" style="font-size:clamp(34px,5vw,44px);padding-block:14px 8px">1 semaine</div>
+        <p>Formation financée, zéro engagement. Tu vois si ça te plaît, et nous si ça nous correspond.</p>
+      </article>
+      <article class="lvl">
+        <div class="medal" style="background:var(--bronze)" aria-hidden="true">1</div>
+        <h3>1re mission</h3>
+        <div class="num">10</div><div class="unit">parfums par jour</div>
+        <p>Tu prends tes marques avec ton coach.</p>
+      </article>
+      <article class="lvl">
+        <div class="medal" style="background:var(--silver)" aria-hidden="true">2</div>
+        <h3>Level Up</h3>
+        <div class="num">30</div><div class="unit">parfums par jour</div>
+        <p>Le rythme moyen des vendeurs formés.</p>
+      </article>
+      <article class="lvl">
+        <div class="medal" style="background:var(--gold)" aria-hidden="true">3</div>
+        <h3>Légende</h3>
+        <div class="num">50</div><div class="unit">parfums par jour</div>
+        <p>Par exemple, 10 clients qui prennent une collection.</p>
+      </article>
+    </div>
+    <p class="note">Un classement simple, des challenges et des primes selon les règles de chaque concours. Objectifs indicatifs, non garantis.</p>
+  </div>
+</section>
+
+<!-- PARFUMS -->
+<section class="alt" id="parfums">
+  <div class="wrap">
+    <div class="head c">
+      <p class="eyebrow">Les parfums</p>
+      <h2>Des parfums de qualité, faciles à faire découvrir.</h2>
+      <p class="lead">8 parfums en coffret de 35 ml, à faire découvrir un par un. Fais défiler pour les découvrir. Le détail de chaque parfum t'est présenté pendant la formation.</p>
+    </div>
+    <div class="rail" role="list" aria-label="Les parfums de la sélection, un par un">
+      <img src="pub/pub-1.jpg" width="864" height="1080" loading="lazy" alt="Desert Mirage, eau de parfum 35 ml">
+      <img src="pub/pub-2.jpg" width="864" height="1080" loading="lazy" alt="Cosmic Tonka, eau de parfum 35 ml">
+      <img src="pub/pub-3.jpg" width="864" height="1080" loading="lazy" alt="Western Shisha, eau de parfum 35 ml">
+      <img src="pub/pub-4.jpg" width="864" height="1080" loading="lazy" alt="Sultan El Waha, eau de parfum 35 ml">
+      <img src="pub/pub-5.jpg" width="864" height="1080" loading="lazy" alt="Ameerat Al Arab, eau de parfum 35 ml">
+      <img src="pub/pub-6.jpg" width="864" height="1080" loading="lazy" alt="Yum Yum Delights, eau de parfum 35 ml">
+      <img src="pub/pub-7.jpg" width="864" height="1080" loading="lazy" alt="Sahghaf Oud Tonka, eau de parfum 35 ml">
+      <img src="pub/pub-8.jpg" width="864" height="1080" loading="lazy" alt="Direction, eau de parfum 35 ml">
+    </div>
+    <div class="combo">
+      <div><b>5 parfums</b>une collection<small>le client en prend souvent plusieurs</small></div>
+      <div><b>3 parfums</b>une grande action</div>
+      <div><b>2 parfums</b>une moyenne action</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUI SOMMES-NOUS -->
+<section id="qui">
+  <div class="wrap">
+    <div class="who">
+      <div>
+        <p class="eyebrow">Qui sommes-nous</p>
+        <h2>Form'Com accompagne des projets. Participe aux actions qui les font avancer.</h2>
+        <p>Form'Com est une association et un organisme de formation spécialisés dans la communication. Nous <b>accompagnons des projets</b>, notamment des projets professionnels, de personnes de tous horizons et de tous âges (dès 16 ans, avec l'autorisation d'un parent). Pour aider à les financer, nous menons des actions de collecte de fonds, notamment en faisant découvrir des parfums de qualité. Les bénéfices de ces ventes financent des projets.</p>
+        <p>Nous cherchons des personnes qui <b>souhaitent participer librement</b> à ces actions. Selon la voie choisie, une commission par parfum ou une prise en charge de frais de projet est prévue (montants indicatifs, non garantis). Tu t'organises comme tu le souhaites et tu peux arrêter à tout moment.</p>
+      </div>
+      <div>
+        <h3 style="font-size:24px">Tu es le bienvenu si tu es…</h3>
+        <div class="tags"><span>Étudiant</span><span>En recherche d'emploi</span><span>En reconversion</span><span>Porteur de projet</span></div>
+        <ul class="nolist" style="margin-top:32px">
+          <li><svg class="i"><use href="#i-check"/></svg>Aucun diplôme exigé</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Aucune expérience demandée</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Formé directement en interne, par des gens qui font le métier</li>
+        </ul>
+        <div class="cta" style="justify-content:flex-start"><a class="btn btn-main" href="#contact">Je me lance</a></div>
+      </div>
+    </div>
+    <div class="eng">
+      <div><b>Honnêteté</b><span>Tu fais découvrir un produit, sans pression à l'achat, sans promesse de gain garanti.</span></div>
+      <div><b>Respect</b><span>Des clients, de leur temps et de leur choix. C'est écrit dans la charte éthique de Form'Com.</span></div>
+      <div><b>Transparence</b><span>Ce que tu touches, ce qui t'est fourni, ce qu'on attend de toi : tout est expliqué avant de t'engager.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="alt" style="text-align:center">
+  <div class="wrap">
+    <p class="eyebrow">Simulateur</p>
+    <h2>Découvre ton niveau en une minute.</h2>
+    <p class="lead" style="margin-inline:auto">Choisis ta voie, fais glisser le curseur, vois le résultat. Aucune donnée n'est demandée pour essayer.</p>
+    <div class="cta"><a class="btn btn-main" href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Ouvrir le simulateur</a></div>
+    <p class="note" style="margin-inline:auto">Montants indicatifs, non garantis.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head c">
+      <p class="eyebrow">Questions</p>
+      <h2>Ce que tu veux savoir avant.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Faut-il un diplôme ou de l'expérience ?</summary><p>Non. Aucun diplôme n'est exigé et aucune expérience n'est demandée. Tu es formé directement en interne.</p></details>
+      <details><summary>C'est gratuit pour moi ?</summary><p>Ta formation est financée par l'association, ainsi que le kit, le stock de parfums, les moyens de paiement et ta tenue. Tu n'as rien à avancer.</p></details>
+      <details><summary>Qu'est-ce que la semaine découverte ?</summary><p>Une semaine sans engagement : 3 jours de formation en salle, puis le terrain avec un coach. Tu vois si ça te convient, et nous vérifions que cela correspond à notre charte.</p></details>
+      <details><summary>Combien je peux gagner ?</summary><p>Cela dépend de ta voie et de ton rythme. À titre d'exemple, de 500 € à 5 000 € par mois selon le nombre de parfums diffusés. Ces montants sont indicatifs et ne sont pas garantis. Le détail est dans le simulateur et en entretien.</p></details>
+      <details><summary>Suis-je salarié ?</summary><p>Non. Selon ta voie, tu participes comme bénévole, tu bénéficies d'une prise en charge de frais de projet, ou tu es indépendant et tu factures tes commissions. Tu t'organises librement : pas d'horaires imposés, pas d'objectif obligatoire, et tu peux arrêter à tout moment.</p></details>
+      <details><summary>Quel est mon statut ?</summary><p>Selon ta voie : prise en charge de tes frais de projet, ou auto-entrepreneur qui facture ses commissions chaque mois à Form'Com. Tu es libre de tes horaires et de ton rythme.</p></details>
+      <details><summary>Je suis mineur, c'est possible ?</summary><p>Dès 16 ans, avec l'autorisation écrite d'un parent, sur la voie Porteur de projet. Pas de terrain entre 22 h et 6 h, et 8 heures par jour maximum.</p></details>
+      <details><summary>Je suis étudiant étranger, puis-je participer ?</summary><p>Cela dépend de ton titre de séjour. Parles-en avec nous avant de t'engager : certaines voies ne sont pas ouvertes à tous.</p></details>
+      <details><summary>Et si je veux seulement aider ?</summary><p>Le bénévolat est possible, sans rémunération et sans objectif. Tu gardes la liberté de t'investir comme tu le souhaites.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">On commence ?</p>
+    <h2>Écris-nous sur WhatsApp.</h2>
+    <p class="lead">Un message suffit. On te répond, on t'explique tout, et tu décides ensuite.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20avec%20LEVEL%20UP%20(source%20%3A%20site)" target="_blank" rel="noopener"><svg class="i" style="width:22px;height:22px"><use href="#i-wa"/></svg>Je me lance</a>
+      <a class="btn btn-ghost" href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Calculer mon niveau</a>
+    </div>
+    <p class="tel">WhatsApp : 06 67 40 72 14</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--fg)">LEVEL UP by Form'Com</b> · Association et organisme de formation spécialisés dans la communication. Montants indicatifs, non garantis.</p>
+    <details>
+      <summary>Mentions légales et confidentialité</summary>
+      <p><b>Éditeur :</b> Association Form'Com, domiciliée à la Maison des associations (Espace 1901), 22 rue Maurice Ravel, 78190 Trappes. SIRET : 932 697 584 00013. Association déclarée, n° RNA : W783006284.. Responsable de la publication : Monsieur NASSIRI. Contact : WhatsApp 06 67 40 72 14.</p>
+      <p><b>Hébergement :</b> GitHub Pages (GitHub, Inc.), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+      <p><b>Données personnelles :</b> ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi. Quand tu écris sur WhatsApp, ton numéro et ton message sont traités par WhatsApp et lus par l'association pour te répondre. Pour exercer tes droits (accès, suppression), écris-nous à la même adresse.</p>
+    </details>
+  </div>
+</footer>
+
+</body></html>
