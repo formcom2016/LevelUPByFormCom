@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>LEVEL UP Éventail A</title>
 <meta name="description" content="Programme associatif Form'Com : formation financée, semaine découverte sans engagement, parcours en 4 niveaux, et une boutique de parfums en coffret 35 ml.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -339,6 +340,23 @@ section,.scene,.offers{scroll-margin-top:var(--nh)}
 .copy{font:inherit;font-weight:700;font-size:13.5px;color:var(--fg);background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:border-color .2s,background .2s}
 .copy:hover{border-color:var(--fg)}
 
+/* Qui sommes-nous : 4 voies */
+.who-h{font-family:var(--serif);font-weight:500;font-size:30px;text-align:center;margin:56px 0 28px}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.way{display:flex;flex-direction:column;gap:12px;padding:26px 24px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:18px;background:color-mix(in srgb,var(--fg,#fff) 4%,transparent)}
+.way-i{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--grad);color:#1a1006}
+.way-i .i{width:22px;height:22px}
+.way h4{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;margin:0}
+.way p{color:var(--muted);font-size:16px;margin:0;flex:1}
+.way-a{font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+.who-soutien,.who-end{max-width:46em;margin:34px auto 0;text-align:center;color:var(--muted);font-size:18px}
+.who-soutien b,.who-end b{color:var(--fg)}
+.who-soutien a{color:var(--fg);font-weight:700;text-underline-offset:4px}
+.who-trust{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px}
+.who-trust .tags{justify-content:center}
+.who-trust .nolist{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center}
+.who-trust .cta{justify-content:center}
+
 /* ===== Quiz : Trouve ton parfum / Ton profil ===== */
 #mon-parfum .head{margin-bottom:34px}
 .qz{max-width:760px;margin-inline:auto;border-radius:30px;border:1px solid color-mix(in srgb,var(--blue) 40%,var(--line));background:radial-gradient(70% 60% at 50% 0%,color-mix(in srgb,var(--blue-deep) 38%,transparent),transparent 72%),var(--card);padding:clamp(22px,4vw,40px);min-width:0}
@@ -476,7 +494,6 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
 <nav class="top" aria-label="Navigation principale">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="LEVEL UP by Form'Com, haut de page">LEVEL <b>UP</b><small>by Form'Com</small></a>
-    <div class="links" id="tabs"><a href="#top">Accueil</a><a href="#pour-qui">Pour qui</a><a href="#parcours">Parcours</a><a href="#simulateur">Simulateur</a><a href="#projets">Projets</a><a href="#qui">Qui sommes-nous</a><a href="#mon-parfum">Mon parfum</a><a href="#parfums">Boutique</a><a href="#faq">Questions</a><a href="#contact">Contact</a></div>
     <a class="btn btn-main" href="#contact">Je me lance</a>
   </div>
 </nav>
@@ -493,13 +510,12 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
     <div class="cta">
       <a class="btn btn-main" href="#revenu">Je veux gagner de l'argent</a>
       <a class="btn btn-main" href="#projet">Je veux financer mon projet</a>
-      <a class="btn btn-ghost" href="#mon-parfum">Trouve ton parfum en 30 secondes</a>
     </div>
     <p class="alt-link"><a href="#etudiant">Je suis étudiant</a> · <a href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Calculer mon niveau</a></p>
-    <p class="orga">Form'Com est une association et un organisme de formation spécialisés dans la communication. Elle accompagne des projets, notamment des projets professionnels, de personnes de tous horizons et de tous âges.</p>
+    <p class="orga">Form'Com est une association et un organisme de formation spécialisés dans la communication et la levée de fonds solidaire. Elle accompagne des projets, notamment des projets professionnels, de personnes de tous horizons et de tous âges.</p>
     <div class="trust"><span>Formation financée</span><span>Zéro engagement</span><span>Tu choisis ton rythme</span></div>
   </div>
-  <div class="hero-media stage"><div class="fan" role="img" aria-label="Les huit parfums en coffret de 35 ml, ouverts en éventail"><div class="f" style="--a:-38.5deg;--hs:0.807;--r:0.1578;--z:3;--i:0;--dp:12;--bt:5.5s;--tint:#E0763A"><div class="fi"><div class="pic" style="background-image:var(--i-desert)"></div></div></div><div class="f" style="--a:-27.5deg;--hs:0.863;--r:0.1233;--z:5;--i:1;--dp:19;--bt:6.4s;--tint:#C98A3E"><div class="fi"><div class="pic" style="background-image:var(--i-cosmic)"></div></div></div><div class="f" style="--a:-16.5deg;--hs:0.917;--r:0.1256;--z:7;--i:2;--dp:26;--bt:7.3s;--tint:#E0475A"><div class="fi"><div class="pic" style="background-image:var(--i-western)"></div></div></div><div class="f" style="--a:-5.5deg;--hs:0.973;--r:0.1156;--z:9;--i:3;--dp:33;--bt:5.5s;--tint:#A3233A"><div class="fi"><div class="pic" style="background-image:var(--i-sultan)"></div></div></div><div class="f" style="--a:5.5deg;--hs:0.973;--r:0.1189;--z:9;--i:4;--dp:33;--bt:6.4s;--tint:#8E96B5"><div class="fi"><div class="pic" style="background-image:var(--i-ameerat)"></div></div></div><div class="f" style="--a:16.5deg;--hs:0.917;--r:0.1133;--z:7;--i:5;--dp:26;--bt:7.3s;--tint:#E58FB4"><div class="fi"><div class="pic" style="background-image:var(--i-yumyum)"></div></div></div><div class="f" style="--a:27.5deg;--hs:0.863;--r:0.12;--z:5;--i:6;--dp:19;--bt:5.5s;--tint:#2F9AA2"><div class="fi"><div class="pic" style="background-image:var(--i-sahghaf)"></div></div></div><div class="f" style="--a:38.5deg;--hs:0.807;--r:0.0944;--z:3;--i:7;--dp:12;--bt:6.4s;--tint:#C99A87"><div class="fi"><div class="pic" style="background-image:var(--i-direction)"></div></div></div></div><div class="stage-cap"><p class="cap-t">8 parfums. <em>8 histoires.</em></p><p class="cap-s">Coffrets de 35 ml, à 10 € pièce. 4 achetés, le 5ᵉ offert.</p><a class="btn btn-main" href="#parfums">Découvrir les parfums</a></div></div>
+  <div class="hero-media stage"><div class="fan" role="img" aria-label="Les huit parfums en coffret de 35 ml, ouverts en éventail"><div class="f" style="--a:-38.5deg;--hs:0.807;--r:0.1578;--z:3;--i:0;--dp:12;--bt:5.5s;--tint:#E0763A"><div class="fi"><div class="pic" style="background-image:var(--i-desert)"></div></div></div><div class="f" style="--a:-27.5deg;--hs:0.863;--r:0.1233;--z:5;--i:1;--dp:19;--bt:6.4s;--tint:#C98A3E"><div class="fi"><div class="pic" style="background-image:var(--i-cosmic)"></div></div></div><div class="f" style="--a:-16.5deg;--hs:0.917;--r:0.1256;--z:7;--i:2;--dp:26;--bt:7.3s;--tint:#E0475A"><div class="fi"><div class="pic" style="background-image:var(--i-western)"></div></div></div><div class="f" style="--a:-5.5deg;--hs:0.973;--r:0.1156;--z:9;--i:3;--dp:33;--bt:5.5s;--tint:#A3233A"><div class="fi"><div class="pic" style="background-image:var(--i-sultan)"></div></div></div><div class="f" style="--a:5.5deg;--hs:0.973;--r:0.1189;--z:9;--i:4;--dp:33;--bt:6.4s;--tint:#8E96B5"><div class="fi"><div class="pic" style="background-image:var(--i-ameerat)"></div></div></div><div class="f" style="--a:16.5deg;--hs:0.917;--r:0.1133;--z:7;--i:5;--dp:26;--bt:7.3s;--tint:#E58FB4"><div class="fi"><div class="pic" style="background-image:var(--i-yumyum)"></div></div></div><div class="f" style="--a:27.5deg;--hs:0.863;--r:0.12;--z:5;--i:6;--dp:19;--bt:5.5s;--tint:#2F9AA2"><div class="fi"><div class="pic" style="background-image:var(--i-sahghaf)"></div></div></div><div class="f" style="--a:38.5deg;--hs:0.807;--r:0.0944;--z:3;--i:7;--dp:12;--bt:6.4s;--tint:#C99A87"><div class="fi"><div class="pic" style="background-image:var(--i-direction)"></div></div></div></div></div>
   <p class="legal-mini">Montants indicatifs, non garantis.</p>
 </section>
 
@@ -538,13 +554,13 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
       <article class="card" id="etudiant">
         <svg class="i" class="i ic" aria-hidden="true"><use href="#i-grad"/></svg>
         <h3>Je suis étudiant</h3>
-        <p>Un planning adapté à tes cours, tes frais pris en charge, une prime de parrainage et une attestation de compétences. Dès 16 ans avec l'autorisation écrite d'un parent.</p>
+        <p>Un planning adapté à tes cours, le Pass Étudiant et une prime de parrainage. Dès 16 ans avec l'autorisation écrite d'un parent.</p>
         <a class="more" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20en%20tant%20qu'%C3%A9tudiant%20(source%20%3A%20site)" target="_blank" rel="noopener">Je me lance</a>
       </article>
       <article class="card">
         <svg class="i" class="i ic" aria-hidden="true"><use href="#i-heart"/></svg>
         <h3>Être bénévole</h3>
-        <p>Rejoins une équipe qui fait avancer des projets. Tes frais sont pris en charge, tu t'organises librement, et tu gagnes des compétences, un réseau et une attestation.</p>
+        <p>Rejoins une équipe qui fait avancer des projets. Tu t'organises librement, et tu gagnes des compétences et un réseau.</p>
         <a class="more" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20veux%20aider%20en%20tant%20que%20b%C3%A9n%C3%A9vole%20(source%20%3A%20site)" target="_blank" rel="noopener">Je rejoins l'équipe</a>
       </article>
     </div>
@@ -567,7 +583,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
     <div class="levels">
       <article class="lvl">
         <div class="medal" style="background:var(--fg);color:var(--bg)" aria-hidden="true">0</div>
-        <h3>Mode démo</h3>
+        <h3>Découverte</h3>
         <div class="num" style="font-size:clamp(34px,5vw,44px);padding-block:14px 8px">1 semaine</div>
         <p>Formation financée, zéro engagement. Tu vois si ça te plaît, et nous si ça nous correspond.</p>
       </article>
@@ -610,7 +626,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
     <div class="head c">
       <p class="eyebrow">Projets</p>
       <h2>Chaque parfum aide <em>un projet à avancer.</em></h2>
-      <p class="lead">Une partie des bénéfices finance des projets accompagnés par Form'Com. Les premiers arrivent bientôt : tu pourras suivre ici leur histoire et leur avancement.</p>
+      <p class="lead">Les premiers arrivent bientôt : tu pourras suivre ici leur histoire et leur avancement.</p>
     </div>
     <div class="pgrid"><article class="pc soon-card"><div class="ph empty" aria-hidden="true"></div><div class="pb"><span class="pill">Bientôt</span><h3>Le premier projet arrive</h3><p>Son nom, son histoire, une photo et sa barre d'avancement seront présentés ici. Chaque parfum acheté y contribue.</p><div class="bar" aria-hidden="true"><i style="--w:0%"></i></div></div></article></div>
     <div class="cta"><a class="btn btn-ghost" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)" target="_blank" rel="noopener">J'ai un projet à présenter</a></div>
@@ -619,23 +635,20 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
 
 <section id="qui">
   <div class="wrap">
-    <div class="who">
-      <div>
-        <p class="eyebrow">Qui sommes-nous</p>
-        <h2>Form'Com accompagne des projets. <em>Participe aux actions qui les font avancer.</em></h2>
-        <p>Form'Com est une association et un organisme de formation spécialisés dans la communication. Nous <b>accompagnons des projets</b>, notamment des projets professionnels, de personnes de tous horizons et de tous âges (dès 16 ans, avec l'autorisation d'un parent). Pour aider à les financer, nous menons des actions de collecte de fonds, notamment en faisant découvrir des parfums de qualité. Les bénéfices de ces ventes financent des projets.</p>
-        <p>Nous cherchons des personnes qui <b>souhaitent participer librement</b> à ces actions. Selon la voie choisie, une commission par parfum ou une prise en charge de frais de projet est prévue (montants indicatifs, non garantis). Tu t'organises comme tu le souhaites et tu peux arrêter à tout moment.</p>
-      </div>
-      <div>
-        <h3>Tu es le bienvenu si tu es…</h3>
-        <div class="tags"><span>Étudiant</span><span>En recherche d'emploi</span><span>En reconversion</span><span>Porteur de projet</span></div>
-        <ul class="nolist" style="margin-top:32px">
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucun diplôme exigé</li>
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucune expérience demandée</li>
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Formé directement en interne, par des gens qui font le métier</li>
-        </ul>
-        <div class="cta" style="justify-content:flex-start"><a class="btn btn-main" href="#contact">Je me lance</a></div>
-      </div>
+    <div class="head c">
+      <p class="eyebrow">Qui sommes-nous</p>
+      <h2>Form'Com : la communication au service <em>de la levée de fonds solidaire.</em></h2>
+      <p class="lead">Form'Com est une association et un organisme de formation spécialisés dans la communication et la levée de fonds solidaire. Nous formons et accompagnons des personnes de tous horizons à travers des actions concrètes de terrain, notamment la vente de parfums solidaires.</p>
+      <p class="lead">Les fonds collectés financent les projets de l'association et les projets individuels des personnes que nous accompagnons.</p>
+    </div>
+    <p class="who-soutien"><b>Tu veux simplement nous soutenir ?</b> Achète un parfum ou une collection sur notre boutique. <a href="#parfums">Voir la boutique</a> · <a href="#mon-parfum">Trouve ton parfum en 30 secondes</a></p>
+    <p class="who-end"><b>Avec Form'Com, chacun peut trouver sa place et contribuer, à sa manière, au financement de projets concrets.</b></p>
+    <div class="who-trust">
+      <div class="tags"><span>Étudiant</span><span>En recherche d'emploi</span><span>En reconversion</span><span>Porteur de projet</span></div>
+      <ul class="nolist">
+        <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Formé directement en interne, par des gens qui font le métier</li>
+      </ul>
+      <div class="cta"><a class="btn btn-main" href="#contact">Je me lance</a></div>
     </div>
     <div class="eng">
       <div><b>Honnêteté</b><span>Un discours clair, des promesses tenues. Tu sais où tu vas, et c'est ce qui rend l'aventure belle à vivre.</span></div>
@@ -673,7 +686,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Desert Mirage</h3>
         <p class="tag">Une escale au bout du désert.</p>
         <p class="poem">Là où l'horizon tremble, une lumière chaude se pose sur la peau. Tu avances, elle te suit : un mirage qu'on voudrait garder.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ton sillage aide un projet à prendre la route.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ton sillage aide un projet à prendre la route.</em></span></a>
         <p class="soon">Notes olfactives détaillées bientôt disponibles.</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="desert" data-name="Desert Mirage" href="#">Acheter</a></div>
       </div>
@@ -685,7 +698,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Cosmic Tonka</h3>
         <p class="tag">Une touche d'ailleurs qui reste.</p>
         <p class="poem">Un éclat de safran, une rose qui s'ouvre, puis la tonka qui s'installe comme une nuit sans fin. Tu passes, le sillage demeure.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Une étoile pour toi, une autre pour un projet qui démarre.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Une étoile pour toi, une autre pour un projet qui démarre.</em></span></a>
         <dl class="notes"><div><dt>Tête</dt><dd><span style="--k:0">Safran</span><span style="--k:1">Bergamote</span></dd></div><div><dt>Cœur</dt><dd><span style="--k:2">Rose de Bulgarie</span><span style="--k:3">Oud</span></dd></div><div><dt>Fond</dt><dd><span style="--k:4">Fève tonka</span><span style="--k:5">Ambre</span><span style="--k:6">Musc blanc</span><span style="--k:7">Mousse de chêne</span></dd></div></dl><p class="fam"><b>Famille olfactive :</b> Oriental boisé</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="cosmic" data-name="Cosmic Tonka" href="#">Acheter</a></div>
       </div>
@@ -697,7 +710,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Western Shisha</h3>
         <p class="tag">Un voyage, deux mondes.</p>
         <p class="poem">Le sucre d'une fête, la fumée d'un salon, un verre de rhum qui s'attarde. Deux mondes se rencontrent, et la vanille les réunit.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Un parfum qui voyage, un projet qui avance.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Un parfum qui voyage, un projet qui avance.</em></span></a>
         <dl class="notes"><div><dt>Tête</dt><dd><span style="--k:0">Raisin</span><span style="--k:1">Chewing-gum</span><span style="--k:2">Encens</span><span style="--k:3">Davana</span></dd></div><div><dt>Cœur</dt><dd><span style="--k:4">Rhum</span><span style="--k:5">Accord pomme chicha</span><span style="--k:6">Jasmin</span></dd></div><div><dt>Fond</dt><dd><span style="--k:7">Vanille</span><span style="--k:8">Patchouli</span></dd></div></dl><p class="fam"><b>Famille olfactive :</b> Oriental vanillé, gourmand</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="western" data-name="Western Shisha" href="#">Acheter</a></div>
       </div>
@@ -709,7 +722,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Sultan El Waha</h3>
         <p class="tag">Le charme d'une oasis.</p>
         <p class="poem">Après la marche, l'ombre des palmiers. Un velours rouge pour celui qui arrive en maître et repart en légende.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Le velours pour toi, un coup de pouce pour un projet.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Le velours pour toi, un coup de pouce pour un projet.</em></span></a>
         <p class="soon">Notes olfactives détaillées bientôt disponibles.</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="sultan" data-name="Sultan El Waha" href="#">Acheter</a></div>
       </div>
@@ -721,7 +734,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Ameerat Al Arab</h3>
         <p class="tag">L'élégance d'une princesse.</p>
         <p class="poem">La fraîcheur des agrumes, la douceur du musc blanc, puis le jasmin et l'oud qui signent le passage. Une élégance qui n'a pas besoin de parler.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Une élégance qui sert aussi un projet.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Une élégance qui sert aussi un projet.</em></span></a>
         <dl class="notes"><div><dt>Tête</dt><dd><span style="--k:0">Agrumes</span><span style="--k:1">Bergamote</span></dd></div><div><dt>Cœur</dt><dd><span style="--k:2">Aloe vera</span><span style="--k:3">Musc blanc</span></dd></div><div><dt>Fond</dt><dd><span style="--k:4">Jasmin</span><span style="--k:5">Notes boisées</span><span style="--k:6">Musc</span><span style="--k:7">Oud</span></dd></div></dl><p class="fam"><b>Famille olfactive :</b> Floral oriental</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="ameerat" data-name="Ameerat Al Arab" href="#">Acheter</a></div>
       </div>
@@ -733,7 +746,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Yum Yum Delights</h3>
         <p class="tag">Un délice qui donne le sourire.</p>
         <p class="poem">Une cerise croquée au soleil, une rose sucrée, un nuage de poudre. Un goûter qui devient parfum, et le sourire qui va avec.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Un sourire pour toi, un sourire pour un projet.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Un sourire pour toi, un sourire pour un projet.</em></span></a>
         <dl class="notes"><div><dt>Tête</dt><dd><span style="--k:0">Baies sauvages</span><span style="--k:1">Cerise</span><span style="--k:2">Orange</span><span style="--k:3">Bergamote</span></dd></div><div><dt>Cœur</dt><dd><span style="--k:4">Rose</span><span style="--k:5">Fleurs blanches</span><span style="--k:6">Vanille</span></dd></div><div><dt>Fond</dt><dd><span style="--k:7">Notes poudrées</span><span style="--k:8">Musc</span><span style="--k:9">Ambre</span></dd></div></dl><p class="fam"><b>Famille olfactive :</b> Fruité floral</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="yumyum" data-name="Yum Yum Delights" href="#">Acheter</a></div>
       </div>
@@ -745,7 +758,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Sahghaf Oud Tonka</h3>
         <p class="tag">Une présence qui se remarque.</p>
         <p class="poem">L'amande ouvre la porte, la cannelle réchauffe la pièce, la rose de Turquie s'invite. Puis la tonka et la vanille s'installent pour la nuit.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ta nuit parfumée éclaire aussi un projet.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ta nuit parfumée éclaire aussi un projet.</em></span></a>
         <dl class="notes"><div><dt>Tête</dt><dd><span style="--k:0">Amande</span></dd></div><div><dt>Cœur</dt><dd><span style="--k:1">Cannelle</span><span style="--k:2">Fleur d'oranger d'Afrique</span><span style="--k:3">Rose de Turquie</span></dd></div><div><dt>Fond</dt><dd><span style="--k:4">Fève tonka</span><span style="--k:5">Vanille</span><span style="--k:6">Bois ambré</span></dd></div></dl><p class="fam"><b>Famille olfactive :</b> Oriental gourmand</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="sahghaf" data-name="Sahghaf Oud Tonka" href="#">Acheter</a></div>
       </div>
@@ -757,7 +770,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
         <h3 class="pname">Direction</h3>
         <p class="tag">Trouve ta direction.</p>
         <p class="poem">Pas de carte, pas de boussole : juste un sillage qui te dit où aller. Avance, il saura te suivre.</p>
-        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ta direction aide d'autres à trouver la leur.</em><small>Une partie des bénéfices finance des projets accompagnés par Form'Com.</small></span></a>
+        <a class="cause" href="#projets"><span class="cause-i" aria-hidden="true"><svg class="i"  aria-hidden="true"><use href="#i-heart"/></svg></span><span><em>Ta direction aide d'autres à trouver la leur.</em></span></a>
         <p class="soon">Notes olfactives détaillées bientôt disponibles.</p>
         <div class="buyrow"><div class="price"><b data-price="unit">10 €</b><span>Coffret 35 ml · eau de parfum</span></div><a class="buy" data-id="direction" data-name="Direction" href="#">Acheter</a></div>
       </div>
@@ -793,11 +806,9 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
       <details><summary>Qu'est-ce que la semaine découverte ?</summary><p>Une semaine sans engagement : 3 jours de formation en salle, puis le terrain avec un coach. Tu vois si ça te convient, et nous vérifions que cela correspond à notre charte.</p></details>
       <details><summary>Combien je peux gagner ?</summary><p>Cela dépend de ta voie et de ton rythme. À titre d'exemple, de 500 € à 5 000 € par mois selon le nombre de parfums diffusés. Ces montants sont indicatifs et ne sont pas garantis. Le détail est dans le simulateur et en entretien.</p></details>
       <details><summary>Suis-je salarié ?</summary><p>Non. Selon ta voie, tu participes comme bénévole, tu bénéficies d'une prise en charge de frais de projet, ou tu es indépendant et tu factures tes commissions. Tu t'organises librement : pas d'horaires imposés, pas d'objectif obligatoire, et tu peux arrêter à tout moment.</p></details>
-      <details><summary>Quel est mon statut ?</summary><p>Selon ta voie : prise en charge de tes frais de projet, ou auto-entrepreneur qui facture ses commissions chaque mois à Form'Com. Tu es libre de tes horaires et de ton rythme.</p></details>
       <details><summary>Je suis mineur, c'est possible ?</summary><p>Dès 16 ans, avec l'autorisation écrite d'un parent, sur la voie Porteur de projet. Pas de terrain entre 22 h et 6 h, et 8 heures par jour maximum.</p></details>
       <details><summary>Je suis étudiant étranger, puis-je participer ?</summary><p>Cela dépend de ton titre de séjour. Parles-en avec nous avant de t'engager : certaines voies ne sont pas ouvertes à tous.</p></details>
-      <details><summary>Et si je veux seulement aider ?</summary><p>Avec plaisir. Tu t'investis comme tu le souhaites, tes frais sont pris en charge, et tu gagnes des compétences et une attestation.</p></details>
-      <details><summary>Peut-on m'attester mes heures de bénévolat ?</summary><p>Oui. Une attestation d'heures peut être remise avec l'accord de ton conseiller : s'il est d'accord, nous pouvons attester tes heures. Parles-en avec lui, puis avec nous.</p></details>
+      <details><summary>Et si je veux seulement aider ?</summary><p>Avec plaisir. Tu t'investis comme tu le souhaites, tu gagnes des compétences.</p></details>
     </div>
   </div>
 </section>
@@ -818,12 +829,26 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
 
 <footer>
   <div class="wrap">
-    <p><b style="color:var(--fg)">LEVEL UP by Form'Com</b> · Association et organisme de formation spécialisés dans la communication. Montants indicatifs, non garantis.</p>
+    <p><b style="color:var(--fg)">LEVEL UP by Form'Com</b> · Association et organisme de formation spécialisés dans la communication et la levée de fonds solidaire. Montants indicatifs, non garantis.</p>
     <details>
-      <summary>Mentions légales et confidentialité</summary>
-      <p><b>Éditeur :</b> Association Form'Com, domiciliée à la Maison des associations (Espace 1901), 22 rue Maurice Ravel, 78190 Trappes. SIRET : 932 697 584 00013. Association déclarée, n° RNA : W783006284.. Responsable de la publication : Monsieur NASSIRI. Contact : WhatsApp 06 67 40 72 14.</p>
+      <summary>Mentions légales</summary>
+      <p><b>Éditeur :</b> Association Form'Com, domiciliée à la Maison des associations (Espace 1901), 22 rue Maurice Ravel, 78190 Trappes. SIRET : 932 697 584 00013. Association déclarée, n° RNA : W783006284. Responsable de la publication : Monsieur NASSIRI. Contact : WhatsApp 06 67 40 72 14.</p>
       <p><b>Hébergement :</b> GitHub Pages (GitHub, Inc.), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
-      <p><b>Données personnelles :</b> ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi. Quand tu écris sur WhatsApp, ton numéro et ton message sont traités par WhatsApp et lus par l'association pour te répondre. Pour exercer tes droits (accès, suppression), écris-nous à la même adresse.</p>
+      <p><b>Propriété intellectuelle :</b> les textes, visuels, noms et marques présents sur ce site sont la propriété de Form'Com ou de leurs titulaires. Toute reproduction sans autorisation est interdite.</p>
+      <p><b>Parfums :</b> les parfums sont présentés avec leurs notes olfactives d'après les fiches publiques des parfums de référence. Ils ne sont pas affiliés aux marques de référence.</p>
+    </details>
+    <details>
+      <summary>Conditions de vente et droit de rétractation</summary>
+      <p><b>Produits et prix :</b> les parfums sont vendus en coffrets de 35 ml. Les prix sont indiqués en euros. L'association se réserve le droit de modifier ses prix et offres à tout moment ; le prix applicable est celui annoncé lors de la commande.</p>
+      <p><b>Commande et paiement :</b> la commande se fait par message WhatsApp ou par lien de paiement. Elle est confirmée après échange avec l'association. Les modalités de paiement et de livraison te sont indiquées avant tout règlement.</p>
+      <p><b>Droit de rétractation :</b> pour toute vente à distance à un consommateur, tu disposes de 14 jours à compter de la réception de ta commande pour te rétracter, sans avoir à te justifier, en écrivant à l'association sur WhatsApp au 06 67 40 72 14. Les produits doivent être renvoyés dans leur état d'origine, non ouverts et non utilisés. Les frais de retour sont à ta charge. Le remboursement est effectué dans un délai de 14 jours après réception du retour. Pour des raisons d'hygiène et de protection de la santé, les parfums descellés après la livraison ne peuvent pas être repris.</p>
+      <p><b>Garanties légales :</b> tu bénéficies de la garantie légale de conformité (articles L217-3 et suivants du Code de la consommation) et de la garantie des vices cachés (articles 1641 et suivants du Code civil).</p>
+      <p><b>Médiation :</b> en cas de litige, tu peux t'adresser gratuitement à un médiateur de la consommation, après avoir d'abord contacté l'association.</p>
+    </details>
+    <details>
+      <summary>Données personnelles et cookies</summary>
+      <p>Ce site ne dépose aucun cookie de suivi, ne contient aucune publicité et ne demande aucune information pour être consulté. Pour s'afficher, il charge des polices (Google Fonts) et un script d'animation (jsDelivr) depuis des serveurs tiers, qui peuvent recevoir ton adresse IP technique.</p>
+      <p>Quand tu nous écris sur WhatsApp, ton numéro et ton message sont traités par WhatsApp et lus par l'association (responsable du traitement) pour te répondre et suivre ta demande. Ils sont conservés le temps nécessaire à cet échange, puis supprimés. Tu peux exercer tes droits d'accès, de rectification, d'opposition et de suppression en écrivant à la même adresse. Tu peux aussi saisir la CNIL (cnil.fr).</p>
     </details>
   </div>
 </footer>
@@ -1013,7 +1038,7 @@ document.querySelectorAll("a.buy").forEach(function(a){
   }
 })();
 
-window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumyum", "sahghaf", "direction"], "simu": "https://formcom2016.github.io/simulateur-levelup/?src=site", "wa": {"B": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)", "M": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20un%20revenu%20(source%20%3A%20site)", "E": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20en%20tant%20qu'%C3%A9tudiant%20(source%20%3A%20site)", "R": "https://wa.me/33667407214?text=Bonjour%2C%20je%20veux%20aider%20en%20tant%20que%20b%C3%A9n%C3%A9vole%20(source%20%3A%20site)"}, "perfumes": {"desert": {"id": "desert", "name": "Desert Mirage", "tint": "#E0763A", "tag": "Une escale au bout du désert.", "poem": "Là où l'horizon tremble, une lumière chaude se pose sur la peau. Tu avances, elle te suit : un mirage qu'on voudrait garder.", "r": 0.1578, "notes": null}, "cosmic": {"id": "cosmic", "name": "Cosmic Tonka", "tint": "#C98A3E", "tag": "Une touche d'ailleurs qui reste.", "poem": "Un éclat de safran, une rose qui s'ouvre, puis la tonka qui s'installe comme une nuit sans fin. Tu passes, le sillage demeure.", "r": 0.1233, "notes": [["Tête", ["Safran", "Bergamote"]], ["Cœur", ["Rose de Bulgarie", "Oud"]], ["Fond", ["Fève tonka", "Ambre", "Musc blanc", "Mousse de chêne"]]]}, "western": {"id": "western", "name": "Western Shisha", "tint": "#E0475A", "tag": "Un voyage, deux mondes.", "poem": "Le sucre d'une fête, la fumée d'un salon, un verre de rhum qui s'attarde. Deux mondes se rencontrent, et la vanille les réunit.", "r": 0.1256, "notes": [["Tête", ["Raisin", "Chewing-gum", "Encens", "Davana"]], ["Cœur", ["Rhum", "Accord pomme chicha", "Jasmin"]], ["Fond", ["Vanille", "Patchouli"]]]}, "sultan": {"id": "sultan", "name": "Sultan El Waha", "tint": "#A3233A", "tag": "Le charme d'une oasis.", "poem": "Après la marche, l'ombre des palmiers. Un velours rouge pour celui qui arrive en maître et repart en légende.", "r": 0.1156, "notes": null}, "ameerat": {"id": "ameerat", "name": "Ameerat Al Arab", "tint": "#8E96B5", "tag": "L'élégance d'une princesse.", "poem": "La fraîcheur des agrumes, la douceur du musc blanc, puis le jasmin et l'oud qui signent le passage. Une élégance qui n'a pas besoin de parler.", "r": 0.1189, "notes": [["Tête", ["Agrumes", "Bergamote"]], ["Cœur", ["Aloe vera", "Musc blanc"]], ["Fond", ["Jasmin", "Notes boisées", "Musc", "Oud"]]]}, "yumyum": {"id": "yumyum", "name": "Yum Yum Delights", "tint": "#E58FB4", "tag": "Un délice qui donne le sourire.", "poem": "Une cerise croquée au soleil, une rose sucrée, un nuage de poudre. Un goûter qui devient parfum, et le sourire qui va avec.", "r": 0.1133, "notes": [["Tête", ["Baies sauvages", "Cerise", "Orange", "Bergamote"]], ["Cœur", ["Rose", "Fleurs blanches", "Vanille"]], ["Fond", ["Notes poudrées", "Musc", "Ambre"]]]}, "sahghaf": {"id": "sahghaf", "name": "Sahghaf Oud Tonka", "tint": "#2F9AA2", "tag": "Une présence qui se remarque.", "poem": "L'amande ouvre la porte, la cannelle réchauffe la pièce, la rose de Turquie s'invite. Puis la tonka et la vanille s'installent pour la nuit.", "r": 0.12, "notes": [["Tête", ["Amande"]], ["Cœur", ["Cannelle", "Fleur d'oranger d'Afrique", "Rose de Turquie"]], ["Fond", ["Fève tonka", "Vanille", "Bois ambré"]]]}, "direction": {"id": "direction", "name": "Direction", "tint": "#C99A87", "tag": "Trouve ta direction.", "poem": "Pas de carte, pas de boussole : juste un sillage qui te dit où aller. Avance, il saura te suivre.", "r": 0.0944, "notes": null}}};
+window.QZ = {"order": ["cosmic", "western", "ameerat", "yumyum", "sahghaf"], "simu": "https://formcom2016.github.io/simulateur-levelup/?src=site", "wa": {"B": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)", "M": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20un%20revenu%20(source%20%3A%20site)", "E": "https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20en%20tant%20qu'%C3%A9tudiant%20(source%20%3A%20site)", "R": "https://wa.me/33667407214?text=Bonjour%2C%20je%20veux%20aider%20en%20tant%20que%20b%C3%A9n%C3%A9vole%20(source%20%3A%20site)"}, "perfumes": {"cosmic": {"id": "cosmic", "name": "Cosmic Tonka", "tint": "#C98A3E", "tag": "Une touche d'ailleurs qui reste.", "poem": "Un éclat de safran, une rose qui s'ouvre, puis la tonka qui s'installe comme une nuit sans fin. Tu passes, le sillage demeure.", "r": 0.1233, "notes": [["Tête", ["Safran", "Bergamote"]], ["Cœur", ["Rose de Bulgarie", "Oud"]], ["Fond", ["Fève tonka", "Ambre", "Musc blanc", "Mousse de chêne"]]]}, "western": {"id": "western", "name": "Western Shisha", "tint": "#E0475A", "tag": "Un voyage, deux mondes.", "poem": "Le sucre d'une fête, la fumée d'un salon, un verre de rhum qui s'attarde. Deux mondes se rencontrent, et la vanille les réunit.", "r": 0.1256, "notes": [["Tête", ["Raisin", "Chewing-gum", "Encens", "Davana"]], ["Cœur", ["Rhum", "Accord pomme chicha", "Jasmin"]], ["Fond", ["Vanille", "Patchouli"]]]}, "ameerat": {"id": "ameerat", "name": "Ameerat Al Arab", "tint": "#8E96B5", "tag": "L'élégance d'une princesse.", "poem": "La fraîcheur des agrumes, la douceur du musc blanc, puis le jasmin et l'oud qui signent le passage. Une élégance qui n'a pas besoin de parler.", "r": 0.1189, "notes": [["Tête", ["Agrumes", "Bergamote"]], ["Cœur", ["Aloe vera", "Musc blanc"]], ["Fond", ["Jasmin", "Notes boisées", "Musc", "Oud"]]]}, "yumyum": {"id": "yumyum", "name": "Yum Yum Delights", "tint": "#E58FB4", "tag": "Un délice qui donne le sourire.", "poem": "Une cerise croquée au soleil, une rose sucrée, un nuage de poudre. Un goûter qui devient parfum, et le sourire qui va avec.", "r": 0.1133, "notes": [["Tête", ["Baies sauvages", "Cerise", "Orange", "Bergamote"]], ["Cœur", ["Rose", "Fleurs blanches", "Vanille"]], ["Fond", ["Notes poudrées", "Musc", "Ambre"]]]}, "sahghaf": {"id": "sahghaf", "name": "Sahghaf Oud Tonka", "tint": "#2F9AA2", "tag": "Une présence qui se remarque.", "poem": "L'amande ouvre la porte, la cannelle réchauffe la pièce, la rose de Turquie s'invite. Puis la tonka et la vanille s'installent pour la nuit.", "r": 0.12, "notes": [["Tête", ["Amande"]], ["Cœur", ["Cannelle", "Fleur d'oranger d'Afrique", "Rose de Turquie"]], ["Fond", ["Fève tonka", "Vanille", "Bois ambré"]]]}}};
 
 /* ===== Quiz : « Trouve ton parfum » puis « Ton profil LEVEL UP ». Rien n'est enregistré. ===== */
 (function(){
@@ -1061,8 +1086,8 @@ window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumy
     var PROF = {
       B: { nom: "Le Bâtisseur", col: "#6C86FF", wa: D.wa.B, cta: "Je finance mon projet", txt: "Ton projet mérite de démarrer. L'association peut prendre en charge les factures qui y sont liées, grâce aux parfums que tu fais découvrir." },
       M: { nom: "Le Moteur", col: "#FF8A5B", wa: D.wa.M, cta: "Je veux gagner un revenu", txt: "Tu aimes que ça avance. En auto-entrepreneur, tu touches une commission par parfum diffusé, avec des horaires et un rythme libres." },
-      E: { nom: "L'Éclaireur", col: "#3DDC97", wa: D.wa.E, cta: "Je suis étudiant", txt: "Un planning adapté à tes cours, tes frais pris en charge, une prime de parrainage et une attestation de compétences." },
-      R: { nom: "Le Rassembleur", col: "#FF4D5C", wa: D.wa.R, cta: "Je rejoins l'équipe", txt: "Rejoins une équipe qui fait avancer des projets. Tes frais sont pris en charge, tu t'organises librement, et tu gagnes des compétences et un réseau." }
+      E: { nom: "L'Éclaireur", col: "#3DDC97", wa: D.wa.E, cta: "Je suis étudiant", txt: "Un planning adapté à tes cours, le Pass Étudiant et une prime de parrainage." },
+      R: { nom: "Le Rassembleur", col: "#FF4D5C", wa: D.wa.R, cta: "Je rejoins l'équipe", txt: "Rejoins une équipe qui fait avancer des projets. Tu t'organises librement, et tu gagnes des compétences et un réseau." }
     };
 
     var st, scoreP, scoreR;
@@ -1122,7 +1147,7 @@ window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumy
         '<div class="qz-duo"><div><b>Ton coup de cœur n°2 : ' + esc(b.name) + '</b><span>Prends-les ensemble : le duo à 20 €. Dès 4 parfums, le 5ᵉ est offert.</span></div>' +
         '<a class="buy ghost" target="_blank" rel="noopener" href="' + esc(buyHref("duo", duoName)) + '">Prendre le duo</a></div>' +
         '<div class="qz-next"><p>Et si tu partageais ton coup de cœur ?</p><button type="button" class="btn btn-main" data-act="profile">Découvre ton profil</button></div>' +
-        '<div class="qz-foot"><button type="button" class="qz-link" data-act="again">Refaire le test</button><a class="qz-link" href="#parfums">Voir les 8 parfums</a></div>';
+        '<div class="qz-foot"><button type="button" class="qz-link" data-act="again">Refaire le test</button><a class="qz-link" href="#parfums">Voir les parfums</a></div>';
       show(h, ".qz-txt h3");
     }
     function renderProfile(){
@@ -1210,7 +1235,7 @@ window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumy
       tabs.forEach(function(t, k){ var on = k === i; t.classList.toggle("on", on); t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1; });
       var t = tabs[i], left = t.offsetLeft - (pick.clientWidth - t.offsetWidth) / 2;
       if (pick.scrollWidth > pick.clientWidth) { try { pick.scrollTo({ left: left, behavior: byUser ? "smooth" : "auto" }); } catch (e) { pick.scrollLeft = left; } }
-      try { history.replaceState(null, "", "#p-" + t.getAttribute("data-id")); } catch (e) {}
+      if (byUser) { try { history.replaceState(null, "", "#p-" + t.getAttribute("data-id")); } catch (e) {} }
     }
     function idxOf(id){ for (var k = 0; k < tabs.length; k++) if (tabs[k].getAttribute("data-id") === id) return k; return -1; }
     tabs.forEach(function(t, k){ t.addEventListener("click", function(){ show(k, true); }); });
@@ -1233,8 +1258,15 @@ window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumy
       var top = shop.getBoundingClientRect().top + window.scrollY - (document.querySelector("nav.top").offsetHeight + 10);
       window.scrollTo({ top: top, behavior: "smooth" });
     }, true);
-    var h = (location.hash || "").replace("#p-", ""), k0 = idxOf(h);
-    show(k0 >= 0 ? k0 : 0, false);
+    /* ouverture : toujours en haut de page, on ignore tout ancien repère #p-... */
+    try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+    show(0, false);
+    if ((location.hash || "").indexOf("#p-") === 0) { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} }
+    window.scrollTo(0, 0);
+    window.addEventListener("load", function(){ if (!window.__userScrolled) window.scrollTo(0, 0); });
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function(ev){ window.addEventListener(ev, function(){ window.__userScrolled = true; }, { once: true, passive: true }); });
   } catch (err) {}
 })();
 </script>
+
+</body></html>
