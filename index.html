@@ -1,5 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>LEVEL UP Vitrine A</title>
+<title>LEVEL UP Éventail A</title>
 <meta name="description" content="Programme associatif Form'Com : formation financée, semaine découverte sans engagement, parcours en 4 niveaux, et une boutique de parfums en coffret 35 ml.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -429,20 +428,16 @@ section,.scene,.offers{scroll-margin-top:var(--nh)}
 .stage-cap .btn{margin-top:24px}
 .pic{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;border-radius:5px}
 .f::before,.v::before{content:"";position:absolute;pointer-events:none;z-index:-1;background:radial-gradient(closest-side,color-mix(in srgb,var(--tint) 58%,transparent),transparent);filter:blur(12px)}
-/* ===== Variante B : la vitrine ===== */
-.vit{--VH:clamp(210px,36vw,430px);--pad:clamp(70px,13vw,150px);position:relative;max-width:1000px;margin-inline:auto;padding-bottom:var(--pad)}
-.spot{position:absolute;inset:-12% -10% -6%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 72%,transparent 100%);background:radial-gradient(38% 80% at calc(50% + var(--mx) * 24%) 0%,rgba(255,255,255,.2),transparent 72%),radial-gradient(60% 40% at 50% 100%,color-mix(in srgb,var(--blue-deep) 50%,transparent),transparent 75%)}
-.vrow{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(5px,1.5vw,20px);height:var(--VH)}
-.v{position:relative;flex:none;height:calc(var(--VH) * var(--hs));width:calc(var(--VH) * var(--hs) * var(--r));animation:rise-in 1.2s var(--ease) calc(.9s + var(--i) * .09s) both}
-.v::before{inset:10% -120% -4%}
-.vb{position:relative;width:100%;height:100%;translate:calc(var(--mx) * var(--dp) * 1px) 0}
-.vb .pw{position:absolute;inset:0;animation:bob var(--bt) ease-in-out infinite alternate;animation-delay:calc(var(--i) * -.8s)}
-.vb .pic{box-shadow:0 26px 50px -22px #000,0 0 46px -12px color-mix(in srgb,var(--tint) 70%,transparent)}
-.vb .pw::after{content:"";position:absolute;inset:0;border-radius:5px;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.5) 50%,transparent 62%);background-size:300% 100%;mix-blend-mode:soft-light;animation:sweep 7s linear calc(var(--i) * .35s) infinite}
-.vb .refl{position:absolute;left:0;top:100%;width:100%;height:30%;margin-top:6px;background-size:100% auto;background-position:bottom;background-repeat:no-repeat;transform:scaleY(-1);opacity:.3;border-radius:5px;-webkit-mask-image:linear-gradient(to top,#000 0,transparent 92%);mask-image:linear-gradient(to top,#000 0,transparent 92%);animation:bob var(--bt) ease-in-out infinite alternate-reverse;animation-delay:calc(var(--i) * -.8s)}
-.floor{position:absolute;left:-6%;right:-6%;bottom:0;height:var(--pad);border-top:1px solid rgba(255,255,255,.16);background:linear-gradient(to bottom,rgba(255,255,255,.06),transparent 85%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 82%,transparent 100%)}
-@media(prefers-reduced-motion:reduce){.vb .refl{animation:none}}
-.stage-cap{margin-top:0}
+/* ===== Variante A : l'éventail ===== */
+.fan{--H:clamp(280px,50vw,540px);position:relative;height:var(--H);width:calc(100% + var(--gutter) * 2);max-width:none;margin-inline:calc(var(--gutter) * -1);-webkit-mask-image:linear-gradient(to top,transparent 0,#000 26%);mask-image:linear-gradient(to top,transparent 0,#000 26%)}
+.fan::before{content:"";position:absolute;inset:6% 6% 0;background:radial-gradient(50% 60% at 50% 100%,color-mix(in srgb,var(--blue-deep) 55%,transparent),transparent 72%);filter:blur(8px)}
+.f{position:absolute;bottom:-3%;z-index:var(--z);height:calc(var(--H) * var(--hs));width:calc(var(--H) * var(--hs) * var(--r));left:calc(50% - var(--H) * var(--hs) * var(--r) / 2);transform-origin:50% 100%;rotate:calc(var(--a) * var(--k));animation:rise-in 1.2s var(--ease) calc(.9s + var(--i) * .09s) both}
+.f::before{inset:10% -230% -4%}
+.fi{position:relative;width:100%;height:100%;translate:calc(var(--mx) * var(--dp) * 1px) calc(var(--my) * var(--dp) * .5px)}
+.f .pic{box-shadow:0 30px 60px -24px #000,0 0 50px -12px color-mix(in srgb,var(--tint) 70%,transparent);animation:bob var(--bt) ease-in-out infinite alternate;animation-delay:calc(var(--i) * -.8s)}
+.f .pic::after{content:"";position:absolute;inset:0;border-radius:5px;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.4) 50%,transparent 62%);background-size:300% 100%;mix-blend-mode:soft-light;animation:sweep 8s linear calc(var(--i) * .4s) infinite}
+@media(prefers-reduced-motion:reduce){.f{rotate:var(--a)}}
+.stage-cap{margin-top:clamp(-70px,-6vw,-28px)}
 
 /* ===== Thème : polices Cormorant Garamond + Manrope, accent dégradé or vers corail ===== */
 :root{--serif:"Cormorant Garamond","Cormorant",Georgia,serif;--sans:"Manrope",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;--blue:#FFB86B;--grad:linear-gradient(90deg,#FFD27A,#FF8A5B)}
@@ -481,7 +476,7 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
 <nav class="top" aria-label="Navigation principale">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="LEVEL UP by Form'Com, haut de page">LEVEL <b>UP</b><small>by Form'Com</small></a>
-    <div class="links" id="tabs"><a href="#top">Accueil</a><a href="#mon-parfum">Mon parfum</a><a href="#pour-qui">Pour qui</a><a href="#parcours">Parcours</a><a href="#parfums">Boutique</a><a href="#projets">Projets</a><a href="#qui">Qui sommes-nous</a><a href="#simulateur">Simulateur</a><a href="#faq">Questions</a><a href="#contact">Contact</a></div>
+    <div class="links" id="tabs"><a href="#top">Accueil</a><a href="#pour-qui">Pour qui</a><a href="#parcours">Parcours</a><a href="#simulateur">Simulateur</a><a href="#projets">Projets</a><a href="#qui">Qui sommes-nous</a><a href="#mon-parfum">Mon parfum</a><a href="#parfums">Boutique</a><a href="#faq">Questions</a><a href="#contact">Contact</a></div>
     <a class="btn btn-main" href="#contact">Je me lance</a>
   </div>
 </nav>
@@ -504,19 +499,8 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
     <p class="orga">Form'Com est une association et un organisme de formation spécialisés dans la communication. Elle accompagne des projets, notamment des projets professionnels, de personnes de tous horizons et de tous âges.</p>
     <div class="trust"><span>Formation financée</span><span>Zéro engagement</span><span>Tu choisis ton rythme</span></div>
   </div>
-  <div class="hero-media stage"><div class="vit" role="img" aria-label="Les huit parfums en coffret de 35 ml, posés sur une vitrine"><div class="spot" aria-hidden="true"></div><div class="vrow"><div class="v" style="--hs:0.720;--r:0.1578;--i:0;--dp:6;--bt:5.5s;--tint:#E0763A"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-desert)"></div></div><div class="refl" style="background-image:var(--i-desert)"></div></div></div><div class="v" style="--hs:0.760;--r:0.1233;--i:1;--dp:8;--bt:6.4s;--tint:#C98A3E"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-cosmic)"></div></div><div class="refl" style="background-image:var(--i-cosmic)"></div></div></div><div class="v" style="--hs:0.800;--r:0.1256;--i:2;--dp:10;--bt:7.3s;--tint:#E0475A"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-western)"></div></div><div class="refl" style="background-image:var(--i-western)"></div></div></div><div class="v" style="--hs:0.840;--r:0.1156;--i:3;--dp:12;--bt:5.5s;--tint:#A3233A"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-sultan)"></div></div><div class="refl" style="background-image:var(--i-sultan)"></div></div></div><div class="v" style="--hs:0.880;--r:0.1189;--i:4;--dp:14;--bt:6.4s;--tint:#8E96B5"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-ameerat)"></div></div><div class="refl" style="background-image:var(--i-ameerat)"></div></div></div><div class="v" style="--hs:0.920;--r:0.1133;--i:5;--dp:16;--bt:7.3s;--tint:#E58FB4"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-yumyum)"></div></div><div class="refl" style="background-image:var(--i-yumyum)"></div></div></div><div class="v" style="--hs:0.960;--r:0.12;--i:6;--dp:18;--bt:5.5s;--tint:#2F9AA2"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-sahghaf)"></div></div><div class="refl" style="background-image:var(--i-sahghaf)"></div></div></div><div class="v" style="--hs:1.000;--r:0.0944;--i:7;--dp:20;--bt:6.4s;--tint:#C99A87"><div class="vb"><div class="pw"><div class="pic" style="background-image:var(--i-direction)"></div></div><div class="refl" style="background-image:var(--i-direction)"></div></div></div></div><div class="floor" aria-hidden="true"></div></div><div class="stage-cap"><p class="cap-t">8 parfums. <em>8 histoires.</em></p><p class="cap-s">Coffrets de 35 ml, à 10 € pièce. 4 achetés, le 5ᵉ offert.</p><a class="btn btn-main" href="#parfums">Découvrir les parfums</a></div></div>
+  <div class="hero-media stage"><div class="fan" role="img" aria-label="Les huit parfums en coffret de 35 ml, ouverts en éventail"><div class="f" style="--a:-38.5deg;--hs:0.807;--r:0.1578;--z:3;--i:0;--dp:12;--bt:5.5s;--tint:#E0763A"><div class="fi"><div class="pic" style="background-image:var(--i-desert)"></div></div></div><div class="f" style="--a:-27.5deg;--hs:0.863;--r:0.1233;--z:5;--i:1;--dp:19;--bt:6.4s;--tint:#C98A3E"><div class="fi"><div class="pic" style="background-image:var(--i-cosmic)"></div></div></div><div class="f" style="--a:-16.5deg;--hs:0.917;--r:0.1256;--z:7;--i:2;--dp:26;--bt:7.3s;--tint:#E0475A"><div class="fi"><div class="pic" style="background-image:var(--i-western)"></div></div></div><div class="f" style="--a:-5.5deg;--hs:0.973;--r:0.1156;--z:9;--i:3;--dp:33;--bt:5.5s;--tint:#A3233A"><div class="fi"><div class="pic" style="background-image:var(--i-sultan)"></div></div></div><div class="f" style="--a:5.5deg;--hs:0.973;--r:0.1189;--z:9;--i:4;--dp:33;--bt:6.4s;--tint:#8E96B5"><div class="fi"><div class="pic" style="background-image:var(--i-ameerat)"></div></div></div><div class="f" style="--a:16.5deg;--hs:0.917;--r:0.1133;--z:7;--i:5;--dp:26;--bt:7.3s;--tint:#E58FB4"><div class="fi"><div class="pic" style="background-image:var(--i-yumyum)"></div></div></div><div class="f" style="--a:27.5deg;--hs:0.863;--r:0.12;--z:5;--i:6;--dp:19;--bt:5.5s;--tint:#2F9AA2"><div class="fi"><div class="pic" style="background-image:var(--i-sahghaf)"></div></div></div><div class="f" style="--a:38.5deg;--hs:0.807;--r:0.0944;--z:3;--i:7;--dp:12;--bt:6.4s;--tint:#C99A87"><div class="fi"><div class="pic" style="background-image:var(--i-direction)"></div></div></div></div><div class="stage-cap"><p class="cap-t">8 parfums. <em>8 histoires.</em></p><p class="cap-s">Coffrets de 35 ml, à 10 € pièce. 4 achetés, le 5ᵉ offert.</p><a class="btn btn-main" href="#parfums">Découvrir les parfums</a></div></div>
   <p class="legal-mini">Montants indicatifs, non garantis.</p>
-</section>
-
-<section id="mon-parfum">
-  <div class="wrap">
-    <div class="head c">
-      <p class="eyebrow">En 30 secondes</p>
-      <h2>Trouve ton parfum, <em>on te le dit.</em></h2>
-      <p class="lead">Cinq questions, aucune mauvaise réponse. Rien n'est enregistré.</p>
-    </div>
-    <div class="qz" id="qz" aria-live="polite"><noscript>Active JavaScript pour faire le test, ou découvre directement <a href="#parfums">les 8 parfums</a>.</noscript></div>
-  </div>
 </section>
 
 <section class="alt" id="pour-qui">
@@ -607,6 +591,69 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
       </article>
     </div>
     <p class="note">Un classement simple, des challenges et des primes selon les règles de chaque concours. Objectifs indicatifs, non garantis.</p>
+  </div>
+</section>
+
+<section class="alt simu" id="simulateur">
+  <div class="wrap">
+    <p class="eyebrow">Simulateur</p>
+    <h2>Découvre ton niveau <em>en une minute.</em></h2>
+    <p class="lead">Choisis ta voie, fais glisser le curseur, vois le résultat. Aucune donnée n'est demandée pour essayer.</p>
+    <div class="cta"><a class="btn btn-main" href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Ouvrir le simulateur</a></div>
+    <p class="simu-url">Si rien ne s'ouvre, copie l'adresse : <code id="simu-url">https://formcom2016.github.io/simulateur-levelup/?src=site</code> <button type="button" class="copy" id="simu-copy">Copier le lien</button></p>
+    <p class="note" style="margin-inline:auto">Montants indicatifs, non garantis.</p>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="wrap">
+    <div class="head c">
+      <p class="eyebrow">Projets</p>
+      <h2>Chaque parfum aide <em>un projet à avancer.</em></h2>
+      <p class="lead">Une partie des bénéfices finance des projets accompagnés par Form'Com. Les premiers arrivent bientôt : tu pourras suivre ici leur histoire et leur avancement.</p>
+    </div>
+    <div class="pgrid"><article class="pc soon-card"><div class="ph empty" aria-hidden="true"></div><div class="pb"><span class="pill">Bientôt</span><h3>Le premier projet arrive</h3><p>Son nom, son histoire, une photo et sa barre d'avancement seront présentés ici. Chaque parfum acheté y contribue.</p><div class="bar" aria-hidden="true"><i style="--w:0%"></i></div></div></article></div>
+    <div class="cta"><a class="btn btn-ghost" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)" target="_blank" rel="noopener">J'ai un projet à présenter</a></div>
+  </div>
+</section>
+
+<section id="qui">
+  <div class="wrap">
+    <div class="who">
+      <div>
+        <p class="eyebrow">Qui sommes-nous</p>
+        <h2>Form'Com accompagne des projets. <em>Participe aux actions qui les font avancer.</em></h2>
+        <p>Form'Com est une association et un organisme de formation spécialisés dans la communication. Nous <b>accompagnons des projets</b>, notamment des projets professionnels, de personnes de tous horizons et de tous âges (dès 16 ans, avec l'autorisation d'un parent). Pour aider à les financer, nous menons des actions de collecte de fonds, notamment en faisant découvrir des parfums de qualité. Les bénéfices de ces ventes financent des projets.</p>
+        <p>Nous cherchons des personnes qui <b>souhaitent participer librement</b> à ces actions. Selon la voie choisie, une commission par parfum ou une prise en charge de frais de projet est prévue (montants indicatifs, non garantis). Tu t'organises comme tu le souhaites et tu peux arrêter à tout moment.</p>
+      </div>
+      <div>
+        <h3>Tu es le bienvenu si tu es…</h3>
+        <div class="tags"><span>Étudiant</span><span>En recherche d'emploi</span><span>En reconversion</span><span>Porteur de projet</span></div>
+        <ul class="nolist" style="margin-top:32px">
+          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucun diplôme exigé</li>
+          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucune expérience demandée</li>
+          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Formé directement en interne, par des gens qui font le métier</li>
+        </ul>
+        <div class="cta" style="justify-content:flex-start"><a class="btn btn-main" href="#contact">Je me lance</a></div>
+      </div>
+    </div>
+    <div class="eng">
+      <div><b>Honnêteté</b><span>Un discours clair, des promesses tenues. Tu sais où tu vas, et c'est ce qui rend l'aventure belle à vivre.</span></div>
+      <div><b>Respect</b><span>Ici, chacun est écouté, encouragé et valorisé. Ton énergie compte autant que tes résultats, et c'est écrit dans la charte éthique de Form'Com.</span></div>
+      <div><b>Transparence</b><span>Tout est sur la table dès le départ : ta rémunération ou la prise en charge de ton projet, ton matériel, ton accompagnement. Tu t'engages les yeux ouverts et tu avances en confiance.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="mon-parfum">
+  <div class="wrap">
+    <div class="head c">
+      <p class="eyebrow">En 30 secondes</p>
+      <h2>Trouve ton parfum, <em>on te le dit.</em></h2>
+      <p class="lead">Cinq questions, aucune mauvaise réponse. Rien n'est enregistré.</p>
+    </div>
+    <div class="qz" id="qz" aria-live="polite"><noscript>Active JavaScript pour faire le test, ou découvre directement <a href="#parfums">les 8 parfums</a>.</noscript></div>
   </div>
 </section>
 
@@ -731,58 +778,6 @@ h1 em,h2 em,.h2 em,.cap-t em{font-style:italic;background:var(--grad);-webkit-ba
     </div>
     <p class="shopnote" id="shopnote">Paiement sécurisé. Commande confirmée par WhatsApp : paiement, livraison et retour te sont précisés à ce moment-là.</p>
     <p class="shopnote">Notes olfactives indiquées d'après les fiches publiques des parfums de référence.</p>
-  </div>
-</section>
-
-
-<section id="projets">
-  <div class="wrap">
-    <div class="head c">
-      <p class="eyebrow">Projets</p>
-      <h2>Chaque parfum aide <em>un projet à avancer.</em></h2>
-      <p class="lead">Une partie des bénéfices finance des projets accompagnés par Form'Com. Les premiers arrivent bientôt : tu pourras suivre ici leur histoire et leur avancement.</p>
-    </div>
-    <div class="pgrid"><article class="pc soon-card"><div class="ph empty" aria-hidden="true"></div><div class="pb"><span class="pill">Bientôt</span><h3>Le premier projet arrive</h3><p>Son nom, son histoire, une photo et sa barre d'avancement seront présentés ici. Chaque parfum acheté y contribue.</p><div class="bar" aria-hidden="true"><i style="--w:0%"></i></div></div></article></div>
-    <div class="cta"><a class="btn btn-ghost" href="https://wa.me/33667407214?text=Bonjour%2C%20je%20me%20lance%20pour%20financer%20mon%20projet%20(source%20%3A%20site)" target="_blank" rel="noopener">J'ai un projet à présenter</a></div>
-  </div>
-</section>
-
-<section id="qui">
-  <div class="wrap">
-    <div class="who">
-      <div>
-        <p class="eyebrow">Qui sommes-nous</p>
-        <h2>Form'Com accompagne des projets. <em>Participe aux actions qui les font avancer.</em></h2>
-        <p>Form'Com est une association et un organisme de formation spécialisés dans la communication. Nous <b>accompagnons des projets</b>, notamment des projets professionnels, de personnes de tous horizons et de tous âges (dès 16 ans, avec l'autorisation d'un parent). Pour aider à les financer, nous menons des actions de collecte de fonds, notamment en faisant découvrir des parfums de qualité. Les bénéfices de ces ventes financent des projets.</p>
-        <p>Nous cherchons des personnes qui <b>souhaitent participer librement</b> à ces actions. Selon la voie choisie, une commission par parfum ou une prise en charge de frais de projet est prévue (montants indicatifs, non garantis). Tu t'organises comme tu le souhaites et tu peux arrêter à tout moment.</p>
-      </div>
-      <div>
-        <h3>Tu es le bienvenu si tu es…</h3>
-        <div class="tags"><span>Étudiant</span><span>En recherche d'emploi</span><span>En reconversion</span><span>Porteur de projet</span></div>
-        <ul class="nolist" style="margin-top:32px">
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucun diplôme exigé</li>
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Aucune expérience demandée</li>
-          <li><svg class="i"  aria-hidden="true"><use href="#i-check"/></svg>Formé directement en interne, par des gens qui font le métier</li>
-        </ul>
-        <div class="cta" style="justify-content:flex-start"><a class="btn btn-main" href="#contact">Je me lance</a></div>
-      </div>
-    </div>
-    <div class="eng">
-      <div><b>Honnêteté</b><span>Un discours clair, des promesses tenues. Tu sais où tu vas, et c'est ce qui rend l'aventure belle à vivre.</span></div>
-      <div><b>Respect</b><span>Ici, chacun est écouté, encouragé et valorisé. Ton énergie compte autant que tes résultats, et c'est écrit dans la charte éthique de Form'Com.</span></div>
-      <div><b>Transparence</b><span>Tout est sur la table dès le départ : ta rémunération ou la prise en charge de ton projet, ton matériel, ton accompagnement. Tu t'engages les yeux ouverts et tu avances en confiance.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt simu" id="simulateur">
-  <div class="wrap">
-    <p class="eyebrow">Simulateur</p>
-    <h2>Découvre ton niveau <em>en une minute.</em></h2>
-    <p class="lead">Choisis ta voie, fais glisser le curseur, vois le résultat. Aucune donnée n'est demandée pour essayer.</p>
-    <div class="cta"><a class="btn btn-main" href="https://formcom2016.github.io/simulateur-levelup/?src=site" target="_blank" rel="noopener">Ouvrir le simulateur</a></div>
-    <p class="simu-url">Si rien ne s'ouvre, copie l'adresse : <code id="simu-url">https://formcom2016.github.io/simulateur-levelup/?src=site</code> <button type="button" class="copy" id="simu-copy">Copier le lien</button></p>
-    <p class="note" style="margin-inline:auto">Montants indicatifs, non garantis.</p>
   </div>
 </section>
 
@@ -1243,5 +1238,3 @@ window.QZ = {"order": ["desert", "cosmic", "western", "sultan", "ameerat", "yumy
   } catch (err) {}
 })();
 </script>
-
-</body></html>
