@@ -1,0 +1,943 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* Refined controls within the original design. */
+.curseur label{flex-direction:column;align-items:center;gap:10px;text-align:center}.curseur output{color:var(--or2,#E8B923)!important;font-size:3.3rem!important;line-height:1.1}.curseur .aide{text-align:center}.detail>summary{cursor:pointer;font-weight:800;font-size:.95rem;list-style:disclosure-closed;padding:.2rem 0}.detail[open]>summary{margin-bottom:1rem}.detail[open]>summary{list-style:disclosure-open}.adjust-row{display:flex;align-items:center;gap:10px;margin-top:10px}.adjust-row button{width:44px;height:44px;border-radius:10px;border:1px solid var(--line,#222A52);background:var(--bg2,#0A0F26);color:var(--fg,#F2F4FC);font-size:22px;flex:none;cursor:pointer}.adjust-row input[type=range]{flex:1;min-width:0;margin:0}.jauge input[type=range]::-webkit-slider-thumb{width:34px;height:34px}.jauge input[type=range]::-moz-range-thumb{width:34px;height:34px}.original-scale{display:flex;justify-content:space-between;font-size:10px;color:var(--muted,#9BA4C6);padding:0 15px;margin-top:9px}.original-scale span::before{content:"";display:block;width:1px;height:5px;background:currentColor;margin:0 auto 5px}#acre-months{display:block;width:100%;padding:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;margin-top:8px}
+
+/* Financial explanation visible directly beneath the income result. */
+.detail>h2{margin-bottom:15px}.vat-calculation,.acre-comparison{margin-top:22px;padding-top:18px;border-top:1px solid var(--line,#222A52)}.vat-calculation h3,.acre-comparison h3{font-size:.95rem;margin:0 0 14px}.vat-calculation .option{margin:12px 0}.vat-calculation .aide,.acre-comparison .aide{font-size:.72rem;line-height:1.7;text-align:left;margin-top:12px}.acre-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.acre-cards>div{background:var(--bg2,#0A0F26);border:1px solid var(--line,#222A52);border-radius:12px;padding:15px 12px;display:flex;flex-direction:column;gap:8px}.acre-cards>div:nth-child(2){border-color:var(--or2,#E8B923)}.acre-cards span{font-size:.7rem;font-weight:700}.acre-cards b{font-family:var(--serif,Georgia,serif);font-size:1.6rem;color:var(--or2,#E8B923);font-weight:600}.acre-cards small{font-size:.62rem;color:var(--muted,#9BA4C6);line-height:1.5}.fisc summary{padding:14px 0;font-weight:700;cursor:pointer}
+
+/* Final alignment with the Form’Com site's editorial identity. */
+.pinceau{font-family:var(--sans);font-size:.85rem;font-weight:800;letter-spacing:.1em;clip-path:none;transform:none;border-radius:10px;padding:.55rem .85rem}.tete .tampon{font-family:var(--sans);font-weight:800;transform:none;border-radius:999px;clip-path:none}.curseur,.voie,.gros-btn,.faisable,.detail,.tuto{border-radius:18px}.cta,.btn-resultat{border-radius:999px;font-family:var(--sans);font-weight:800;letter-spacing:.03em}.sim-back{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;text-decoration:none;color:var(--mut);font-family:var(--sans);font-size:.75rem;font-weight:700}.sim-back:hover{color:var(--or2)}.depart .sim-back{margin-top:8px}.faisability-context{font-family:var(--sans);font-size:.75rem;color:var(--mut);line-height:1.6;margin:0 0 12px}.rounding-note{font-size:.65rem;line-height:1.6;color:var(--mut);margin-top:12px}
+
+/* Same Form’Com wordmark as the rest of the website. */
+.site-wordmark{display:inline-block;color:#F2F4FC;font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:22px;font-weight:900;font-style:italic;letter-spacing:-.04em;text-decoration:none;white-space:nowrap;line-height:1.3}.site-wordmark b{color:#FF4D5C!important;font:inherit!important;background:none!important;-webkit-text-fill-color:#FF4D5C!important}.depart .site-wordmark{display:table;margin:0 auto 1rem;font-size:30px}.marque{flex-wrap:wrap;gap:8px 14px}.sim-program-label small{font-family:var(--sans);color:var(--mut);font-size:.6rem;letter-spacing:.08em}.marque>.site-wordmark{font-size:22px}
+</style></head><body>
+<!DOCTYPE html>
+<!--
+  SIMULATEUR LEVEL UP by Form'Com · 3 voies (Porteur de projet, Gagner de l'argent, Bénévole) + Pass Étudiant
+  Les QR codes ajoutent ?src=... : l'accueil s'adapte (affiche-vacances, affiche-argent, affiche-travail, affiche-projet, residence…).
+  Mise en ligne : GitHub Pages, ce fichier doit s'appeler index.html.
+  Pour le partager par WhatsApp : mets ce fichier en ligne (par exemple sur app.netlify.com/drop,
+  glisser-déposer, gratuit), puis envoie le lien obtenu.
+  Réglages : voir la section CONFIG dans le <script> en bas du fichier.
+-->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060916">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="LEVEL UP : calcule ton niveau">
+<meta property="og:description" content="Règle ton rythme et découvre ton niveau et ce que tu peux gagner.">
+<title>LEVEL UP : ton simulateur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0E2470; --bleu: #1F4FD1; --rouge: #E3242B; --noir: #121626; --pale: #EEF2FF; --gris: #6B7190; --or: #E7B23A; --argent: #B9C2CF; --bronze: #C77B3E; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  html, body { background: #FFFFFF; }
+  body { font-family: "Poppins", system-ui, sans-serif; color: #121626; -webkit-font-smoothing: antialiased; }
+  .page { background: #FFFFFF; min-height: 100vh; overflow-x: hidden; }
+  .wrap { max-width: 30rem; margin: 0 auto; padding: 0 1.1rem 2rem; position: relative; }
+  :focus-visible { outline: 3px solid #E3242B; outline-offset: 3px; border-radius: 6px; }
+
+  /* En-tête */
+  .tete { background: #0E2470; color: #FFFFFF; padding: 1.1rem 1.1rem 2.6rem; position: relative; overflow: hidden;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .tete::after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -26px; height: 52px; background: #FFFFFF; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .tete-in { max-width: 30rem; margin: 0 auto; position: relative; z-index: 1; }
+  .marque { display: flex; align-items: center; gap: .6rem; }
+  .logo { width: 2.3rem; height: 2.3rem; background: #FFFFFF; border-radius: 8px; position: relative; flex: none; }
+  .logo i { position: absolute; display: block; }
+  .marque b { font-weight: 800; font-size: .95rem; }
+  .marque small { display: block; font-size: .65rem; font-weight: 600; color: #9DB6FF; letter-spacing: .04em; }
+  .tampon { position: absolute; right: 0; top: .2rem; font-family: "Bangers", "Impact", sans-serif; font-size: .95rem; letter-spacing: .03em; background: #E3242B; color: #FFFFFF; padding: .3rem .7rem; transform: rotate(5deg); clip-path: polygon(3% 8%, 98% 0, 100% 88%, 1% 100%); }
+  h1 { margin-top: 1.3rem; font-family: "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive; font-weight: 400; line-height: 1.05; font-size: clamp(2.1rem, 10vw, 2.7rem); transform: rotate(-3deg); }
+  h1 span { color: #FF5A5F; display: block; font-size: 1.15em; }
+  .sous { margin-top: .7rem; font-size: .95rem; color: #DCE4FF; }
+
+  /* Bandeaux pinceau */
+  .pinceau { display: inline-block; font-family: "Bangers", "Impact", sans-serif; font-size: 1.25rem; letter-spacing: .03em; color: #FFFFFF; padding: .35rem 1rem .3rem .8rem; transform: rotate(-1.5deg);
+    clip-path: polygon(0 12%, 6% 0, 40% 6%, 70% 0, 100% 10%, 97% 55%, 100% 92%, 60% 100%, 30% 94%, 3% 100%, 1% 60%); margin: 1.6rem 0 .9rem; }
+  .pinceau.rouge { background: #E3242B; } .pinceau.bleu { background: #0E2470; }
+
+  /* Choix de la voie */
+  .voies { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .voie { font: inherit; text-align: left; cursor: pointer; background: #FFFFFF; color: #121626; border: 2.5px solid #121626; border-radius: 16px; padding: .9rem .85rem; box-shadow: 4px 4px 0 #1F4FD1; transition: transform .1s, box-shadow .1s; }
+  .voie:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 #1F4FD1; }
+  .voie .num { font-family: "Bangers", "Impact", sans-serif; font-size: .95rem; color: #E3242B; letter-spacing: .03em; }
+  .voie strong { display: block; font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-weight: 400; font-size: 1.25rem; line-height: 1.1; margin: .15rem 0 .3rem; }
+  .voie small { font-size: .78rem; color: #6B7190; line-height: 1.3; display: block; }
+  .voie[aria-pressed="true"] { background: #0E2470; color: #FFFFFF; box-shadow: 4px 4px 0 #E3242B; }
+  .voie[aria-pressed="true"] small { color: #C9D5FF; } .voie[aria-pressed="true"] .num { color: #FF5A5F; }
+
+  /* Curseurs */
+  .curseur { background: #FFFFFF; border: 1.5px solid #D5DDF0; border-radius: 16px; padding: .9rem 1rem .6rem; margin-bottom: .8rem; box-shadow: 3px 3px 0 #D5DDF0; }
+  .curseur label { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; }
+  .curseur output { font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-size: 1.9rem; color: #1F4FD1; line-height: 1; }
+  .jauge { position: relative; height: 104px; margin: .2rem 0 0; }
+  .jauge .piste { position: absolute; left: 15px; right: 15px; top: 46px; height: 14px; border-radius: 99px; border: 2px solid #121626; overflow: hidden; background: #F1F3F9; }
+  .jauge .zones, .jauge .rempli { position: absolute; inset: 0; background: linear-gradient(90deg, #8EA3D8 0 6.67%, #C77B3E 6.67% 33.33%, #9AA6B8 33.33% 60%, #E7B23A 60% 100%); }
+  .jauge .zones { opacity: .22; }
+  .jauge .rempli { clip-path: inset(0 calc(100% - var(--k, 0%)) 0 0); will-change: clip-path; }
+  .jauge .rempli::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 60%); }
+  .jauge input[type=range] { touch-action: pan-y; position: absolute; left: 0; right: 0; top: 38px; width: 100%; height: 30px; z-index: 3; margin: 0; }
+  .jauge input[type=range]::-webkit-slider-runnable-track { background: transparent !important; height: 30px; }
+  .jauge input[type=range]::-moz-range-track { background: transparent; }
+  .jauge input[type=range]::-moz-range-progress { background: transparent; }
+  .jauge input[type=range]::-webkit-slider-thumb { margin-top: 0; width: 30px; height: 30px; background: #E3242B; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2.5px #121626, 0 4px 10px rgba(0,0,0,.25); }
+  .medal { position: absolute; top: 37px; width: 32px; height: 32px; margin-left: -16px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; z-index: 2; pointer-events: none;
+    background: #DCE1EC; border: 2.5px solid #121626; color: #6B7190; transition: transform .2s; }
+  .medal.on { background: var(--c); color: #121626; box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 0 14px var(--c); }
+  .medal.pop { animation: pop .55s ease-out; }
+  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.55) rotate(-10deg); } 100% { transform: scale(1); } }
+  .medal-nom { position: absolute; top: 88px; transform: translateX(-50%); font-size: .58rem; font-weight: 800; letter-spacing: .03em; color: #9AA3BF; white-space: nowrap; }
+  .medal-nom.on { color: #121626; }
+  .cran { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: rgba(18,22,38,.28); z-index: 1; }
+  .cran-num { position: absolute; top: 72px; transform: translateX(-50%); font-size: .62rem; font-weight: 600; color: #A7AFC6; font-variant-numeric: tabular-nums; }
+  .cran-num.on { color: #121626; font-weight: 800; }
+  .cran-num.badge { font-size: .7rem; }
+  .bulle { position: absolute; top: 0; transform: translateX(-50%); background: #0E2470; color: #FFFFFF; font-family: "Anton", "Impact", sans-serif; font-size: .95rem; padding: .15rem .55rem; border-radius: 8px; white-space: nowrap; z-index: 4; pointer-events: none; }
+  .bulle::after { content: ""; position: absolute; left: 50%; bottom: -5px; margin-left: -5px; border: 5px solid transparent; border-bottom: 0; border-top-color: #0E2470; }
+  .objectif { position: absolute; top: 12px; transform: translateX(-50%) rotate(-4deg); background: #E3242B; color: #FFFFFF; font-family: "Bangers", "Impact", sans-serif; font-size: .8rem; letter-spacing: .03em; padding: .1rem .45rem; border-radius: 4px; white-space: nowrap; z-index: 1; }
+  @keyframes flotte { 0%, 100% { margin-top: 0; } 50% { margin-top: -3px; } }
+  .astuce { display: flex; align-items: center; gap: .5rem; background: #0E2470; color: #FFFFFF; border-radius: 12px; padding: .55rem .75rem; font-size: .82rem; font-weight: 600; line-height: 1.3; margin-bottom: .7rem; transition: opacity .4s, max-height .4s, margin .4s, padding .4s; max-height: 6rem; overflow: hidden; }
+  .astuce .main { flex: none; font-size: 1.3rem; display: inline-block; animation: glisse 1.4s ease-in-out infinite; }
+  @keyframes glisse { 0%, 100% { transform: translateX(-4px); } 50% { transform: translateX(6px); } }
+  .astuce.vu { opacity: 0; max-height: 0; margin: 0; padding-top: 0; padding-bottom: 0; }
+  .combos { margin-top: 0; }
+  .faisable { background: #FFFFFF; border: 1.5px solid #D5DDF0; border-radius: 16px; padding: .9rem 1rem; box-shadow: 3px 3px 0 #D5DDF0; }
+  .combos-titre { font-size: .8rem; font-weight: 600; color: #121626; margin-bottom: .45rem; }
+  .combos-titre b { color: #E3242B; }
+  .combo-liste { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45rem; }
+  .combo { background: #EEF2FF; border: 2px solid #121626; border-radius: 12px; padding: .45rem .3rem .4rem; text-align: center; box-shadow: 2px 2px 0 #1F4FD1; }
+  .combo .x { display: inline-block; font-family: "Bangers", "Impact", sans-serif; font-size: .7rem; line-height: 1.15; letter-spacing: .04em; color: #FFFFFF; background: #E3242B; border-radius: 4px; padding: 0 .35rem; transform: rotate(-4deg); }
+  .combo b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.5rem; line-height: 1.1; color: #0E2470; margin-top: .15rem; }
+  .combo small { display: block; font-size: .66rem; font-weight: 600; color: #6B7190; line-height: 1.2; }
+  .heure { margin-top: .7rem; background: #0E2470; color: #FFFFFF; border-radius: 14px; padding: .75rem .8rem; box-shadow: 3px 3px 0 #E3242B; }
+  .heure-tete { display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .heure-tete span { font-family: "Bangers", "Impact", sans-serif; font-size: 1rem; letter-spacing: .04em; }
+  .heures { display: flex; gap: .3rem; }
+  .heures button { font: inherit; font-size: .75rem; font-weight: 800; color: #FFFFFF; background: transparent; border: 1.5px solid rgba(255,255,255,.5); border-radius: 99px; padding: .2rem .55rem; cursor: pointer; }
+  .heures button[aria-pressed="true"] { background: #FFFFFF; color: #0E2470; border-color: #FFFFFF; }
+  .heure-chiffre { font-family: "Anton", "Impact", sans-serif; font-size: 2.1rem; line-height: 1.1; margin-top: .35rem; }
+  .heure-chiffre small { font-family: "Poppins", sans-serif; font-size: .8rem; font-weight: 600; color: #C9D5FF; }
+  .heure-txt { font-size: .82rem; color: #DCE4FF; margin-top: .15rem; line-height: 1.4; }
+  .heure-txt b { color: #FFFFFF; }
+  .preuve { display: flex; align-items: center; gap: .6rem; background: #0E2470; color: #FFFFFF; border-radius: 12px; padding: .55rem .75rem; margin: -.2rem 0 .8rem; font-size: .8rem; line-height: 1.35; box-shadow: 3px 3px 0 #E3242B; }
+  .preuve-tag { flex: none; font-family: "Bangers", "Impact", sans-serif; font-size: .78rem; letter-spacing: .04em; background: #E7B23A; color: #121626; padding: .15rem .45rem; border-radius: 4px; transform: rotate(-4deg); }
+  .preuve b { color: #FF8A8E; }
+  .barre-bas { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: #0E2470; color: #FFFFFF; box-shadow: 0 -4px 16px rgba(0,0,0,.25); padding: .55rem .9rem calc(.55rem + env(safe-area-inset-bottom)); border-top: 3px solid #E3242B; }
+  .barre-bas-in { max-width: 30rem; margin: 0 auto; display: flex; align-items: center; gap: .65rem; }
+  .bb-medal { flex: none; width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 2.5px solid #FFFFFF; display: grid; place-items: center; font-size: 1.05rem; }
+  .bb-txt { flex: 1; min-width: 0; line-height: 1.1; }
+  .bb-txt small { display: block; font-size: .64rem; font-weight: 600; color: #C9D5FF; letter-spacing: .03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bb-txt b { font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.45rem; white-space: nowrap; }
+  .bb-txt em { font-style: normal; font-family: "Bangers", "Impact", sans-serif; font-size: .9rem; letter-spacing: .03em; color: #FF8A8E; margin-left: .3rem; }
+  .bb-cta { flex: none; text-decoration: none; white-space: nowrap; font-family: "Anton", "Impact", sans-serif; font-size: .95rem; color: #FFFFFF; background: #E3242B; border: 2px solid #FFFFFF; border-radius: 10px; padding: .45rem .7rem; }
+  .page { padding-bottom: 5.2rem; }
+  .tuto { margin-top: -1.2rem; position: relative; z-index: 2; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .75rem .8rem .8rem; box-shadow: 4px 4px 0 #E3242B; }
+  .tuto-titre { font-family: "Bangers", "Impact", sans-serif; font-size: 1.05rem; letter-spacing: .04em; color: #E3242B; margin-bottom: .45rem; }
+  .tuto ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; }
+  .tuto li { text-align: center; font-size: .72rem; font-weight: 700; line-height: 1.25; color: #121626; }
+  .tuto li span { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin: 0 auto .3rem; border-radius: 50%; background: #0E2470; color: #FFFFFF; font-size: 1rem; }
+  .tuto li.fait span { background: #2BB673; }
+  .voie { position: relative; }
+  .voie-large { grid-column: 1 / -1; }
+  .voie .touche { display: inline-block; margin-top: .45rem; font-size: .72rem; font-weight: 800; color: #E3242B; }
+  .voie[aria-pressed="true"] .touche { color: #7CF29C; }
+  .voies.attente .voie { animation: appel 1.6s ease-in-out infinite; }
+  .voies.attente .voie:nth-child(2) { animation-delay: .8s; }
+  @keyframes appel { 0%, 100% { box-shadow: 4px 4px 0 #1F4FD1; } 50% { box-shadow: 4px 4px 0 #1F4FD1, 0 0 0 5px rgba(227,36,43,.35); } }
+  .voies.choisi .voie[aria-pressed="false"] { opacity: .7; }
+  .attente-msg { margin-top: .6rem; text-align: center; font-size: .82rem; font-weight: 700; color: #E3242B; }
+  @media (prefers-reduced-motion: reduce) { .voies.attente .voie { animation: none; } }
+  .depart { position: fixed; inset: 0; z-index: 100; background: #0E2470; color: #FFFFFF; overflow-y: auto; display: flex;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .depart[hidden] { display: none !important; }
+  .depart-in { margin: auto; width: 100%; max-width: 26rem; padding: 2rem 1.3rem calc(2rem + env(safe-area-inset-bottom)); text-align: center; }
+  .depart .logo { margin: 0 auto 1rem; width: 3rem; height: 3rem; }
+  .depart h2 { font-family: "Permanent Marker", "Comic Sans MS", cursive; font-weight: 400; font-size: clamp(2rem, 9vw, 2.5rem); line-height: 1.05; transform: rotate(-3deg); }
+  .depart h2 span { color: #FF5A5F; display: block; }
+  .depart .chrono { display: inline-block; margin: 1rem 0 1.6rem; font-family: "Bangers", "Impact", sans-serif; letter-spacing: .04em; background: #E3242B; padding: .25rem .8rem; transform: rotate(-2deg); }
+  .depart .q { font-weight: 800; font-size: 1.05rem; margin-bottom: .9rem; }
+  .gros-btn { display: flex; align-items: center; gap: .8rem; width: 100%; text-align: left; font: inherit; cursor: pointer; margin-bottom: 1rem;
+    background: #FFFFFF; color: #121626; border: 3px solid #121626; border-radius: 18px; padding: 1rem 1rem; box-shadow: 6px 6px 0 #E3242B; animation: appel2 1.8s ease-in-out infinite; }
+  .gros-btn:nth-of-type(2) { animation-delay: .6s; box-shadow: 6px 6px 0 #1F4FD1; }
+    .gros-btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #E3242B; }
+  @keyframes appel2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+  .gros-btn .ic { flex: none; width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; background: #EEF2FF; border: 2px solid #121626; }
+  .gros-btn b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
+  .gros-btn small { display: block; font-size: .8rem; color: #6B7190; }
+  .gros-btn .fl { margin-left: auto; flex: none; font-family: "Anton", "Impact", sans-serif; font-size: 1.1rem; color: #FFFFFF; background: #E3242B; border-radius: 10px; padding: .35rem .6rem; }
+  .depart .rassure { font-size: .8rem; color: #C9D5FF; margin-top: .4rem; }
+  .curseur.focus { box-shadow: 0 0 0 4px #E3242B, 3px 3px 0 #D5DDF0; animation: focus 1.4s ease-in-out 3; }
+  @keyframes focus { 50% { box-shadow: 0 0 0 8px rgba(227,36,43,.35), 3px 3px 0 #D5DDF0; } }
+  .btn-resultat { display: block; width: 100%; margin: .4rem 0 0; font: inherit; font-family: "Anton", "Impact", sans-serif; font-size: 1.3rem; color: #FFFFFF; background: #0E2470; border: 3px solid #121626; border-radius: 14px; padding: .7rem; box-shadow: 4px 4px 0 #E3242B; cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { .gros-btn, .curseur.focus { animation: none; } }
+  .benev { position: fixed; inset: 0; z-index: 110; background: #FFFFFF; overflow-y: auto; }
+  .benev[hidden] { display: none !important; }
+  .benev-tete { background: #0E2470; color: #FFFFFF; padding: 1.3rem 1.2rem 2.4rem; position: relative; overflow: hidden;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .benev-tete::after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -24px; height: 48px; background: #FFFFFF; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .benev-tete-in { max-width: 30rem; margin: 0 auto; position: relative; z-index: 1; }
+  .retour { font: inherit; font-size: .82rem; font-weight: 700; color: #FFFFFF; background: transparent; border: 1.5px solid rgba(255,255,255,.5); border-radius: 99px; padding: .3rem .8rem; cursor: pointer; }
+  .benev h2 { margin-top: 1rem; font-family: "Permanent Marker", "Comic Sans MS", cursive; font-weight: 400; font-size: clamp(1.9rem, 8.5vw, 2.4rem); line-height: 1.05; transform: rotate(-3deg); }
+  .benev h2 span { color: #7CE3A5; display: block; }
+  .benev-tete p { margin-top: .7rem; color: #DCE4FF; font-size: .95rem; line-height: 1.45; }
+  .benev-corps { max-width: 30rem; margin: 0 auto; padding: .5rem 1.1rem 2.5rem; }
+  .bloc { background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .9rem 1rem; margin-bottom: 1rem; }
+  .bloc.vert { box-shadow: 4px 4px 0 #2BB673; } .bloc.bleu { box-shadow: 4px 4px 0 #1F4FD1; } .bloc.rouge { box-shadow: 4px 4px 0 #E3242B; }
+  .bloc h3 { font-family: "Bangers", "Impact", sans-serif; font-weight: 400; font-size: 1.25rem; letter-spacing: .03em; color: #0E2470; margin-bottom: .45rem; }
+  .bloc p, .bloc li { font-size: .9rem; line-height: 1.5; }
+  .bloc ul { list-style: none; display: grid; gap: .45rem; }
+  .bloc li { display: flex; gap: .55rem; align-items: flex-start; }
+  .bloc li span { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; font-size: .85rem; background: #EEF2FF; }
+  .citation { font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: 1.25rem; color: #E3242B; text-align: center; transform: rotate(-2deg); margin: 1.3rem 0; line-height: 1.3; }
+  .lien-voies { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: transparent; border: 0; text-decoration: underline; cursor: pointer; }
+  .pied-benev { text-align: center; font-size: .72rem; color: #6B7190; margin-top: 1rem; }
+  .vers-benev { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: #EEF2FF; border: 1.5px dashed #1F4FD1; border-radius: 12px; padding: .65rem; cursor: pointer; }
+  .gros-btn:nth-of-type(3) { animation-delay: 1.2s; box-shadow: 6px 6px 0 #2BB673; }
+  .gros-btn:nth-of-type(4) { animation-delay: 1.8s; box-shadow: 6px 6px 0 #2BB673; }
+  .etu { margin-top: 1rem; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .9rem 1rem; box-shadow: 4px 4px 0 #E7B23A; }
+  .etu h3 { font-family: "Bangers", "Impact", sans-serif; font-weight: 400; font-size: 1.15rem; letter-spacing: .03em; color: #0E2470; margin-bottom: .5rem; }
+  .etu h3:not(:first-child) { margin-top: .9rem; }
+  .bascule { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .bascule button { font: inherit; text-align: left; cursor: pointer; background: #FFFFFF; color: #121626; border: 2px solid #121626; border-radius: 12px; padding: .6rem .65rem; line-height: 1.25; }
+  .bascule button b { display: block; font-size: .85rem; }
+  .bascule button small { display: block; font-size: .7rem; color: #6B7190; margin-top: .1rem; }
+  .bascule button[aria-pressed="true"] { background: #0E2470; color: #FFFFFF; box-shadow: 3px 3px 0 #E3242B; }
+  .bascule button[aria-pressed="true"] small { color: #C9D5FF; }
+  .rythmes { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .rythmes button { font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; color: #0E2470; background: #EEF2FF; border: 1.5px solid #1F4FD1; border-radius: 99px; padding: .35rem .7rem; }
+  .rythmes button[aria-pressed="true"] { background: #1F4FD1; color: #FFFFFF; }
+  .etu-plus { list-style: none; display: grid; gap: .35rem; font-size: .84rem; line-height: 1.4; }
+  .etu-plus li::before { content: "✓ "; color: #2BB673; font-weight: 800; }
+  .etu-note { margin-top: .7rem; font-size: .78rem; line-height: 1.45; background: #FFF4D6; border-left: 4px solid #E7B23A; border-radius: 8px; padding: .55rem .7rem; }
+  .accroche { display: inline-block; margin: 0 0 1rem; font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: 1.15rem; line-height: 1.2; color: #FFFFFF; background: var(--ac, #E3242B); padding: .45rem .9rem; transform: rotate(-2deg); clip-path: polygon(0 10%, 5% 0, 50% 5%, 96% 0, 100% 12%, 98% 90%, 60% 100%, 3% 96%); }
+  .pass-zone { margin: 0 0 1.3rem; }
+  .pass-btn { display: flex; align-items: center; gap: .75rem; width: 100%; text-align: left; font: inherit; cursor: pointer; color: #121626; background: #FFE9A8; border: 3px dashed #121626; border-radius: 18px; padding: .8rem 1rem; box-shadow: 5px 5px 0 #E7B23A; }
+  .pass-btn .pass-ic { flex: none; font-size: 1.9rem; }
+  .pass-btn b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.3rem; line-height: 1.1; }
+  .pass-btn small { display: block; font-size: .8rem; font-weight: 600; color: #5B4A12; }
+  .pass-btn[aria-pressed="true"] { background: #2BB673; color: #FFFFFF; border-style: solid; box-shadow: 5px 5px 0 #0B5E37; }
+  .pass-btn[aria-pressed="true"] small { color: #E6FFF1; }
+  .mineur { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: .6rem; font-size: .88rem; font-weight: 700; cursor: pointer; }
+  .mineur input { width: 1.25rem; height: 1.25rem; accent-color: #E7B23A; }
+  .etu .mineur { justify-content: flex-start; margin: 0 0 .4rem; color: #121626; }
+  .choix { display: block; }
+  .gros-btn { position: relative; }
+  .gros-btn.conseil { outline: 4px solid var(--ac, #E3242B); outline-offset: 4px; }
+  .pour-toi { position: absolute; top: -.75rem; right: .8rem; font-family: "Bangers", "Impact", sans-serif; font-size: .85rem; letter-spacing: .04em; color: #FFFFFF; background: var(--ac, #E3242B); padding: .1rem .55rem; border-radius: 6px; transform: rotate(3deg); }
+  .gros-btn:disabled, .voie:disabled { opacity: .45; animation: none; cursor: not-allowed; box-shadow: none; }
+  .pass-mini { display: block; width: 100%; margin-top: .9rem; font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer; color: #121626; background: #FFE9A8; border: 2.5px dashed #121626; border-radius: 14px; padding: .7rem .8rem; box-shadow: 3px 3px 0 #E7B23A; }
+  .pass-banniere { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: -.1rem 0 .7rem; background: #2BB673; color: #FFFFFF; border-radius: 10px; padding: .45rem .65rem; font-family: "Bangers", "Impact", sans-serif; font-size: 1.1rem; letter-spacing: .04em; }
+  .pass-banniere button { font: inherit; font-family: "Poppins", sans-serif; font-size: .7rem; font-weight: 700; color: #FFFFFF; background: transparent; border: 1.5px solid rgba(255,255,255,.7); border-radius: 99px; padding: .15rem .55rem; cursor: pointer; letter-spacing: 0; }
+  .etu-plus b { color: #0E2470; }
+  .confetti { position: fixed; width: 8px; height: 12px; z-index: 50; pointer-events: none; border-radius: 2px; animation: tombe 1.4s ease-in forwards; }
+  @keyframes tombe { to { transform: translate(var(--dx), 70vh) rotate(var(--r)); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .medal.pop, .objectif, .confetti, .astuce .main { animation: none; } }
+  .curseur .aide { font-size: .78rem; color: #6B7190; margin-top: .1rem; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 40px; background: transparent; cursor: pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height: 10px; border-radius: 99px; background: linear-gradient(90deg, #1F4FD1 var(--p, 30%), #E3E9F8 var(--p, 30%)); }
+  input[type=range]::-moz-range-track { height: 10px; border-radius: 99px; background: #E3E9F8; }
+  input[type=range]::-moz-range-progress { height: 10px; border-radius: 99px; background: #1F4FD1; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; margin-top: -10px; border-radius: 50%; background: #E3242B; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2.5px #121626; }
+  input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #E3242B; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2.5px #121626; }
+
+  /* Niveau */
+  .niveau { display: flex; gap: 1rem; align-items: center; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 18px; padding: 1rem; box-shadow: 5px 5px 0 #0E2470; }
+  .medaille { flex: none; width: 4.6rem; height: 4.6rem; border-radius: 50%; display: grid; place-items: center; font-size: 2rem; border: 3px solid #121626; position: relative; transition: background .3s; }
+  .medaille::before { content: ""; position: absolute; top: 10%; left: 18%; width: 30%; height: 30%; border-radius: 50%; background: rgba(255,255,255,.45); }
+  .niveau-txt small { font-size: .75rem; font-weight: 600; color: #6B7190; letter-spacing: .05em; }
+  .niveau-txt strong { display: block; font-family: "Bangers", "Impact", sans-serif; font-size: 2rem; letter-spacing: .03em; line-height: 1; color: #0E2470; }
+  .barre { height: 12px; border: 2px solid #121626; border-radius: 99px; overflow: hidden; margin-top: .45rem; background: #FFFFFF; }
+  .barre i { display: block; height: 100%; width: 0; background: #E3242B; transition: width .35s ease-out; }
+  .suivant { font-size: .8rem; margin-top: .35rem; color: #121626; font-weight: 600; }
+  .etapes { display: flex; justify-content: space-between; margin-top: .8rem; padding: 0 .2rem; }
+  .etapes span { font-size: .66rem; font-weight: 800; color: #9AA3BF; text-align: center; flex: 1; }
+  .etapes span.on { color: #1F4FD1; }
+
+  /* Résultat */
+  .resultat { margin-top: 1rem; background: #0E2470; color: #FFFFFF; border-radius: 20px; padding: 1.2rem 1.1rem; box-shadow: 5px 5px 0 #E3242B; position: relative; overflow: hidden;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .resultat .lib { font-size: .85rem; color: #C9D5FF; font-weight: 600; }
+  .montant { font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-size: clamp(3rem, 15vw, 4rem); line-height: 1.05; margin: .15rem 0; white-space: nowrap; }
+  .montant em { font-style: normal; font-size: .45em; color: #FF5A5F; }
+  .details { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .6rem; }
+  .details div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: .6rem .7rem; }
+  .details span { display: block; font-size: .72rem; color: #C9D5FF; }
+  .details b { font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-weight: 400; font-size: 1.35rem; white-space: nowrap; }
+  .alerte { margin-top: .7rem; font-size: .78rem; background: rgba(227,36,43,.2); border-left: 3px solid #FF5A5F; border-radius: 8px; padding: .5rem .7rem; color: #FFFFFF; }
+  .detail { margin-top: 1rem; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 18px; padding: 1rem 1rem .8rem; box-shadow: 5px 5px 0 #1F4FD1; }
+  .detail h2 { font-family: "Bangers", "Impact", sans-serif; font-weight: 400; font-size: 1.35rem; letter-spacing: .03em; color: #0E2470; margin-bottom: .5rem; }
+  .ligne { display: flex; justify-content: space-between; gap: .8rem; padding: .5rem 0; border-bottom: 1px dashed #D5DDF0; font-size: .88rem; }
+  .ligne b { white-space: nowrap; font-weight: 800; }
+  .ligne small { display: block; font-size: .72rem; color: #6B7190; }
+  .ligne.moins b { color: #E3242B; }
+  .ligne.total { border-bottom: 0; border-top: 2.5px solid #121626; margin-top: .3rem; padding-top: .7rem; font-weight: 800; font-size: 1rem; }
+  .ligne.total b { color: #1F4FD1; font-size: 1.15rem; }
+  .tva { margin-top: .8rem; border-radius: 12px; padding: .7rem .8rem; font-size: .82rem; line-height: 1.45; background: #EAF7EE; border-left: 4px solid #2BB673; }
+  .tva.alerte2 { background: #FDECEC; border-left-color: #E3242B; }
+  .tva strong { display: block; font-size: .9rem; margin-bottom: .15rem; }
+  .fisc { margin-top: .8rem; border-top: 1px dashed #D5DDF0; padding-top: .6rem; }
+  .fisc summary { cursor: pointer; font-size: .82rem; font-weight: 800; color: #1F4FD1; list-style: none; }
+  .fisc summary::-webkit-details-marker { display: none; }
+  .fisc summary::before { content: "+ "; color: #E3242B; }
+  .fisc[open] summary::before { content: "− "; }
+  .options { margin-top: .7rem; display: grid; gap: .6rem; }
+  .option { display: flex; gap: .6rem; align-items: flex-start; font-size: .84rem; cursor: pointer; }
+  .option input { flex: none; width: 1.3rem; height: 1.3rem; accent-color: #1F4FD1; margin-top: .1rem; }
+  .option small { display: block; font-size: .72rem; color: #6B7190; }
+  .an-ca { font-size: .78rem; color: #6B7190; margin-top: .5rem; }
+  .precision { margin-top: .7rem; font-size: .8rem; background: rgba(255,255,255,.1); border-left: 3px solid #FF5A5F; border-radius: 8px; padding: .55rem .7rem; color: #FFFFFF; line-height: 1.4; }
+  .demo { margin-top: 1rem; border: 2.5px dashed #1F4FD1; border-radius: 14px; padding: .75rem .85rem; font-size: .84rem; line-height: 1.45; background: #EEF2FF; }
+  .demo strong { color: #0E2470; }
+  .savoir details { background: #FFFFFF; border: 1.5px solid #D5DDF0; border-radius: 14px; margin-bottom: .6rem; box-shadow: 3px 3px 0 #D5DDF0; }
+  .savoir summary { list-style: none; cursor: pointer; padding: .85rem 2.4rem .85rem .9rem; font-weight: 800; font-size: .92rem; position: relative; }
+  .savoir summary::-webkit-details-marker { display: none; }
+  .savoir summary::after { content: "+"; position: absolute; right: .9rem; top: .6rem; font-size: 1.4rem; color: #E3242B; transition: transform .2s; }
+  .savoir details[open] summary::after { transform: rotate(45deg); }
+  .savoir .contenu { padding: 0 .9rem .9rem; font-size: .85rem; line-height: 1.5; color: #121626; }
+  .savoir .contenu ul { padding-left: 1.1rem; margin-top: .3rem; }
+  .savoir .contenu li { margin-bottom: .25rem; }
+  .motiv { margin-top: 1rem; font-family: "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive; font-size: 1.25rem; color: #E3242B; transform: rotate(-2deg); text-align: center; line-height: 1.25; }
+
+  /* Appel à l'action */
+  .cta { display: flex; align-items: center; justify-content: center; gap: .6rem; width: 100%; margin-top: 1.3rem; text-decoration: none; font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-size: 1.6rem; letter-spacing: .02em; color: #FFFFFF; background: #E3242B; border: 3px solid #121626; border-radius: 16px; padding: .85rem 1rem; box-shadow: 5px 5px 0 #121626; }
+  .cta:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #121626; }
+  .cta .play { width: 0; height: 0; border-left: 16px solid #FFFFFF; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .cta-sous { text-align: center; font-size: .82rem; margin-top: .6rem; font-weight: 600; }
+  .note { margin-top: 1.4rem; font-size: .72rem; color: #6B7190; line-height: 1.45; }
+  .pied { text-align: center; font-size: .72rem; color: #6B7190; margin-top: 1.2rem; }
+  @media (prefers-reduced-motion: reduce) { .barre i { transition: none; } }
+
+  /* ===== Habillage LEVEL UP (charte du site) : fond sombre, Cormorant + Manrope, dégradé or vers corail =====
+     Seul l'habillage change ici. Les calculs, les voies et le CONFIG (script) sont inchangés. */
+  :root { --bg: #060916; --card: #101637; --card2: #0A0F26; --fg: #F2F4FC; --mut: #9BA4C6; --line: #222A52; --or2: #FFB86B; --grad: linear-gradient(90deg, #FFD27A, #FF8A5B); --rose: #FF4D5C; --vert: #3DDC97;
+    --panel: linear-gradient(160deg, #14289A 0%, #0B1450 62%, #080E36 100%); --serif: "Cormorant Garamond", Georgia, serif; --sans: "Manrope", system-ui, sans-serif; color-scheme: dark; }
+  html, body, .page, .benev { background: var(--bg); }
+  body { font-family: var(--sans); color: var(--fg); font-weight: 500; }
+  :focus-visible { outline: 3px solid var(--or2); }
+  .wrap { max-width: 32rem; }
+
+  /* En-tête */
+  .tete, .benev-tete, .depart { background: radial-gradient(80% 70% at 50% 0%, #1536C9 0%, transparent 72%), radial-gradient(45% 45% at 92% 100%, rgba(217,30,43,.22), transparent 70%), var(--bg); background-size: auto; border-bottom: 1px solid var(--line); }
+  .depart { border: 0; }
+  .tete::after, .benev-tete::after { display: none; }
+  .tete { padding-bottom: 3.2rem; }
+  .logo { border-radius: 10px; }
+  .marque b { font-family: var(--sans); font-weight: 800; font-size: 1rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+  .marque small { color: var(--mut); }
+  .tampon { font-family: var(--sans); font-weight: 800; font-size: .7rem; letter-spacing: .16em; background: transparent; color: var(--or2); border: 1px solid rgba(255,184,107,.5); border-radius: 999px; padding: .3rem .8rem; transform: none; clip-path: none; }
+  h1, .depart h2, .benev h2 { font-family: var(--serif); font-weight: 600; transform: none; letter-spacing: -.005em; line-height: 1; }
+  h1 { font-size: clamp(2.6rem, 12vw, 3.4rem); margin-top: 1.5rem; }
+  .depart h2 { font-size: clamp(2.5rem, 11vw, 3.2rem); }
+  .benev h2 { font-size: clamp(2.3rem, 10vw, 3rem); }
+  h1 span, .depart h2 span, .benev h2 span { font-style: italic; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; padding-bottom: .1em; }
+  .sous, .benev-tete p { color: var(--mut); }
+  .pinceau { font-family: var(--sans); font-weight: 800; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; background: transparent !important; color: var(--or2); padding: 0; transform: none; clip-path: none; }
+
+  /* Surfaces */
+  .voie, .curseur, .faisable, .tuto, .niveau, .detail, .bloc, .etu, .savoir details, .gros-btn, .bascule button, .benev .bloc { background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 34px -22px #000; }
+  .bloc.vert, .bloc.bleu, .bloc.rouge, .etu { box-shadow: 0 14px 34px -22px #000; }
+  .bloc.vert { border-color: rgba(61,220,151,.4); } .bloc.bleu { border-color: rgba(108,134,255,.45); } .bloc.rouge { border-color: rgba(255,77,92,.4); }
+  .etu { border-color: rgba(255,184,107,.4); }
+  .tuto { border-color: rgba(255,184,107,.45); }
+  .tuto-titre, .voie .num, .attente-msg, .combos-titre b, .voie .touche, .citation, .motiv { color: var(--or2); }
+  .tuto-titre, .num, .voie .num, .bloc h3, .etu h3, .detail h2, .tuto-titre { font-family: var(--sans); font-weight: 800; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+  .bloc h3, .etu h3, .detail h2 { color: var(--or2); font-size: .8rem; margin-bottom: .6rem; }
+  .tuto li { color: var(--fg); }
+  .tuto li span { background: var(--grad); color: #060916; font-weight: 800; }
+  .tuto li.fait span { background: var(--vert); }
+  .voie small, .gros-btn small, .curseur .aide, .bascule button small, .ligne small, .option small, .an-ca, .note, .pied, .pied-benev, .combo small { color: var(--mut); }
+  .voie strong, .gros-btn b, .pass-btn b { font-family: var(--serif); font-weight: 700; font-size: 1.45rem; line-height: 1.05; text-transform: none; }
+  .voie[aria-pressed="true"], .bascule button[aria-pressed="true"] { background: var(--panel); color: var(--fg); border-color: var(--or2); box-shadow: 0 0 0 1px var(--or2), 0 14px 34px -18px rgba(255,184,107,.5); }
+  .voie[aria-pressed="true"] small, .bascule button[aria-pressed="true"] small { color: #C9D5FF; }
+  .voie[aria-pressed="true"] .num { color: var(--or2); } .voie[aria-pressed="true"] .touche { color: var(--vert); }
+  @keyframes appel { 0%, 100% { box-shadow: 0 14px 34px -22px #000; } 50% { box-shadow: 0 0 0 4px rgba(255,184,107,.35), 0 14px 34px -22px #000; } }
+  @keyframes focus { 50% { box-shadow: 0 0 0 8px rgba(255,184,107,.3); } }
+  .curseur.focus { box-shadow: 0 0 0 3px var(--or2); }
+  .curseur output { font-family: var(--serif); font-weight: 700; font-size: 2.3rem; color: var(--or2); }
+  .curseur label { font-weight: 700; }
+
+  /* Jauge et curseurs */
+  .jauge .piste { border: 1px solid var(--line); background: var(--card2); }
+  .medal { background: #222A52; border: 2px solid var(--bg); color: var(--mut); }
+  .medal.on { color: #060916; box-shadow: 0 0 0 4px rgba(6,9,22,.9), 0 0 16px var(--c); }
+  .medal-nom { color: #6E78A0; } .medal-nom.on { color: var(--fg); }
+  .cran { background: rgba(242,244,252,.16); } .cran-num { color: #6E78A0; } .cran-num.on { color: var(--fg); }
+  .bulle { background: var(--grad); color: #060916; font-family: var(--sans); font-weight: 800; font-size: .85rem; }
+  .bulle::after { border-top-color: #FFA66E; }
+  .objectif { font-family: var(--sans); font-weight: 800; font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; background: var(--rose); border-radius: 999px; padding: .15rem .55rem; transform: translateX(-50%); }
+  .jauge input[type=range]::-webkit-slider-thumb { background: var(--grad); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2), 0 4px 12px rgba(0,0,0,.5); }
+  input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--or2) var(--p, 30%), #222A52 var(--p, 30%)); }
+  input[type=range]::-moz-range-track { background: #222A52; }
+  input[type=range]::-moz-range-progress { background: var(--or2); }
+  input[type=range]::-webkit-slider-thumb { background: var(--grad); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+  input[type=range]::-moz-range-thumb { background: var(--or2); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+  .jauge input[type=range]::-moz-range-thumb { background: var(--or2); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+
+  /* Blocs bleus (panneaux) */
+  .astuce, .heure, .preuve, .resultat, .btn-resultat { background: var(--panel); color: var(--fg); border: 1px solid rgba(108,134,255,.35); box-shadow: 0 14px 34px -22px #000; }
+  .resultat { border-radius: 22px; background-image: var(--panel); }
+  .astuce .main { color: var(--or2); }
+  .heure-tete span, .preuve-tag, .pass-banniere, .depart .chrono, .combo .x, .pour-toi, .bb-txt em { font-family: var(--sans); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+  .heure-tete span { font-size: .72rem; letter-spacing: .14em; }
+  .heure-chiffre, .montant, .details b, .combo b, .bb-txt b { font-family: var(--serif); font-weight: 700; }
+  .heure-chiffre { font-size: 2.6rem; } .heure-chiffre small { font-family: var(--sans); }
+  .montant { font-size: clamp(3.6rem, 17vw, 4.8rem); line-height: 1; }
+  .montant em { color: var(--or2); font-style: normal; font-family: var(--sans); font-weight: 700; }
+  .details b { font-size: 1.7rem; }
+  .resultat .lib, .details span, .heure-txt, .heure-chiffre small { color: #C9D5FF; }
+  .heures button[aria-pressed="true"] { background: var(--grad); color: #060916; border-color: transparent; }
+  .preuve-tag { background: var(--grad); color: #060916; transform: none; border-radius: 999px; padding: .15rem .6rem; font-size: .66rem; }
+  .preuve b { color: var(--or2); }
+  .alerte, .precision { background: rgba(255,77,92,.14); border-left-color: var(--rose); }
+  .combo { background: var(--card2); border: 1px solid var(--line); box-shadow: none; }
+  .combo .x { background: var(--rose); transform: none; border-radius: 999px; padding: .05rem .5rem; font-size: .58rem; }
+  .combo b { color: var(--or2); font-size: 1.8rem; }
+
+  /* Niveau, barre, détail */
+  .niveau { border-color: rgba(255,184,107,.4); }
+  .medaille { border: 3px solid var(--bg); }
+  .niveau-txt small { color: var(--mut); }
+  .niveau-txt strong { font-family: var(--serif); font-weight: 700; font-size: 2.4rem; color: var(--fg); letter-spacing: 0; text-transform: none; }
+  .barre { border: 1px solid var(--line); background: var(--card2); }
+  .barre i { background: var(--grad); }
+  .suivant { color: var(--fg); } .etapes span { color: #6E78A0; } .etapes span.on { color: var(--or2); }
+  .ligne { border-bottom: 1px dashed var(--line); }
+  .ligne.moins b { color: var(--rose); }
+  .ligne.total { border-top: 1px solid rgba(242,244,252,.28); } .ligne.total b { color: var(--or2); }
+  .tva { background: rgba(61,220,151,.12); border-left-color: var(--vert); } .tva.alerte2 { background: rgba(255,77,92,.13); border-left-color: var(--rose); }
+  .fisc { border-top-color: var(--line); } .fisc summary { color: var(--or2); } .fisc summary::before, .savoir summary::after { color: var(--or2); }
+  .option input, .mineur input { accent-color: var(--or2); }
+  .demo, .vers-benev { background: rgba(255,184,107,.1); border-color: rgba(255,184,107,.55); color: var(--fg); } .demo strong, .etu-plus b { color: var(--or2); }
+  .lien-voies { color: var(--or2); }
+  .savoir details { border-radius: 16px; box-shadow: none; } .savoir .contenu { color: var(--fg); }
+  .etu-note { background: rgba(255,184,107,.1); border-left-color: var(--or2); color: var(--fg); }
+  .rythmes button { background: var(--card2); border-color: var(--line); color: var(--fg); } .rythmes button[aria-pressed="true"] { background: var(--grad); color: #060916; border-color: transparent; }
+  .bloc li span, .gros-btn .ic { background: var(--card2); border: 1px solid var(--line); }
+  .citation, .motiv { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.5rem; transform: none; }
+
+  /* Choix de départ et boutons */
+  .gros-btn { color: var(--fg); animation: none; }
+  .gros-btn:nth-of-type(n) { box-shadow: 0 14px 34px -22px #000; }
+  .gros-btn:hover { border-color: var(--or2); }
+  .gros-btn:active { transform: scale(.985); box-shadow: 0 14px 34px -22px #000; }
+  .gros-btn .fl, .bb-cta { font-family: var(--sans); font-weight: 800; font-size: .85rem; color: #060916; background: var(--grad); border: 0; border-radius: 999px; padding: .5rem .85rem; }
+  .gros-btn.conseil { outline: 3px solid var(--ac, var(--or2)); outline-offset: 3px; }
+  .pour-toi { background: var(--ac, var(--or2)); color: #060916; transform: none; border-radius: 999px; font-size: .62rem; padding: .15rem .6rem; }
+  .depart .q { font-family: var(--serif); font-weight: 700; font-size: 1.5rem; }
+  .depart .chrono { background: transparent; border: 1px solid rgba(255,184,107,.5); color: var(--or2); transform: none; border-radius: 999px; font-size: .7rem; letter-spacing: .14em; }
+  .depart .rassure { color: var(--mut); }
+  .accroche { font-family: var(--serif); font-style: italic; font-weight: 700; font-size: 1.3rem; transform: none; clip-path: none; border-radius: 999px; padding: .4rem 1.1rem; color: #060916; }
+  .pass-btn, .pass-mini { background: rgba(255,184,107,.1); border: 1.5px dashed rgba(255,184,107,.7); color: var(--fg); box-shadow: none; border-radius: 18px; }
+  .pass-btn small { color: var(--mut); }
+  .pass-btn[aria-pressed="true"] { background: rgba(61,220,151,.16); border: 1.5px solid var(--vert); color: var(--fg); box-shadow: none; } .pass-btn[aria-pressed="true"] small { color: #CFF7E3; }
+  .pass-banniere { background: var(--vert); color: #04210F; font-size: .72rem; border-radius: 999px; }
+  .pass-banniere button { color: #04210F; border-color: rgba(4,33,15,.5); }
+  .btn-resultat { font-family: var(--sans); font-weight: 800; font-size: 1rem; border-radius: 999px; }
+  .cta { font-family: var(--sans); font-weight: 800; font-size: 1.1rem; letter-spacing: 0; color: #060916; background: var(--grad); border: 0; border-radius: 999px; box-shadow: 0 14px 30px -14px rgba(255,138,91,.7); padding: 1rem 1.2rem; }
+  .cta:active { transform: scale(.98); box-shadow: 0 8px 20px -12px rgba(255,138,91,.7); }
+  .cta .play { border-left-color: #060916; }
+  .cta-sous { color: var(--mut); }
+  .barre-bas { background: rgba(6,9,22,.92); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-top: 1px solid rgba(255,184,107,.4); box-shadow: 0 -10px 30px rgba(0,0,0,.5); }
+  .bb-medal { border: 2px solid var(--bg); }
+  .bb-txt small { color: var(--mut); } .bb-txt em { color: var(--or2); font-size: .7rem; }
+  .bb-txt b { font-size: 1.7rem; }
+  .retour { color: var(--fg); border-color: rgba(242,244,252,.35); }
+  /* chiffres bien lisibles dans Cormorant (le « 1 » ne doit pas ressembler à un « I ») */
+  .curseur output, .montant, .details b, .heure-chiffre, .combo b, .bb-txt b, .niveau-txt strong, .num, .cran-num, h1, h2 { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+  .combos-titre, .mineur, .etu .mineur, .medal-nom.on { color: var(--fg); }
+</style>
+</head>
+<body>
+<div class="depart" id="depart" role="dialog" aria-modal="true" aria-label="Commencer le simulateur">
+  <div class="depart-in">
+    <a class="site-wordmark" href="index.html" aria-label="Form’Com — Accueil">FORM’<b>COM</b></a>
+    <p class="accroche" id="accroche" hidden></p>
+    <h2>Calcule ton niveau<span>LEVEL UP !</span></h2>
+    <span class="chrono">⏱ 1 MINUTE CHRONO</span>
+    <div class="pass-zone">
+      <button class="pass-btn" type="button" data-pass aria-pressed="false"><span class="pass-ic" aria-hidden="true">🎓</span><span><b data-pass-titre>TU ES ÉTUDIANT ?</b><small data-pass-sous>Touche ici pour activer ton PASS ÉTUDIANT</small></span></button>
+      <label class="mineur" data-mineur-zone hidden><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
+    </div>
+    <p class="q">Maintenant, touche ton objectif :</p>
+    <div class="choix">
+    <button class="gros-btn" type="button" data-depart="projet"><span class="ic" aria-hidden="true">🎯</span><span><b>PORTEUR DE PROJET</b><small>L'association règle les factures de ton projet</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="revenu"><span class="ic" aria-hidden="true">💶</span><span><b>GAGNER DE L'ARGENT</b><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="benevole"><span class="ic" aria-hidden="true">🤝</span><span><b>DEVENIR BÉNÉVOLE</b><small>Aider l'association, pour la cause</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    </div>
+    <p class="rassure">Gratuit · Sans inscription · Rien n'est enregistré</p>
+  </div>
+</div>
+<div class="benev" id="benev" role="dialog" aria-modal="true" aria-label="Devenir bénévole" hidden>
+  <div class="benev-tete"><div class="benev-tete-in">
+    <button class="retour" type="button" id="benev-retour">← Retour</button>
+    <h2>Rejoins l'aventure<span>en bénévole</span></h2>
+    <p>Tu as envie de t'engager pour une cause qui fait avancer les jeunes, à ton rythme ? Ta place est ici.</p>
+  </div></div>
+  <div class="benev-corps">
+    <section class="bloc bleu">
+      <h3>CE QUE TU FAIS</h3>
+      <p>Tu fais découvrir nos parfums de qualité lors d'actions solidaires. <b>Quand tu veux, autant que tu veux</b> : aucun objectif, aucune obligation. Tu es libre de venir, de t'absenter ou d'arrêter à tout moment.</p>
+    </section>
+    <section class="bloc vert">
+      <h3>CE QUE TU Y GAGNES</h3>
+      <ul>
+        <li><span aria-hidden="true">💬</span>Des compétences qui comptent : communiquer, convaincre, développer ton estime de soi.</li>
+        <li><span aria-hidden="true">📄</span>Une expérience à valoriser sur ton CV, et une attestation de bénévolat.</li>
+        <li><span aria-hidden="true">🤝</span>Des rencontres et un réseau, avec une équipe qui partage les mêmes valeurs.</li>
+        <li><span aria-hidden="true">✨</span>La fierté de faire avancer des projets solidaires.</li>
+      </ul>
+    </section>
+    <p class="citation">Chaque parfum diffusé aide un jeune à financer son projet.</p>
+    <section class="bloc rouge">
+      <h3>EN TOUTE TRANSPARENCE</h3>
+      <p>Le bénévolat n'est pas rémunéré : ni salaire, ni prime, ni cadeau lié à tes résultats. Tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs. Tu suis une courte formation offerte, et tu respectes la charte de l'association : honnêteté, respect, aucune pression à l'achat. Entre 16 et 17 ans, l'accord écrit d'un parent est nécessaire.</p>
+    </section>
+    <a class="cta" id="benev-cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME PROPOSE</a>
+    <p class="cta-sous">On te répond sur WhatsApp pour faire connaissance.</p>
+    <button class="lien-voies" type="button" id="benev-voies">Tu cherches plutôt à financer ton projet ou à gagner de l'argent ? Calcule ton niveau →</button>
+    <p class="pied-benev">LEVEL UP by Form'Com · Association & organisme de formation<br><a href="index.html">Découvrir le site Form’Com</a></p>
+  </div>
+</div>
+<div class="page">
+  <header class="tete">
+    <div class="tete-in"><a class="sim-back" href="index.html">← Retour au site Form’Com</a>
+      <div class="marque">
+        <a class="site-wordmark" href="index.html" aria-label="Form’Com — Accueil">FORM’<b>COM</b></a>
+        <div class="sim-program-label"><small>PROGRAMME LEVEL UP</small></div>
+      </div>
+      <span class="tampon">SIMULATEUR</span>
+      <h1>Calcule ton niveau<span>LEVEL UP !</span></h1>
+      <p class="sous">Règle ton rythme et découvre ce que tu peux atteindre.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tuto" aria-label="Mode d'emploi">
+      <p class="tuto-titre">TUTO : 3 ÉTAPES, 1 MINUTE</p>
+      <ol>
+        <li id="tuto1"><span aria-hidden="true">👆</span>Touche<br>ta voie</li>
+        <li id="tuto2"><span aria-hidden="true">↔</span>Fais glisser<br>le curseur</li>
+        <li id="tuto3"><span aria-hidden="true">🏆</span>Découvre ton<br>niveau et tes gains</li>
+      </ol>
+    </section>
+    <span class="pinceau rouge">1. CHOISIS TA VOIE</span>
+    <div class="voies attente" id="voies" role="group" aria-label="Ta voie">
+      <button class="voie" type="button" data-voie="projet" aria-pressed="false">
+        <span class="num">VOIE 1</span><strong>Porteur de projet</strong><small>L'association règle les factures de ton projet</small><span class="touche">👆 Touche ici</span>
+      </button>
+      <button class="voie" type="button" data-voie="revenu" aria-pressed="false">
+        <span class="num">VOIE 2</span><strong>Gagner de l'argent</strong><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small><span class="touche">👆 Touche ici</span>
+      </button>
+    </div>
+    <button class="pass-mini" type="button" data-pass id="pass-mini">🎓 Tu es étudiant ? Active ton PASS ÉTUDIANT →</button>
+    <p class="attente-msg" id="attente-msg">Choisis une voie pour commencer ↑</p>
+    <section class="etu" id="etu" hidden>
+      <div class="pass-banniere"><span>🎓 PASS ÉTUDIANT ACTIVÉ</span><button type="button" id="pass-off">Désactiver</button></div>
+      <label class="mineur"><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
+      <h3>TON RYTHME D'ÉTUDIANT</h3>
+      <div class="rythmes" role="group" aria-label="Rythme étudiant">
+        <button type="button" data-j="8" aria-pressed="true">Week-ends · 8 j</button>
+        <button type="button" data-j="12" aria-pressed="false">Week-ends + soirs · 12 j</button>
+        <button type="button" data-j="20" aria-pressed="false">Vacances · 20 j</button>
+      </div>
+      <h3>TES AVANTAGES PASS ÉTUDIANT</h3>
+      <ul class="etu-plus">
+        <li><b>Parrainage :</b> fais découvrir l’aventure à quelqu’un. Une prime pourra être débloquée sous conditions, expliquées lors de notre rencontre.</li>
+        <li><b>Stage avec ton établissement</b>  : en accord avec ton établissement, un stage peut être réalisé chez Form’Com avec une attestation de fin de stage. Une attestation de fin de formation est délivrée pour la formation suivie.</li>
+        <li><b>Planning adapté</b> à tes cours et à tes partiels : tu choisis tes jours.</li>
+        <li><b>Dès 16 ans</b>, avec l'autorisation écrite d'un parent.</li>
+      </ul>
+      <p class="etu-note" id="etu-note"></p>
+    </section>
+
+    <span class="pinceau bleu" id="etape2">2. RÈGLE TON RYTHME</span>
+    <div class="curseur">
+      <p class="astuce" id="astuce"><span class="main" aria-hidden="true">👉</span>Fais glisser le curseur : ton niveau et ton résultat changent selon le nombre de parfums que tu diffuses chaque jour.</p>
+      <label for="parfums">Parfums par jour <output id="o-parfums">10</output></label>
+      <div class="jauge" id="jauge">
+        <div class="piste" aria-hidden="true"><div class="zones"></div><div class="rempli" id="rempli"></div></div>
+        <div class="objectif" id="objectif" aria-hidden="true"></div>
+        <input type="range" id="parfums" min="0" max="80" step="1" value="10" aria-label="Parfums par jour">
+      </div><div class="adjust-row"><button type="button" data-adjust="parfums" data-delta="-1" aria-label="Diminuer les parfums">−</button><p class="aide" style="flex:1">Ajuste précisément avec − et +</p><button type="button" data-adjust="parfums" data-delta="1" aria-label="Augmenter les parfums">+</button></div>
+    </div>
+    <div class="preuve">
+      <span class="preuve-tag">EXPÉRIENCE DE TERRAIN</span>
+      <p><b>Seifeddine</b> : 7 parfums le premier jour, une trentaine une semaine plus tard.</p>
+    </div>
+    <div class="curseur">
+      <label for="jours">Jours par mois <output id="o-jours">20</output></label>
+      <div class="adjust-row"><button type="button" data-adjust="jours" data-delta="-1" aria-label="Diminuer jours">−</button><input type="range" id="jours" min="1" max="25" step="1" value="20"><button type="button" data-adjust="jours" data-delta="1" aria-label="Augmenter jours">+</button></div><div class="original-scale" aria-hidden="true"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>
+      <p class="aide">Fais glisser le curseur selon tes disponibilités.</p>
+    </div>
+    <div class="curseur" id="c-mois">
+      <label for="mois">Mois travaillés dans l'année <output id="o-mois">10</output></label>
+      <div class="adjust-row"><button type="button" data-adjust="mois" data-delta="-1" aria-label="Diminuer mois">−</button><input type="range" id="mois" min="1" max="12" step="1" value="10"><button type="button" data-adjust="mois" data-delta="1" aria-label="Augmenter mois">+</button></div><div class="original-scale" aria-hidden="true"><span>1</span><span>3</span><span>6</span><span>9</span><span>12</span></div>
+      <p class="aide">Fais glisser le curseur pour choisir ta durée d’activité. Dix mois sont proposés au départ, tu peux choisir de un à douze.</p>
+    </div>
+    <button class="btn-resultat" type="button" id="voir-resultat">VOIR MON RÉSULTAT ↓</button>
+
+    <span class="pinceau rouge">3. TON RÉSULTAT</span>
+    <section class="niveau" aria-live="polite">
+      <div class="medaille" id="medaille" aria-hidden="true">▶</div>
+      <div class="niveau-txt" style="flex:1">
+        <small>LE NIVEAU QUE TU EXPLORES</small>
+        <strong id="niveau">LEVEL UP</strong>
+        <div class="barre"><i id="barre"></i></div>
+        <p class="suivant" id="suivant"></p>
+      </div>
+    </section>
+
+    <section class="resultat" aria-live="polite">
+      <p class="lib" id="lib">Pour ton projet, chaque mois</p>
+      <p class="montant"><span id="montant">0</span> <em>€*</em></p>
+      <div class="details">
+        <div><span id="lib-an">Sur 10 mois</span><b id="an">0 €</b></div>
+        <div><span id="lib-3">Parfums par mois</span><b id="d3">0</b></div>
+      </div>
+      <p class="alerte" id="alerte" hidden></p>
+      <p class="precision" id="precision"></p>
+    </section>
+    <section class="detail" id="detail" hidden aria-label="Du brut au net"><h2>DU BRUT AU NET</h2>
+      <p class="aide">Estimation après les prélèvements sélectionnés, avant frais professionnels et CFE. Hypothèse : prestations de services commerciales BIC, à confirmer selon ton activité déclarée.</p>
+      <div class="ligne"><span>Tes commissions brutes<small>chiffre d’affaires hors taxes facturé à Form’Com</small></span><b id="d-ca"></b></div>
+      <div class="ligne moins"><span id="t-cotis">Cotisations sociales<small>retraite, santé, protection sociale</small></span><b id="d-cotis"></b></div>
+      <div class="ligne moins"><span>Formation professionnelle (0,1 %)</span><b id="d-cfp"></b></div>
+      <div class="ligne moins" id="l-vl" hidden><span>Impôt, versement libératoire (1,7 %)</span><b id="d-vl"></b></div>
+      <div class="ligne total"><span>Ton revenu après ces prélèvements<small>avant frais professionnels et CFE</small></span><b id="d-net"></b></div>
+      <div class="ligne"><span>CFE (taxe locale)<small>à prévoir à partir de la 2e année</small></span><b>non comptée</b></div>
+      <p class="an-ca" id="d-an"></p><p class="rounding-note">Montants arrondis à l’euro pour faciliter la lecture. De petits écarts d’arrondi peuvent apparaître.</p>
+      <div class="vat-calculation"><h3>La TVA, si elle s’applique</h3><label class="option"><input type="checkbox" id="tva-applicable"><span>Je facture la TVA<small>À sélectionner uniquement si elle s’applique à mon activité.</small></span></label><div class="ligne"><span>TVA calculée au taux de 20 %<small>ajoutée aux commissions HT ; à reverser, hors déductions éventuelles</small></span><b id="vat-amount">0 €</b></div><div class="ligne"><span>Total facturé avec cette TVA</span><b id="invoice-total">0 €</b></div><p class="aide">La TVA est distincte de ton revenu et n’est pas ajoutée au net affiché. Le statut de TVA dépend de ta situation réelle, pas uniquement de cette projection.</p></div><div class="tva" id="d-tva"></div>
+      <div class="acre-comparison"><h3>Pour un même mois d’activité</h3><div class="acre-cards"><div><span>Sans ACRE</span><b id="without-acre">0 €</b><small>Après les prélèvements sélectionnés</small></div><div><span>Avec ACRE, si éligible</span><b id="with-acre">0 €</b><small>Pour un mois couvert par la réduction</small></div></div><p class="aide">L’ACRE réduit temporairement les cotisations sociales, pas la TVA. La comparaison suppose une réduction de 25 %, applicable aux créations à compter du 1er juillet 2026 sous conditions. Le résultat principal utilise ton option choisie ci-dessous.</p></div><details class="fisc"><summary>Ajuster mes options fiscales : ACRE et impôt</summary>
+      <div class="options">
+        <label class="option"><input type="checkbox" id="acre"><span>J’ai droit à l’ACRE<small>Réduction de 25 %, hypothèse des créations à compter du 1er juillet 2026, sous conditions.</small></span></label>
+        <label class="option" id="acre-duration" hidden><span>Mois de réduction restants sur cette période <input type="number" id="acre-months" min="0" max="12" value="3" step="1" aria-label="Mois ACRE restants"></span></label><label class="option"><input type="checkbox" id="vl"><span>Je choisis le versement libératoire de l'impôt<small>1,7 % du chiffre d'affaires, et l'impôt sur ce revenu est réglé. Sous conditions de revenus du foyer.</small></span></label>
+      </div></details>
+    </section>
+
+
+    <span class="pinceau bleu">EST-CE QUE C'EST FAISABLE ?</span>
+    <section class="faisable">
+      <div class="combos">
+        <p class="combos-titre" id="combos-titre"></p><p class="faisability-context">Trois façons possibles d’atteindre ce volume : choisis l’exemple qui t’aide à te projeter.</p>
+        <div class="combo-liste">
+          <div class="combo"><span class="x">COLLECTION ×5</span><b id="c5"></b><small>clients qui prennent<br>une collection</small></div>
+          <div class="combo"><span class="x">GRANDE ACTION ×3</span><b id="c3"></b><small>clients qui prennent<br>une grande action</small></div>
+          <div class="combo"><span class="x">MOYENNE ACTION ×2</span><b id="c2"></b><small>clients qui prennent<br>une moyenne action</small></div>
+        </div>
+        <div class="heure">
+          <div class="heure-tete"><span>ET À L'HEURE ?</span>
+            <div class="heures" role="group" aria-label="Heures sur le terrain par jour">
+              <button type="button" data-h="4" aria-pressed="false">4 h</button><button type="button" data-h="6" aria-pressed="true">6 h</button><button type="button" data-h="8" aria-pressed="false">8 h</button>
+            </div></div>
+          <p class="heure-chiffre"><span id="ph"></span> <small>parfums par heure</small></p>
+          <p class="heure-txt" id="heure-txt"></p>
+        </div>
+      </div>
+    </section>
+    <div class="demo" id="demo"></div>
+
+    <p class="motiv" id="motiv"></p>
+
+    <span class="pinceau bleu">TOUT CE QU'IL FAUT SAVOIR</span>
+    <section class="savoir">
+      <details><summary>Ce qui t'est fourni</summary><div class="contenu">Tu n'avances rien. On te fournit :
+        <ul><li>ta formation, financée par l'association ;</li><li>le kit et le stock de parfums ;</li><li>les moyens de paiement et le logiciel d'encaissement ;</li><li>ta tenue réglementaire (veste).</li></ul></div></details>
+      <details><summary>Quand et comment tu es payé</summary><div class="contenu"><b>Porteur de projet :</b> chaque mois, l'association règle les factures liées à ton projet, dans la limite du montant atteint.<br><b>Gagner de l'argent :</b> en auto-entrepreneur, tu factures chaque mois tes commissions à Form'Com, qui te règle par virement.<br><b>Pass Étudiant :</b> tu choisis la voie qui te convient. Avant 18 ans, c'est la voie Porteur de projet.</div></details>
+      <details><summary>Où va l'argent d'un parfum ?</summary><div class="contenu">C'est une levée de fonds solidaire : une partie finance ton projet (ou ta rémunération), et une partie finance les projets solidaires de l'association. Ton client repart avec un produit qu'il apprécie : tout le monde y gagne.</div></details>
+      <details><summary>Primes, challenges et voyages</summary><div class="contenu">Ton engagement mérite d’être reconnu. Selon les challenges, les récompenses pourront prendre différentes formes : cadeaux, voyages ou primes, en fonction de ton parcours et des règles du concours. Les résultats comptent, mais aussi l’assiduité, l’enthousiasme et la progression. Ces récompenses ne sont pas incluses dans le calcul.</div></details>
+      <details><summary>Ce qu'on attend de toi</summary><div class="contenu">
+        <ul><li>Respecter la charte éthique de Form'Com : honnêteté envers les clients, respect, aucune pression à l'achat.</li>
+        <li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie Porteur de projet uniquement).</li></ul></div></details>
+      <details><summary>Comment c'est calculé ?</summary><div class="contenu" id="t-calcul"></div></details>
+      <details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Je me lance », dans le message WhatsApp que tu envoies toi-même.</div></details>
+    </section>
+
+    <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME LANCE</a>
+    <p class="cta-sous">Premières ventes prises en compte · Formation financée · Découverte sans engagement</p>
+
+    <button class="vers-benev" type="button" id="vers-benev">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
+    <p class="note">* Montants indicatifs, non garantis. Tout le fonctionnement t'est expliqué en entretien.</p>
+    <p class="pied">LEVEL UP by Form'Com · Association & organisme de formation<br><a href="index.html">Découvrir le site Form’Com</a></p>
+  </main>
+</div>
+<div class="barre-bas" role="status" aria-live="polite">
+  <div class="barre-bas-in">
+    <div class="bb-medal" id="bb-medal" aria-hidden="true">★</div>
+    <div class="bb-txt"><small id="bb-lib">Pour ton projet, jusqu'à</small><b id="bb-montant">0 €</b></div>
+    <a class="bb-cta" id="bb-cta" href="#" target="_blank" rel="noopener">▶ JE ME LANCE</a>
+  </div>
+</div>
+
+<script src="assets/simulator-core.js"></script><script>
+  /* ===== CONFIG ===== */
+  const PAR_PARFUM = 4;                 // montant par parfum diffusé (non affiché)
+  const PRIX_PUBLIC = 10;               // prix de vente public d'un parfum (impact des bénévoles)
+  const TAUX = { cotis: 0.212, cotisAcre: 0.159, cfp: 0.001, vl: 0.017, tva: 0.20 };   // taux 2026, prestations de services commerciales
+  const SEUIL = { tva: 37500, tvaMajore: 41250, micro: 83600 };                       // seuils annuels 2026
+  const MOIS = 10;                      // horizon « sur X mois »
+  const WHATSAPP = "33667407214";       // numéro, format international sans +
+  // Sources des QR codes (?src=...) : texte d'accueil, voie mise en avant, couleur, Pass Étudiant activé d'office
+  const SOURCES = {
+    "affiche-vacances": { lieu: "l'affiche Vacances", voie: "revenu", couleur: "#F06A00", accroche: "Tes prochaines vacances, tu te les payes !" },
+    "affiche-argent":   { lieu: "l'affiche Argent",   voie: "revenu", couleur: "#00A383", accroche: "Ton propre argent, à ton rythme !" },
+    "affiche-travail":  { lieu: "l'affiche Travail",  voie: "revenu", couleur: "#D81E2C", accroche: "Fini le lance-pierres : tu choisis tes horaires !" },
+    "affiche-projet":   { lieu: "l'affiche Projet",   voie: "projet", couleur: "#8A3FF0", accroche: "Et si tu finançais ton projet toi-même ?" },
+    "residence":        { lieu: "une résidence étudiante", pass: true, couleur: "#2BB673", accroche: "Étudiant ? Ton Pass est déjà activé !" },
+    "stand":   { lieu: "le stand" },
+    "livret":  { lieu: "le livret projet" },
+    "papier":  { lieu: "le simulateur papier" },
+    "boitage": { lieu: "un flyer dans ma boîte aux lettres" },
+  };
+  /* ================== */
+
+  const NIVEAUX = [
+    { min: 0,  nom: "MODE DÉMO",   couleur: "#1F4FD1", icone: "▶",  txt: "Tout le monde commence ici. Fais glisser le curseur pour explorer ton rythme !" },
+    { min: 10, nom: "1re MISSION", couleur: "#C77B3E", icone: "★",  txt: "Tu es lancé ! Chaque journée te rapproche du level up." },
+    { min: 30, nom: "LEVEL UP",    couleur: "#B9C2CF", icone: "⚡", txt: "Un rythme à explorer. L’équipe t’accompagne pour progresser." },
+    { min: 50, nom: "LÉGENDE",     couleur: "#E7B23A", icone: "👑", txt: "Niveau légende : 10 clients qui prennent une collection, et c'est fait. Tu vas te surprendre toi-même." },
+  ];
+  const $ = id => document.getElementById(id);
+  const pos = (v, r) => `calc(15px + (100% - 30px) * ${(v - r.min) / (r.max - r.min)})`;
+  function construirePaliers() {
+    const r = $("parfums"), zone = $("jauge"), piste = zone.querySelector(".piste");
+    for (let v = +r.min; v <= +r.max; v += 5) {
+      const k = (v - r.min) / (r.max - r.min);
+      if (v > +r.min && v < +r.max) { const t = document.createElement("i"); t.className = "cran"; t.style.left = (k * 100) + "%"; piste.appendChild(t); }
+      const n = document.createElement("span"); n.className = "cran-num" + (NIVEAUX.some(x => x.min === v) ? " badge" : ""); n.dataset.v = v;
+      n.style.left = pos(v, r); n.textContent = v; zone.appendChild(n);
+    }
+    NIVEAUX.slice(1).forEach(n => {
+      const m = document.createElement("div"); m.className = "medal"; m.dataset.min = n.min; m.style.left = pos(n.min, r);
+      m.style.setProperty("--c", n.couleur); m.textContent = "🔒"; m.dataset.icone = n.icone;
+      const l = document.createElement("div"); l.className = "medal-nom"; l.dataset.min = n.min; l.style.left = pos(n.min, r); l.textContent = n.nom;
+      zone.insertBefore(m, r); zone.appendChild(l);
+    });
+  }
+  let niveauPrec = null;
+  function feteDeblocage(i) {
+    if (navigator.vibrate) navigator.vibrate(i === NIVEAUX.length - 1 ? [40, 60, 40] : 35);
+    if (i === NIVEAUX.length - 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const cols = ["#E3242B", "#1F4FD1", "#E7B23A", "#0E2470"];
+      for (let k = 0; k < 40; k++) {
+        const c = document.createElement("i"); c.className = "confetti";
+        c.style.left = (40 + Math.random() * 20) + "vw"; c.style.top = "30vh"; c.style.background = cols[k % 4];
+        c.style.setProperty("--dx", (Math.random() * 80 - 40) + "vw"); c.style.setProperty("--r", (Math.random() * 720 - 360) + "deg");
+        c.style.animationDelay = (Math.random() * .2) + "s"; document.body.appendChild(c); setTimeout(() => c.remove(), 1800);
+      }
+    }
+  }
+  const eur = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0") + "\u00a0€";
+  const nb = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0");
+  let voie = "projet", choisie = false, affiche = 0, pass = false, mineur = false, etuInit = false;
+  const SRC = (() => { try { return (new URLSearchParams(location.search).get("src") || "").toLowerCase().trim(); } catch (e) { return ""; } })();
+  const SOURCE = SOURCES[SRC] || (SRC ? { lieu: SRC } : null);
+  const vuSur = SOURCE ? ` (Vu sur ${SOURCE.lieu}.)` : "";
+
+  function animer(cible) {
+    const debut = affiche, t0 = performance.now(), duree = 350;
+    const pas = t => {
+      const k = Math.min(1, (t - t0) / duree), v = debut + (cible - debut) * (1 - Math.pow(1 - k, 3));
+      $("montant").textContent = nb(v);
+      if (k < 1) requestAnimationFrame(pas); else affiche = cible;
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { $("montant").textContent = nb(cible); affiche = cible; return; }
+    requestAnimationFrame(pas);
+  }
+
+  function calcul() {
+    const p = +$("parfums").value, j = +$("jours").value;
+    $("o-parfums").textContent = p; $("o-jours").textContent = j;
+    ["parfums", "jours"].forEach(id => { const el = $(id); el.style.setProperty("--p", ((el.value - el.min) / (el.max - el.min) * 100) + "%"); });
+
+    // niveau
+    let i = NIVEAUX.length - 1; while (p < NIVEAUX[i].min) i--;
+    const n = NIVEAUX[i], next = NIVEAUX[i + 1];
+    $("niveau").textContent = n.nom;
+    $("medaille").textContent = n.icone; $("medaille").style.background = n.couleur;
+    $("barre").style.width = (next ? (p - n.min) / (next.min - n.min) * 100 : 100) + "%";
+    $("suivant").textContent = next ? `Encore ${next.min - p} parfum${next.min - p > 1 ? "s" : ""} par jour pour passer ${next.nom} !` : "Niveau maximum atteint !";
+    const r = $("parfums"), k = (p - r.min) / (r.max - r.min);
+    $("rempli").style.setProperty("--k", (k * 100) + "%");
+    document.querySelectorAll(".medal").forEach(m => {
+      const on = p >= +m.dataset.min, etait = m.classList.contains("on");
+      if (on !== etait) {
+        m.classList.toggle("on", on); m.textContent = on ? m.dataset.icone : "🔒";
+        if (on && niveauPrec !== null) { m.classList.remove("pop"); void m.offsetWidth; m.classList.add("pop"); }
+      }
+    });
+    document.querySelectorAll(".medal-nom").forEach(l => l.classList.toggle("on", p >= +l.dataset.min));
+    document.querySelectorAll(".cran-num").forEach(n => n.classList.toggle("on", p >= +n.dataset.v));
+    const obj = $("objectif");
+    $("combos-titre").innerHTML = `<b>${p} parfums par jour</b>, ce n'est pas ${p} ventes. C'est par exemple :`;
+    $("c2").textContent = Math.ceil(p / 2); $("c3").textContent = Math.ceil(p / 3); $("c5").textContent = Math.ceil(p / 5);
+    const parH = p / heures, minCollec = p > 0 ? Math.max(1, Math.round(300 * heures / p)) : 0;
+    const fmtMin = m => m === 60 ? "toutes les heures" : m % 60 === 0 ? `toutes les ${m / 60} heures` : m > 60 ? `toutes les ${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")}` : `toutes les ${m} minutes`;
+    const duos = p > 0 ? Math.max(1, Math.round(parH / 2)) : 0;
+    $("ph").textContent = parH.toLocaleString("fr-FR", { maximumFractionDigits: 1 });
+    $("heure-txt").innerHTML = p === 0 ? "Fais glisser le curseur pour tester un rythme et découvrir des exemples." : `Sur une journée de ${heures} h, c'est <b>un client avec une collection ${fmtMin(minCollec)}</b>, ou environ ${duos} moyenne${duos > 1 ? "s" : ""} action${duos > 1 ? "s" : ""} par heure.`;
+    if (next) { obj.hidden = false; obj.style.left = pos(next.min, r); obj.textContent = `Plus que ${next.min - p} !`; } else obj.hidden = true;
+    if (niveauPrec !== null && i > niveauPrec) feteDeblocage(i);
+    niveauPrec = i;
+    $("motiv").textContent = n.txt;
+
+    // montants
+    const revenu = voie === "revenu", benevole = voie === "benevole";
+    const etudiant = pass && !revenu && !benevole;
+    $("etu").hidden = !pass; $("pass-mini").hidden = pass;
+    $("etu-note").innerHTML = mineur
+      ? "<b>Entre 16 et 17 ans :</b> c'est la voie Porteur de projet, avec l'accord écrit d'un parent. <b>Étudiant hors Union européenne ?</b> Ton titre de séjour encadre ton activité : parlons-en avant de commencer."
+      : revenu
+      ? "<b>Auto-entreprise :</b> à partir de 18 ans. <b>Étudiant hors Union européenne ?</b> Ton titre de séjour ne permet pas l'auto-entreprise : choisis la voie Porteur de projet et parlons-en avant de commencer."
+      : "<b>Étudiant hors Union européenne ?</b> Ton titre de séjour encadre ton activité : parlons-en avant de commencer.";
+    const mois = +$("mois").value;
+    $("o-mois").textContent = $("mois").value; $("mois").style.setProperty("--p", (($("mois").value - 1) / 11 * 100) + "%");
+    $("c-mois").hidden = false; $("detail").hidden = !revenu;
+    const estimation = FormComSimulator.calculate({perDay:p,days:j,months:mois,route:revenu?"income":"project",acreMonths:$("acre").checked?Math.max(0,Math.min(mois,+$("acre-months").value||0)):0,liberatoire:$("vl").checked});
+    const brut = estimation.gross;
+    $("acre-duration").hidden = !$("acre").checked;
+    $("acre-months").max = mois;
+    const tc = estimation.activeAcre > 0 ? TAUX.cotisAcre : TAUX.cotis;
+    const cotis = revenu ? brut * tc : 0, cfp = revenu ? brut * TAUX.cfp : 0, vl = revenu && $("vl").checked ? brut * TAUX.vl : 0;
+    const net = benevole ? estimation.receipts : brut - cotis - cfp - vl;
+    $("lib").textContent = revenu ? "Ton revenu estimé après prélèvements" : benevole ? "Fonds levés pour l'association, chaque mois" : etudiant ? "Ta bourse estimée pour tes frais" : "Ta bourse estimée pour ton projet";
+    $("precision").hidden = false;
+    $("precision").textContent = revenu ? "Estimation après les prélèvements sélectionnés, avant frais professionnels, CFE et impôt non sélectionné. Hypothèse BIC commercial à confirmer. " + (estimation.activeAcre > 0 ? "Le mois affiché utilise le taux ACRE choisi ; le total tient compte de sa durée restante." : "") : benevole
+      ? "Montant des ventes au profit de l'association, avant frais (achat des parfums, fonctionnement). En bénévole, tu ne perçois aucune rémunération : seuls tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs."
+      : etudiant
+      ? `Jusqu'à ${eur(net)} par mois de prise en charge de tes frais. Ce n'est pas un salaire : l'association règle directement tes factures (frais d'études, permis, matériel, formation…).`
+      : `Jusqu'à ${eur(net)} par mois de prise en charge de ton projet professionnel. Ce n'est pas un salaire : l'association règle directement les factures liées à ton projet (formation, matériel, permis…).`;
+    $("demo").innerHTML = "<strong>Dès tes premières ventes, tu avances :</strong> tu génères des commissions en indépendant ou tu constitues ta bourse comme porteur de projet, y compris pendant la semaine découverte.";
+    $("t-calcul").innerHTML = `Les offres remettent 1 parfum à 10 €, 2 à 20 €, 3 à 30 €, 5 à 40 € ou 8 à 60 €.<br>Coût : 2 € par parfum remis, cadeaux inclus. Part du participant = 50 % de la différence entre ventes et coût des parfums.<br>Le calcul utilise un mélange mensuel illustratif : surtout des ventes de 1 ou 2 parfums, quelques trios et collections. Ce mélange est une hypothèse ajustée au rythme choisi, pas une statistique.<br>Dans ton scénario : ${estimation.sales} ventes pour ${estimation.units} parfums remis sur le mois. Part du participant avant prélèvements : ${eur(brut)}.<br>` + (revenu ? "Les prélèvements sélectionnés sont ensuite déduits. Le taux social retenu suppose des prestations de services commerciales BIC ; les frais professionnels et la CFE ne sont pas calculés." : "L’association règle les factures à hauteur de la bourse constituée : ce n’est pas un salaire.");
+    if (glisse) { $("montant").textContent = nb(net); affiche = net; } else animer(net);
+    $("lib-an").textContent = `Sur ${mois} mois, à ce rythme`; $("an").textContent = eur(revenu ? estimation.period : net * mois);
+    if (revenu) { $("lib-3").textContent = "Chiffre d'affaires / mois"; $("d3").textContent = eur(brut); }
+    else { $("lib-3").textContent = "Parfums par mois"; $("d3").textContent = nb(p * j); }
+    $("alerte").hidden = true;
+
+    if (revenu) {
+      const moins = n => "\u2212\u00a0" + eur(n);
+      $("d-ca").textContent = eur(brut);
+      $("t-cotis").firstChild.textContent = `Cotisations sociales (${(tc * 100).toLocaleString("fr-FR")} %)`;
+      $("d-cotis").textContent = moins(cotis); $("d-cfp").textContent = moins(cfp);
+      $("l-vl").hidden = !$("vl").checked; $("d-vl").textContent = moins(vl);
+      $("d-net").textContent = eur(net);
+      const vat = $("tva-applicable").checked ? brut * TAUX.tva : 0;
+      $("vat-amount").textContent = eur(vat);
+      $("invoice-total").textContent = eur(brut + vat);
+      $("without-acre").textContent = eur(estimation.ordinary);
+      $("with-acre").textContent = eur(estimation.reduced);
+      const caAn = brut * mois;
+      $("d-an").textContent = `Chiffre d'affaires sur ${mois} mois : ${eur(caAn)} · Charges sur ${mois} mois : ${eur((brut * mois - estimation.period))}` + (!$("vl").checked ? " · Impôt sur le revenu selon ton foyer, non compté ici." : "");
+      const box = $("d-tva");
+      box.classList.toggle("alerte2",caAn > SEUIL.tva);
+      box.innerHTML = caAn > SEUIL.tva ? "<strong>TVA : vérifie ta situation</strong>Cette projection approche ou dépasse les seuils de certaines prestations. Ton chiffre d’affaires antérieur, la date de création et le dépassement éventuel comptent. Le simulateur ne détermine pas ta TVA." : "<strong>Prélèvements : une hypothèse de simulation</strong>Le taux social retenu est celui des prestations commerciales BIC. La TVA et tes obligations dépendent de ta situation réelle.";
+
+    }
+
+    // WhatsApp
+    const passTxt = pass ? (mineur ? " Je suis étudiant(e), avec le Pass Étudiant, et j'ai 16-17 ans (avec l'accord d'un parent)." : " Je suis étudiant(e), avec le Pass Étudiant.") : "";
+    const voieTxt = revenu
+      ? "Je veux gagner de l'argent en indépendant (auto-entrepreneur, avec une commission par parfum)."
+      : "Je veux financer mon projet avec l'association (elle prend en charge les factures liées à mon projet).";
+    const rythme = ` Rythme testé : ${p} parfums par jour, niveau ${n.nom}, soit environ ${eur(net)} par mois ${revenu ? "pour moi" : "pour mon projet"}, à titre indicatif.`;
+    const fin = revenu ? " Je me lance : quelle est la prochaine étape ?" : " Je me lance : comment on démarre ?";
+    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP. ${voieTxt}${passTxt}${rythme}${vuSur}${fin}`;
+    $("cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    $("bb-cta").href = $("cta").href;
+    $("bb-montant").textContent = eur(net) + "*";
+    $("bb-lib").textContent = !choisie ? "Choisis ta voie en haut ↑" : n.nom + (revenu ? " · ce qu'il te reste / mois" : benevole ? " · fonds levés / mois" : etudiant ? " · pour tes frais / mois" : " · pour ton projet / mois");
+    $("bb-medal").textContent = n.icone; $("bb-medal").style.background = n.couleur;
+  }
+
+  function marquerVoie(v) {
+    voie = v;
+    document.querySelectorAll(".voie").forEach(x => {
+      const on = x.dataset.voie === v; x.setAttribute("aria-pressed", on);
+      x.querySelector(".touche").textContent = x.disabled ? "Dès 18 ans" : on ? "✓ Choisie" : "Touche pour changer";
+    });
+  }
+  document.querySelectorAll(".voie").forEach(b => b.addEventListener("click", () => {
+    if (b.disabled) return;
+    marquerVoie(b.dataset.voie);
+    const premiere = !choisie; choisie = true;
+    $("voies").classList.remove("attente"); $("voies").classList.add("choisi");
+    $("attente-msg").hidden = true; $("tuto1").classList.add("fait");
+    calcul();
+    if (premiere && $("depart").hidden === false) {} else if (premiere && !document.querySelector(".curseur.focus")) $("etape2").scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+  $("parfums").addEventListener("input", () => { $("tuto2").classList.add("fait"); $("tuto3").classList.add("fait"); $("parfums").closest(".curseur").classList.remove("focus"); }, { once: true });
+  const doux = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  // ----- Pass Étudiant -----
+  function majPass() {
+    document.querySelectorAll("[data-pass]").forEach(b => b.setAttribute("aria-pressed", pass));
+    document.querySelectorAll("[data-pass-titre]").forEach(e => e.textContent = pass ? "PASS ÉTUDIANT ACTIVÉ ✓" : "TU ES ÉTUDIANT ?");
+    document.querySelectorAll("[data-pass-sous]").forEach(e => e.textContent = pass ? "Tes avantages s'affichent dans ton calcul" : "Touche ici pour activer ton PASS ÉTUDIANT");
+    document.querySelectorAll("[data-mineur-zone]").forEach(e => e.hidden = !pass);
+    document.querySelectorAll(".mineur-cb").forEach(c => c.checked = mineur);
+    const bloque = pass && mineur;
+    document.querySelectorAll('[data-depart="revenu"], .voie[data-voie="revenu"]').forEach(b => b.disabled = bloque);
+    document.querySelectorAll("[data-sous-revenu]").forEach(e => e.textContent = bloque ? "À partir de 18 ans (auto-entrepreneur)" : "Vacances, permis, voiture… en auto-entrepreneur");
+    if (bloque && voie === "revenu") marquerVoie("projet"); else if (choisie) marquerVoie(voie);
+    else document.querySelectorAll(".voie").forEach(x => x.querySelector(".touche").textContent = x.disabled ? "Dès 18 ans" : "👆 Touche ici");
+    if (pass && !etuInit) { etuInit = true; $("jours").value = 8; majRythmes(); }
+    calcul();
+  }
+  const setPass = on => { pass = on; if (!on) mineur = false; majPass(); };
+  document.querySelectorAll("[data-pass]").forEach(b => b.addEventListener("click", () => {
+    setPass(!pass);
+    if (b.id === "pass-mini" && pass) setTimeout(() => $("etu").scrollIntoView({ behavior: doux(), block: "start" }), 60);
+  }));
+  $("pass-off").addEventListener("click", () => setPass(false));
+  document.querySelectorAll(".mineur-cb").forEach(c => c.addEventListener("change", () => { mineur = c.checked; majPass(); }));
+  const ouvrirBenev = () => { $("depart").hidden = true; $("benev").hidden = false; $("benev").scrollTop = 0; document.body.style.overflow = "hidden"; };
+  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais rejoindre l'équipe en tant que bénévole." + vuSur + " Je me lance : comment ça se passe ?");
+  $("benev-retour").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) { $("depart").hidden = false; } else document.body.style.overflow = ""; });
+  $("benev-voies").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) $("depart").hidden = false; else document.body.style.overflow = ""; });
+  $("vers-benev").addEventListener("click", ouvrirBenev);
+  document.querySelectorAll("[data-depart]").forEach(b => b.addEventListener("click", () => {
+    if (b.disabled) return;
+    if (b.dataset.depart === "benevole") { ouvrirBenev(); return; }
+    $("depart").hidden = true; document.body.style.overflow = "";
+    document.querySelector(`.voie[data-voie="${b.dataset.depart}"]`).click();
+    const carte = $("parfums").closest(".curseur"); carte.classList.add("focus");
+    setTimeout(() => carte.scrollIntoView({ behavior: doux(), block: "center" }), 60);
+  }));
+  $("voir-resultat").addEventListener("click", () => { $("tuto3").classList.add("fait"); document.querySelector(".niveau").scrollIntoView({ behavior: doux(), block: "start" }); });
+  document.body.style.overflow = "hidden";
+  let heures = 6;
+  document.querySelectorAll(".heures button").forEach(b => b.addEventListener("click", () => {
+    heures = +b.dataset.h; document.querySelectorAll(".heures button").forEach(x => x.setAttribute("aria-pressed", x === b)); calcul();
+  }));
+  let glisse = false, prevu = false;
+  const planifier = () => { if (prevu) return; prevu = true; requestAnimationFrame(() => { prevu = false; glisse = true; calcul(); glisse = false; }); };
+  ["parfums", "jours", "mois"].forEach(id => $(id).addEventListener("input", planifier));
+  const majRythmes = () => document.querySelectorAll("[data-j]").forEach(x => x.setAttribute("aria-pressed", x.dataset.j === $("jours").value));
+  document.querySelectorAll("[data-j]").forEach(b => b.addEventListener("click", () => { $("jours").value = b.dataset.j; majRythmes(); calcul(); }));
+  $("jours").addEventListener("input", majRythmes);
+  ["acre", "vl", "acre-months", "tva-applicable"].forEach(id => $(id).addEventListener("input", calcul));
+  $("parfums").addEventListener("input", () => $("astuce").classList.add("vu"), { once: true });
+  construirePaliers();
+  if (SOURCE && SOURCE.accroche) {
+    const a = $("accroche"); a.textContent = SOURCE.accroche; a.hidden = false;
+    if (SOURCE.couleur) a.style.setProperty("--ac", SOURCE.couleur);
+  }
+  if (SOURCE && SOURCE.voie) {
+    const b = document.querySelector(`[data-depart="${SOURCE.voie}"]`);
+    b.classList.add("conseil"); if (SOURCE.couleur) b.style.setProperty("--ac", SOURCE.couleur);
+    const t = document.createElement("span"); t.className = "pour-toi"; t.textContent = "👉 POUR TOI"; b.appendChild(t);
+  }
+  if (SOURCE && SOURCE.pass) pass = true;
+  majPass();
+
+ document.querySelectorAll("[data-adjust]").forEach(b=>b.addEventListener("click",()=>{const r=$(b.dataset.adjust);r.value=Math.max(+r.min,Math.min(+r.max,+r.value+(+b.dataset.delta)));r.dispatchEvent(new Event("input",{bubbles:true}));}));
+</script>
+</body>
+</html>
+
+</body></html>
