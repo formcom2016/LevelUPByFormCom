@@ -15,3 +15,24 @@
 .faq-list{max-width:850px}.faq-list details{border-bottom:1px solid var(--line);padding:22px 0}.faq-list summary{cursor:pointer;font-size:19px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:20px}.faq-list summary::after{content:'+';color:var(--blue);font-size:25px;line-height:1}.faq-list details[open] summary::after{content:'−'}.faq-list details>div{color:var(--muted);line-height:1.8;margin-top:18px;max-width:48em}.faq-list a,.notice a,.note a{color:var(--blue)}.application-paths{grid-template-columns:1fr;gap:16px}.application-paths .card{padding:24px}.application-paths h3{font-size:26px}.optional{font-weight:400;color:var(--muted);font-size:12px}.message-review{border-top:1px solid var(--line);padding-top:24px;margin-top:12px}.message-review h4{font-size:19px;margin:0 0 15px}.message-review p{color:var(--muted);line-height:1.7;margin-bottom:18px}.message-review .btn{margin-bottom:10px}.spaced-heading{margin-top:38px}.payment-follow-up{margin-top:24px;line-height:1.8;font-size:14px}.payment-follow-up a{color:var(--blue)}.receipt-card{padding:28px;border:1px solid var(--line);background:var(--card);border-radius:16px;max-width:720px;margin:30px 0;text-align:left}.receipt-card h2{font-size:30px}.receipt-card p{margin-top:14px;color:var(--muted)}.receipt-card ul{padding-left:20px;color:var(--muted);line-height:1.8}.cart-gift{display:flex;gap:10px;align-items:center;font-size:14px}.cart-gift input{width:20px;height:20px;accent-color:var(--blue);flex:none}.notice{display:block;margin-top:20px;line-height:1.7}.contact-layout input,.contact-layout select,.contact-layout textarea{min-height:48px}.contact-form textarea{min-height:130px}@media(max-width:600px){.faq-list summary{font-size:17px}.message-review .btn{white-space:normal;min-height:52px;height:auto}.page-hero .cta .btn{white-space:normal;text-align:center}}
 
 .three-paths{grid-template-columns:repeat(3,minmax(0,1fr))}.path.c{background:var(--card);border:1px solid var(--line)}.three-paths .btn{white-space:normal;text-align:center;padding:14px 18px;height:auto;font-size:14px}.three-paths .path h3{font-size:30px}.three-paths .path p{font-size:15px}.three-paths .path ul{font-size:14px}.three-paths .path{display:flex;flex-direction:column}.three-paths .path .btn{margin-top:auto}.three-paths .path ul{margin-bottom:26px}@media(max-width:950px){.three-paths{grid-template-columns:1fr}}
+
+/* Résultats des premières expériences, dans la charte existante. */
+.proof-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.proof-card{min-width:0;display:flex;flex-direction:column;padding:28px 24px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.proof-tag{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--blue);line-height:1.6;margin-bottom:20px}
+.proof-card h3{font-family:var(--serif);font-size:38px;line-height:1.1;margin:0 0 12px}
+.proof-intro{font-size:14px;color:var(--muted);line-height:1.6;min-height:3.2em}
+.proof-card .proof-numbers{display:flex;align-items:baseline;gap:12px;font-family:var(--serif);font-size:clamp(42px,4vw,62px);line-height:1.15;margin:25px 0 5px;font-variant-numeric:tabular-nums}
+.proof-numbers>strong{font-weight:600;color:var(--blue)}
+.proof-numbers .proof-arrow{font-family:Manrope,sans-serif;font-size:25px;color:var(--muted)}
+.proof-unit{font-size:13px;font-weight:700;line-height:1.6;min-height:3.2em}
+.proof-period{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px;min-height:3.2em}
+.proof-average{display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:20px 0}
+.proof-average strong{font-family:var(--serif);font-size:36px;color:var(--blue);font-weight:600;white-space:nowrap}
+.proof-average span{font-size:12px;line-height:1.6;color:var(--muted)}
+.proof-story{font-size:13px;line-height:1.8;color:var(--muted)}
+.proof-source{font-size:12px;line-height:1.8;color:var(--muted);max-width:1000px;margin:24px 0 0}
+.proof-cta{margin-top:38px}.proof-cta>p{font-family:var(--serif);font-size:clamp(25px,3vw,36px);margin-bottom:22px}
+@media(max-width:1100px){.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-card .proof-numbers{font-size:60px}}
+@media(max-width:600px){.proof-grid{grid-template-columns:1fr}.proof-card{padding:26px}.proof-intro,.proof-unit,.proof-period{min-height:0}.proof-card .proof-numbers{font-size:64px}.proof-cta .btn{width:100%;white-space:normal;text-align:center}}
