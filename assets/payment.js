@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const links={ponctuel:'https://buy.stripe.com/4gMaEW0Lm8mr38jf6a4ko01',abo5:'https://buy.stripe.com/eVqaEW0LmeKPfV5f6a4ko02',abo10:'https://buy.stripe.com/9B64gy3XycCHdMX8HM4ko00'};
+const links={ponctuel:'https://buy.stripe.com/4gMaEW0Lm8mr38jf6a4ko01',abo5:'https://buy.stripe.com/eVqaEW0LmeKPfV5f6a4ko02'};
 const params=new URLSearchParams(location.search),id=params.get('id')||'';
 const validId=/^[a-zA-Z0-9_-]{1,200}$/.test(id);
 document.querySelectorAll('[data-stripe]').forEach(a=>{const url=new URL(links[a.dataset.stripe]);if(validId)url.searchParams.set('client_reference_id',id);a.href=url.href});
