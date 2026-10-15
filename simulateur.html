@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
 /* Refined controls within the original design. */
 .curseur label{flex-direction:column;align-items:center;gap:10px;text-align:center}.curseur output{color:var(--or2,#E8B923)!important;font-size:3.3rem!important;line-height:1.1}.curseur .aide{text-align:center}.detail>summary{cursor:pointer;font-weight:800;font-size:.95rem;list-style:disclosure-closed;padding:.2rem 0}.detail[open]>summary{margin-bottom:1rem}.detail[open]>summary{list-style:disclosure-open}.adjust-row{display:flex;align-items:center;gap:10px;margin-top:10px}.adjust-row button{width:44px;height:44px;border-radius:10px;border:1px solid var(--line,#222A52);background:var(--bg2,#0A0F26);color:var(--fg,#F2F4FC);font-size:22px;flex:none;cursor:pointer}.adjust-row input[type=range]{flex:1;min-width:0;margin:0}.jauge input[type=range]::-webkit-slider-thumb{width:34px;height:34px}.jauge input[type=range]::-moz-range-thumb{width:34px;height:34px}.original-scale{display:flex;justify-content:space-between;font-size:10px;color:var(--muted,#9BA4C6);padding:0 15px;margin-top:9px}.original-scale span::before{content:"";display:block;width:1px;height:5px;background:currentColor;margin:0 auto 5px}#acre-months{display:block;width:100%;padding:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;margin-top:8px}
 
@@ -12,6 +13,7 @@
 .site-wordmark{display:inline-block;color:#F2F4FC;font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:22px;font-weight:900;font-style:italic;letter-spacing:-.04em;text-decoration:none;white-space:nowrap;line-height:1.3}.site-wordmark b{color:#FF4D5C!important;font:inherit!important;background:none!important;-webkit-text-fill-color:#FF4D5C!important}.depart .site-wordmark{display:table;margin:0 auto 1rem;font-size:30px}.marque{flex-wrap:wrap;gap:8px 14px}.sim-program-label small{font-family:var(--sans);color:var(--mut);font-size:.6rem;letter-spacing:.08em}.marque>.site-wordmark{font-size:22px}
 </style></head><body>
 <!DOCTYPE html>
+
 <!--
   SIMULATEUR LEVEL UP by Form'Com · 3 voies (Porteur de projet, Gagner de l'argent, Bénévole) + Pass Étudiant
   Les QR codes ajoutent ?src=... : l'accueil s'adapte (affiche-vacances, affiche-argent, affiche-travail, affiche-projet, residence…).
@@ -22,16 +24,16 @@
 -->
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060916">
-<meta name="color-scheme" content="dark">
-<meta property="og:title" content="LEVEL UP : calcule ton niveau">
-<meta property="og:description" content="Règle ton rythme et découvre ton niveau et ce que tu peux gagner.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060916" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="LEVEL UP : calcule ton niveau" property="og:title"/>
+<meta content="Règle ton rythme et découvre ton niveau et ce que tu peux gagner." property="og:description"/>
 <title>LEVEL UP : ton simulateur</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root { --navy: #0E2470; --bleu: #1F4FD1; --rouge: #E3242B; --noir: #121626; --pale: #EEF2FF; --gris: #6B7190; --or: #E7B23A; --argent: #B9C2CF; --bronze: #C77B3E; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -454,227 +456,216 @@
 </style>
 </head>
 <body>
-<div class="depart" id="depart" role="dialog" aria-modal="true" aria-label="Commencer le simulateur">
-  <div class="depart-in">
-    <a class="site-wordmark" href="index.html" aria-label="Form’Com — Accueil">FORM’<b>COM</b></a>
-    <p class="accroche" id="accroche" hidden></p>
-    <h2>Calcule ton niveau<span>LEVEL UP !</span></h2>
-    <span class="chrono">⏱ 1 MINUTE CHRONO</span>
-    <div class="pass-zone">
-      <button class="pass-btn" type="button" data-pass aria-pressed="false"><span class="pass-ic" aria-hidden="true">🎓</span><span><b data-pass-titre>TU ES ÉTUDIANT ?</b><small data-pass-sous>Touche ici pour activer ton PASS ÉTUDIANT</small></span></button>
-      <label class="mineur" data-mineur-zone hidden><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
-    </div>
-    <p class="q">Maintenant, touche ton objectif :</p>
-    <div class="choix">
-    <button class="gros-btn" type="button" data-depart="projet"><span class="ic" aria-hidden="true">🎯</span><span><b>PORTEUR DE PROJET</b><small>L'association règle les factures de ton projet</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
-    <button class="gros-btn" type="button" data-depart="revenu"><span class="ic" aria-hidden="true">💶</span><span><b>GAGNER DE L'ARGENT</b><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
-    <button class="gros-btn" type="button" data-depart="benevole"><span class="ic" aria-hidden="true">🤝</span><span><b>DEVENIR BÉNÉVOLE</b><small>Aider l'association, pour la cause</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
-    </div>
-    <p class="rassure">Gratuit · Sans inscription · Rien n'est enregistré</p>
-  </div>
+<div aria-label="Commencer le simulateur" aria-modal="true" class="depart" id="depart" role="dialog">
+<div class="depart-in">
+<a aria-label="Form’Com — Accueil" class="site-wordmark" href="index.html">FORM’<b>COM</b></a>
+<p class="accroche" hidden="" id="accroche"></p>
+<h2>Calcule ton niveau<span>LEVEL UP !</span></h2>
+<span class="chrono">⏱ 1 MINUTE CHRONO</span>
+<div class="pass-zone">
+<button aria-pressed="false" class="pass-btn" data-pass="" type="button"><span aria-hidden="true" class="pass-ic">🎓</span><span><b data-pass-titre="">TU ES ÉTUDIANT ?</b><small data-pass-sous="">Touche ici pour activer ton PASS ÉTUDIANT</small></span></button>
+<label class="mineur" data-mineur-zone="" hidden=""><input class="mineur-cb" type="checkbox"/> J'ai 16 ou 17 ans</label>
 </div>
-<div class="benev" id="benev" role="dialog" aria-modal="true" aria-label="Devenir bénévole" hidden>
-  <div class="benev-tete"><div class="benev-tete-in">
-    <button class="retour" type="button" id="benev-retour">← Retour</button>
-    <h2>Rejoins l'aventure<span>en bénévole</span></h2>
-    <p>Tu as envie de t'engager pour une cause qui fait avancer les jeunes, à ton rythme ? Ta place est ici.</p>
-  </div></div>
-  <div class="benev-corps">
-    <section class="bloc bleu">
-      <h3>CE QUE TU FAIS</h3>
-      <p>Tu fais découvrir nos parfums de qualité lors d'actions solidaires. <b>Quand tu veux, autant que tu veux</b> : aucun objectif, aucune obligation. Tu es libre de venir, de t'absenter ou d'arrêter à tout moment.</p>
-    </section>
-    <section class="bloc vert">
-      <h3>CE QUE TU Y GAGNES</h3>
-      <ul>
-        <li><span aria-hidden="true">💬</span>Des compétences qui comptent : communiquer, convaincre, développer ton estime de soi.</li>
-        <li><span aria-hidden="true">📄</span>Une expérience à valoriser sur ton CV, et une attestation de bénévolat.</li>
-        <li><span aria-hidden="true">🤝</span>Des rencontres et un réseau, avec une équipe qui partage les mêmes valeurs.</li>
-        <li><span aria-hidden="true">✨</span>La fierté de faire avancer des projets solidaires.</li>
-      </ul>
-    </section>
-    <p class="citation">Chaque parfum diffusé aide un jeune à financer son projet.</p>
-    <section class="bloc rouge">
-      <h3>EN TOUTE TRANSPARENCE</h3>
-      <p>Le bénévolat n'est pas rémunéré : ni salaire, ni prime, ni cadeau lié à tes résultats. Tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs. Tu suis une courte formation offerte, et tu respectes la charte de l'association : honnêteté, respect, aucune pression à l'achat. Entre 16 et 17 ans, l'accord écrit d'un parent est nécessaire.</p>
-    </section>
-    <a class="cta" id="benev-cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME PROPOSE</a>
-    <p class="cta-sous">On te répond sur WhatsApp pour faire connaissance.</p>
-    <button class="lien-voies" type="button" id="benev-voies">Tu cherches plutôt à financer ton projet ou à gagner de l'argent ? Calcule ton niveau →</button>
-    <p class="pied-benev">LEVEL UP by Form'Com · Association & organisme de formation<br><a href="index.html">Découvrir le site Form’Com</a></p>
-  </div>
+<p class="q">Maintenant, touche ton objectif :</p>
+<div class="choix">
+<button class="gros-btn" data-depart="projet" type="button"><span aria-hidden="true" class="ic">🎯</span><span><b>PORTEUR DE PROJET</b><small>L'association règle les factures de ton projet</small></span><span aria-hidden="true" class="fl">GO ▶</span></button>
+<button class="gros-btn" data-depart="revenu" type="button"><span aria-hidden="true" class="ic">💶</span><span><b>GAGNER DE L'ARGENT</b><small data-sous-revenu="">Vacances, permis, voiture… en auto-entrepreneur</small></span><span aria-hidden="true" class="fl">GO ▶</span></button>
+<button class="gros-btn" data-depart="benevole" type="button"><span aria-hidden="true" class="ic">🤝</span><span><b>DEVENIR BÉNÉVOLE</b><small>Aider l'association, pour la cause</small></span><span aria-hidden="true" class="fl">GO ▶</span></button>
+</div>
+<p class="rassure">Gratuit · Sans inscription · Rien n'est enregistré</p>
+</div>
+</div>
+<div aria-label="Devenir bénévole" aria-modal="true" class="benev" hidden="" id="benev" role="dialog">
+<div class="benev-tete"><div class="benev-tete-in">
+<button class="retour" id="benev-retour" type="button">← Retour</button>
+<h2>Rejoins l'aventure<span>en bénévole</span></h2>
+<p>Tu as envie de t'engager pour une cause qui fait avancer les jeunes, à ton rythme ? Ta place est ici.</p>
+</div></div>
+<div class="benev-corps">
+<section class="bloc bleu">
+<h3>CE QUE TU FAIS</h3>
+<p>Tu fais découvrir nos parfums de qualité lors d'actions solidaires. <b>Quand tu veux, autant que tu veux</b> : aucun objectif, aucune obligation. Tu es libre de venir, de t'absenter ou d'arrêter à tout moment.</p>
+</section>
+<section class="bloc vert">
+<h3>CE QUE TU Y GAGNES</h3>
+<ul>
+<li><span aria-hidden="true">💬</span>Des compétences qui comptent : communiquer, convaincre, développer ton estime de soi.</li>
+<li><span aria-hidden="true">📄</span>Une expérience à valoriser sur ton CV, et une attestation de bénévolat.</li>
+<li><span aria-hidden="true">🤝</span>Des rencontres et un réseau, avec une équipe qui partage les mêmes valeurs.</li>
+<li><span aria-hidden="true">✨</span>La fierté de faire avancer des projets solidaires.</li>
+</ul>
+</section>
+<p class="citation">Chaque parfum diffusé aide un jeune à financer son projet.</p>
+<section class="bloc rouge">
+<h3>EN TOUTE TRANSPARENCE</h3>
+<p>Le bénévolat n'est pas rémunéré : ni salaire, ni prime, ni cadeau lié à tes résultats. Tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs. Tu suis une courte formation offerte, et tu respectes la charte de l'association : honnêteté, respect, aucune pression à l'achat. Entre 16 et 17 ans, l'accord écrit d'un parent est nécessaire.</p>
+</section>
+<a class="cta" href="#" id="benev-cta" rel="noopener" target="_blank"><span aria-hidden="true" class="play"></span>JE ME PROPOSE</a>
+<p class="cta-sous">On te répond sur WhatsApp pour faire connaissance.</p>
+<button class="lien-voies" id="benev-voies" type="button">Tu cherches plutôt à financer ton projet ou à gagner de l'argent ? Calcule ton niveau →</button>
+<p class="pied-benev">LEVEL UP by Form'Com · Association &amp; organisme de formation<br/><a href="index.html">Découvrir le site Form’Com</a></p>
+</div>
 </div>
 <div class="page">
-  <header class="tete">
-    <div class="tete-in"><a class="sim-back" href="index.html">← Retour au site Form’Com</a>
-      <div class="marque">
-        <a class="site-wordmark" href="index.html" aria-label="Form’Com — Accueil">FORM’<b>COM</b></a>
-        <div class="sim-program-label"><small>PROGRAMME LEVEL UP</small></div>
-      </div>
-      <span class="tampon">SIMULATEUR</span>
-      <h1>Calcule ton niveau<span>LEVEL UP !</span></h1>
-      <p class="sous">Règle ton rythme et découvre ce que tu peux atteindre.</p>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="tuto" aria-label="Mode d'emploi">
-      <p class="tuto-titre">TUTO : 3 ÉTAPES, 1 MINUTE</p>
-      <ol>
-        <li id="tuto1"><span aria-hidden="true">👆</span>Touche<br>ta voie</li>
-        <li id="tuto2"><span aria-hidden="true">↔</span>Fais glisser<br>le curseur</li>
-        <li id="tuto3"><span aria-hidden="true">🏆</span>Découvre ton<br>niveau et tes gains</li>
-      </ol>
-    </section>
-    <span class="pinceau rouge">1. CHOISIS TA VOIE</span>
-    <div class="voies attente" id="voies" role="group" aria-label="Ta voie">
-      <button class="voie" type="button" data-voie="projet" aria-pressed="false">
-        <span class="num">VOIE 1</span><strong>Porteur de projet</strong><small>L'association règle les factures de ton projet</small><span class="touche">👆 Touche ici</span>
-      </button>
-      <button class="voie" type="button" data-voie="revenu" aria-pressed="false">
-        <span class="num">VOIE 2</span><strong>Gagner de l'argent</strong><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small><span class="touche">👆 Touche ici</span>
-      </button>
-    </div>
-    <button class="pass-mini" type="button" data-pass id="pass-mini">🎓 Tu es étudiant ? Active ton PASS ÉTUDIANT →</button>
-    <p class="attente-msg" id="attente-msg">Choisis une voie pour commencer ↑</p>
-    <section class="etu" id="etu" hidden>
-      <div class="pass-banniere"><span>🎓 PASS ÉTUDIANT ACTIVÉ</span><button type="button" id="pass-off">Désactiver</button></div>
-      <label class="mineur"><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
-      <h3>TON RYTHME D'ÉTUDIANT</h3>
-      <div class="rythmes" role="group" aria-label="Rythme étudiant">
-        <button type="button" data-j="8" aria-pressed="true">Week-ends · 8 j</button>
-        <button type="button" data-j="12" aria-pressed="false">Week-ends + soirs · 12 j</button>
-        <button type="button" data-j="20" aria-pressed="false">Vacances · 20 j</button>
-      </div>
-      <h3>TES AVANTAGES PASS ÉTUDIANT</h3>
-      <ul class="etu-plus">
-        <li><b>Parrainage :</b> fais découvrir l’aventure à quelqu’un. Une prime pourra être débloquée sous conditions, expliquées lors de notre rencontre.</li>
-        <li><b>Stage avec ton établissement</b>  : en accord avec ton établissement, un stage peut être réalisé chez Form’Com avec une attestation de fin de stage. Une attestation de fin de formation est délivrée pour la formation suivie.</li>
-        <li><b>Planning adapté</b> à tes cours et à tes partiels : tu choisis tes jours.</li>
-        <li><b>Dès 16 ans</b>, avec l'autorisation écrite d'un parent.</li>
-      </ul>
-      <p class="etu-note" id="etu-note"></p>
-    </section>
-
-    <span class="pinceau bleu" id="etape2">2. RÈGLE TON RYTHME</span>
-    <div class="curseur">
-      <p class="astuce" id="astuce"><span class="main" aria-hidden="true">👉</span>Fais glisser le curseur : ton niveau et ton résultat changent selon le nombre de parfums que tu diffuses chaque jour.</p>
-      <label for="parfums">Parfums par jour <output id="o-parfums">10</output></label>
-      <div class="jauge" id="jauge">
-        <div class="piste" aria-hidden="true"><div class="zones"></div><div class="rempli" id="rempli"></div></div>
-        <div class="objectif" id="objectif" aria-hidden="true"></div>
-        <input type="range" id="parfums" min="0" max="80" step="1" value="10" aria-label="Parfums par jour">
-      </div><div class="adjust-row"><button type="button" data-adjust="parfums" data-delta="-1" aria-label="Diminuer les parfums">−</button><p class="aide" style="flex:1">Ajuste précisément avec − et +</p><button type="button" data-adjust="parfums" data-delta="1" aria-label="Augmenter les parfums">+</button></div>
-    </div>
-    <div class="preuve">
-      <span class="preuve-tag">EXPÉRIENCE DE TERRAIN</span>
-      <p><b>Seifeddine</b> : 7 parfums le premier jour, une trentaine une semaine plus tard.</p>
-    </div>
-    <div class="curseur">
-      <label for="jours">Jours par mois <output id="o-jours">20</output></label>
-      <div class="adjust-row"><button type="button" data-adjust="jours" data-delta="-1" aria-label="Diminuer jours">−</button><input type="range" id="jours" min="1" max="25" step="1" value="20"><button type="button" data-adjust="jours" data-delta="1" aria-label="Augmenter jours">+</button></div><div class="original-scale" aria-hidden="true"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>
-      <p class="aide">Fais glisser le curseur selon tes disponibilités.</p>
-    </div>
-    <div class="curseur" id="c-mois">
-      <label for="mois">Mois travaillés dans l'année <output id="o-mois">10</output></label>
-      <div class="adjust-row"><button type="button" data-adjust="mois" data-delta="-1" aria-label="Diminuer mois">−</button><input type="range" id="mois" min="1" max="12" step="1" value="10"><button type="button" data-adjust="mois" data-delta="1" aria-label="Augmenter mois">+</button></div><div class="original-scale" aria-hidden="true"><span>1</span><span>3</span><span>6</span><span>9</span><span>12</span></div>
-      <p class="aide">Fais glisser le curseur pour choisir ta durée d’activité. Dix mois sont proposés au départ, tu peux choisir de un à douze.</p>
-    </div>
-    <button class="btn-resultat" type="button" id="voir-resultat">VOIR MON RÉSULTAT ↓</button>
-
-    <span class="pinceau rouge">3. TON RÉSULTAT</span>
-    <section class="niveau" aria-live="polite">
-      <div class="medaille" id="medaille" aria-hidden="true">▶</div>
-      <div class="niveau-txt" style="flex:1">
-        <small>LE NIVEAU QUE TU EXPLORES</small>
-        <strong id="niveau">LEVEL UP</strong>
-        <div class="barre"><i id="barre"></i></div>
-        <p class="suivant" id="suivant"></p>
-      </div>
-    </section>
-
-    <section class="resultat" aria-live="polite">
-      <p class="lib" id="lib">Pour ton projet, chaque mois</p>
-      <p class="montant"><span id="montant">0</span> <em>€*</em></p>
-      <div class="details">
-        <div><span id="lib-an">Sur 10 mois</span><b id="an">0 €</b></div>
-        <div><span id="lib-3">Parfums par mois</span><b id="d3">0</b></div>
-      </div>
-      <p class="alerte" id="alerte" hidden></p>
-      <p class="precision" id="precision"></p>
-    </section>
-    <section class="detail" id="detail" hidden aria-label="Du brut au net"><h2>DU BRUT AU NET</h2>
-      <p class="aide">Estimation après les prélèvements sélectionnés, avant frais professionnels et CFE. Hypothèse : prestations de services commerciales BIC, à confirmer selon ton activité déclarée.</p>
-      <div class="ligne"><span>Tes commissions brutes<small>chiffre d’affaires hors taxes facturé à Form’Com</small></span><b id="d-ca"></b></div>
-      <div class="ligne moins"><span id="t-cotis">Cotisations sociales<small>retraite, santé, protection sociale</small></span><b id="d-cotis"></b></div>
-      <div class="ligne moins"><span>Formation professionnelle (0,1 %)</span><b id="d-cfp"></b></div>
-      <div class="ligne moins" id="l-vl" hidden><span>Impôt, versement libératoire (1,7 %)</span><b id="d-vl"></b></div>
-      <div class="ligne total"><span>Ton revenu après ces prélèvements<small>avant frais professionnels et CFE</small></span><b id="d-net"></b></div>
-      <div class="ligne"><span>CFE (taxe locale)<small>à prévoir à partir de la 2e année</small></span><b>non comptée</b></div>
-      <p class="an-ca" id="d-an"></p><p class="rounding-note">Montants arrondis à l’euro pour faciliter la lecture. De petits écarts d’arrondi peuvent apparaître.</p>
-      <div class="vat-calculation"><h3>La TVA, si elle s’applique</h3><label class="option"><input type="checkbox" id="tva-applicable"><span>Je facture la TVA<small>À sélectionner uniquement si elle s’applique à mon activité.</small></span></label><div class="ligne"><span>TVA calculée au taux de 20 %<small>ajoutée aux commissions HT ; à reverser, hors déductions éventuelles</small></span><b id="vat-amount">0 €</b></div><div class="ligne"><span>Total facturé avec cette TVA</span><b id="invoice-total">0 €</b></div><p class="aide">La TVA est distincte de ton revenu et n’est pas ajoutée au net affiché. Le statut de TVA dépend de ta situation réelle, pas uniquement de cette projection.</p></div><div class="tva" id="d-tva"></div>
-      <div class="acre-comparison"><h3>Pour un même mois d’activité</h3><div class="acre-cards"><div><span>Sans ACRE</span><b id="without-acre">0 €</b><small>Après les prélèvements sélectionnés</small></div><div><span>Avec ACRE, si éligible</span><b id="with-acre">0 €</b><small>Pour un mois couvert par la réduction</small></div></div><p class="aide">L’ACRE réduit temporairement les cotisations sociales, pas la TVA. La comparaison suppose une réduction de 25 %, applicable aux créations à compter du 1er juillet 2026 sous conditions. Le résultat principal utilise ton option choisie ci-dessous.</p></div><details class="fisc"><summary>Ajuster mes options fiscales : ACRE et impôt</summary>
-      <div class="options">
-        <label class="option"><input type="checkbox" id="acre"><span>J’ai droit à l’ACRE<small>Réduction de 25 %, hypothèse des créations à compter du 1er juillet 2026, sous conditions.</small></span></label>
-        <label class="option" id="acre-duration" hidden><span>Mois de réduction restants sur cette période <input type="number" id="acre-months" min="0" max="12" value="3" step="1" aria-label="Mois ACRE restants"></span></label><label class="option"><input type="checkbox" id="vl"><span>Je choisis le versement libératoire de l'impôt<small>1,7 % du chiffre d'affaires, et l'impôt sur ce revenu est réglé. Sous conditions de revenus du foyer.</small></span></label>
-      </div></details>
-    </section>
-
-
-    <span class="pinceau bleu">EST-CE QUE C'EST FAISABLE ?</span>
-    <section class="faisable">
-      <div class="combos">
-        <p class="combos-titre" id="combos-titre"></p><p class="faisability-context">Trois façons possibles d’atteindre ce volume : choisis l’exemple qui t’aide à te projeter.</p>
-        <div class="combo-liste">
-          <div class="combo"><span class="x">COLLECTION ×5</span><b id="c5"></b><small>clients qui prennent<br>une collection</small></div>
-          <div class="combo"><span class="x">GRANDE ACTION ×3</span><b id="c3"></b><small>clients qui prennent<br>une grande action</small></div>
-          <div class="combo"><span class="x">MOYENNE ACTION ×2</span><b id="c2"></b><small>clients qui prennent<br>une moyenne action</small></div>
-        </div>
-        <div class="heure">
-          <div class="heure-tete"><span>ET À L'HEURE ?</span>
-            <div class="heures" role="group" aria-label="Heures sur le terrain par jour">
-              <button type="button" data-h="4" aria-pressed="false">4 h</button><button type="button" data-h="6" aria-pressed="true">6 h</button><button type="button" data-h="8" aria-pressed="false">8 h</button>
-            </div></div>
-          <p class="heure-chiffre"><span id="ph"></span> <small>parfums par heure</small></p>
-          <p class="heure-txt" id="heure-txt"></p>
-        </div>
-      </div>
-    </section>
-    <div class="demo" id="demo"></div>
-
-    <p class="motiv" id="motiv"></p>
-
-    <span class="pinceau bleu">TOUT CE QU'IL FAUT SAVOIR</span>
-    <section class="savoir">
-      <details><summary>Ce qui t'est fourni</summary><div class="contenu">Tu n'avances rien. On te fournit :
+<header class="tete">
+<div class="tete-in"><a class="sim-back" href="index.html">← Retour au site Form’Com</a>
+<div class="marque">
+<a aria-label="Form’Com — Accueil" class="site-wordmark" href="index.html">FORM’<b>COM</b></a>
+<div class="sim-program-label"><small>PROGRAMME LEVEL UP</small></div>
+</div>
+<span class="tampon">SIMULATEUR</span>
+<h1>Calcule ton niveau<span>LEVEL UP !</span></h1>
+<p class="sous">Règle ton rythme et découvre ce que tu peux atteindre.</p>
+</div>
+</header>
+<main class="wrap">
+<section aria-label="Mode d'emploi" class="tuto">
+<p class="tuto-titre">TUTO : 3 ÉTAPES, 1 MINUTE</p>
+<ol>
+<li id="tuto1"><span aria-hidden="true">👆</span>Touche<br/>ta voie</li>
+<li id="tuto2"><span aria-hidden="true">↔</span>Fais glisser<br/>le curseur</li>
+<li id="tuto3"><span aria-hidden="true">🏆</span>Découvre ton<br/>niveau et tes gains</li>
+</ol>
+</section>
+<span class="pinceau rouge">1. CHOISIS TA VOIE</span>
+<div aria-label="Ta voie" class="voies attente" id="voies" role="group">
+<button aria-pressed="false" class="voie" data-voie="projet" type="button">
+<span class="num">VOIE 1</span><strong>Porteur de projet</strong><small>L'association règle les factures de ton projet</small><span class="touche">👆 Touche ici</span>
+</button>
+<button aria-pressed="false" class="voie" data-voie="revenu" type="button">
+<span class="num">VOIE 2</span><strong>Gagner de l'argent</strong><small data-sous-revenu="">Vacances, permis, voiture… en auto-entrepreneur</small><span class="touche">👆 Touche ici</span>
+</button>
+</div>
+<button class="pass-mini" data-pass="" id="pass-mini" type="button">🎓 Tu es étudiant ? Active ton PASS ÉTUDIANT →</button>
+<p class="attente-msg" id="attente-msg">Choisis une voie pour commencer ↑</p>
+<section class="etu" hidden="" id="etu">
+<div class="pass-banniere"><span>🎓 PASS ÉTUDIANT ACTIVÉ</span><button id="pass-off" type="button">Désactiver</button></div>
+<label class="mineur"><input class="mineur-cb" type="checkbox"/> J'ai 16 ou 17 ans</label>
+<h3>TON RYTHME D'ÉTUDIANT</h3>
+<div aria-label="Rythme étudiant" class="rythmes" role="group">
+<button aria-pressed="true" data-j="8" type="button">Week-ends · 8 j</button>
+<button aria-pressed="false" data-j="12" type="button">Week-ends + soirs · 12 j</button>
+<button aria-pressed="false" data-j="20" type="button">Vacances · 20 j</button>
+</div>
+<h3>TES AVANTAGES PASS ÉTUDIANT</h3>
+<ul class="etu-plus">
+<li><b>Parrainage :</b> fais découvrir l’aventure à quelqu’un. Une prime pourra être débloquée sous conditions, expliquées lors de notre rencontre.</li>
+<li><b>Stage avec ton établissement</b>  : en accord avec ton établissement, un stage peut être réalisé chez Form’Com avec une attestation de fin de stage. Une attestation de fin de formation est délivrée pour la formation suivie.</li>
+<li><b>Planning adapté</b> à tes cours et à tes partiels : tu choisis tes jours.</li>
+<li><b>Dès 16 ans</b>, avec l'autorisation écrite d'un parent.</li>
+</ul>
+<p class="etu-note" id="etu-note"></p>
+</section>
+<span class="pinceau bleu" id="etape2">2. RÈGLE TON RYTHME</span>
+<div class="curseur">
+<p class="astuce" id="astuce"><span aria-hidden="true" class="main">👉</span>Fais glisser le curseur : ton niveau et ton résultat changent selon le nombre de parfums que tu diffuses chaque jour.</p>
+<label for="parfums">Parfums par jour <output id="o-parfums">10</output></label>
+<div class="jauge" id="jauge">
+<div aria-hidden="true" class="piste"><div class="zones"></div><div class="rempli" id="rempli"></div></div>
+<div aria-hidden="true" class="objectif" id="objectif"></div>
+<input aria-label="Parfums par jour" id="parfums" max="80" min="0" step="1" type="range" value="10"/>
+</div><div class="adjust-row"><button aria-label="Diminuer les parfums" data-adjust="parfums" data-delta="-1" type="button">−</button><p class="aide" style="flex:1">Ajuste précisément avec − et +</p><button aria-label="Augmenter les parfums" data-adjust="parfums" data-delta="1" type="button">+</button></div>
+</div>
+<div class="preuve">
+<span class="preuve-tag">EXPÉRIENCE DE TERRAIN</span>
+<p><b>Seifeddine</b> : 7 parfums le premier jour, une trentaine une semaine plus tard.</p>
+</div>
+<div class="curseur">
+<label for="jours">Jours par mois <output id="o-jours">20</output></label>
+<div class="adjust-row"><button aria-label="Diminuer jours" data-adjust="jours" data-delta="-1" type="button">−</button><input id="jours" max="25" min="1" step="1" type="range" value="20"/><button aria-label="Augmenter jours" data-adjust="jours" data-delta="1" type="button">+</button></div><div aria-hidden="true" class="original-scale"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>
+<p class="aide">Fais glisser le curseur selon tes disponibilités.</p>
+</div>
+<div class="curseur" id="c-mois">
+<label for="mois">Mois travaillés dans l'année <output id="o-mois">10</output></label>
+<div class="adjust-row"><button aria-label="Diminuer mois" data-adjust="mois" data-delta="-1" type="button">−</button><input id="mois" max="12" min="1" step="1" type="range" value="10"/><button aria-label="Augmenter mois" data-adjust="mois" data-delta="1" type="button">+</button></div><div aria-hidden="true" class="original-scale"><span>1</span><span>3</span><span>6</span><span>9</span><span>12</span></div>
+<p class="aide">Fais glisser le curseur pour choisir ta durée d’activité. Dix mois sont proposés au départ, tu peux choisir de un à douze.</p>
+</div>
+<button class="btn-resultat" id="voir-resultat" type="button">VOIR MON RÉSULTAT ↓</button>
+<span class="pinceau rouge">3. TON RÉSULTAT</span>
+<section aria-live="polite" class="niveau">
+<div aria-hidden="true" class="medaille" id="medaille">▶</div>
+<div class="niveau-txt" style="flex:1">
+<small>LE NIVEAU QUE TU EXPLORES</small>
+<strong id="niveau">LEVEL UP</strong>
+<div class="barre"><i id="barre"></i></div>
+<p class="suivant" id="suivant"></p>
+</div>
+</section>
+<section aria-live="polite" class="resultat">
+<p class="lib" id="lib">Pour ton projet, chaque mois</p>
+<p class="montant"><span id="montant">0</span> <em>€*</em></p>
+<div class="details">
+<div><span id="lib-an">Sur 10 mois</span><b id="an">0 €</b></div>
+<div><span id="lib-3">Parfums par mois</span><b id="d3">0</b></div>
+</div>
+<p class="alerte" hidden="" id="alerte"></p>
+<p class="precision" id="precision"></p>
+</section>
+<section aria-label="Du brut au net" class="detail" hidden="" id="detail"><h2>DU BRUT AU NET</h2>
+<p class="aide">Estimation après les prélèvements sélectionnés, avant frais professionnels et CFE. Hypothèse : prestations de services commerciales BIC, à confirmer selon ton activité déclarée.</p>
+<div class="ligne"><span>Tes commissions brutes<small>chiffre d’affaires hors taxes facturé à Form’Com</small></span><b id="d-ca"></b></div>
+<div class="ligne moins"><span id="t-cotis">Cotisations sociales<small>retraite, santé, protection sociale</small></span><b id="d-cotis"></b></div>
+<div class="ligne moins"><span>Formation professionnelle (0,1 %)</span><b id="d-cfp"></b></div>
+<div class="ligne moins" hidden="" id="l-vl"><span>Impôt, versement libératoire (1,7 %)</span><b id="d-vl"></b></div>
+<div class="ligne total"><span>Ton revenu après ces prélèvements<small>avant frais professionnels et CFE</small></span><b id="d-net"></b></div>
+<div class="ligne"><span>CFE (taxe locale)<small>à prévoir à partir de la 2e année</small></span><b>non comptée</b></div>
+<p class="an-ca" id="d-an"></p><p class="rounding-note">Montants arrondis à l’euro pour faciliter la lecture. De petits écarts d’arrondi peuvent apparaître.</p>
+<div class="vat-calculation"><h3>La TVA, si elle s’applique</h3><label class="option"><input id="tva-applicable" type="checkbox"/><span>Je facture la TVA<small>À sélectionner uniquement si elle s’applique à mon activité.</small></span></label><div class="ligne"><span>TVA calculée au taux de 20 %<small>ajoutée aux commissions HT ; à reverser, hors déductions éventuelles</small></span><b id="vat-amount">0 €</b></div><div class="ligne"><span>Total facturé avec cette TVA</span><b id="invoice-total">0 €</b></div><p class="aide">La TVA est distincte de ton revenu et n’est pas ajoutée au net affiché. Le statut de TVA dépend de ta situation réelle, pas uniquement de cette projection.</p></div><div class="tva" id="d-tva"></div>
+<div class="acre-comparison"><h3>Pour un même mois d’activité</h3><div class="acre-cards"><div><span>Sans ACRE</span><b id="without-acre">0 €</b><small>Après les prélèvements sélectionnés</small></div><div><span>Avec ACRE, si éligible</span><b id="with-acre">0 €</b><small>Pour un mois couvert par la réduction</small></div></div><p class="aide">L’ACRE réduit temporairement les cotisations sociales, pas la TVA. La comparaison suppose une réduction de 25 %, applicable aux créations à compter du 1er juillet 2026 sous conditions. Le résultat principal utilise ton option choisie ci-dessous.</p></div><details class="fisc"><summary>Ajuster mes options fiscales : ACRE et impôt</summary>
+<div class="options">
+<label class="option"><input id="acre" type="checkbox"/><span>J’ai droit à l’ACRE<small>Réduction de 25 %, hypothèse des créations à compter du 1er juillet 2026, sous conditions.</small></span></label>
+<label class="option" hidden="" id="acre-duration"><span>Mois de réduction restants sur cette période <input aria-label="Mois ACRE restants" id="acre-months" max="12" min="0" step="1" type="number" value="3"/></span></label><label class="option"><input id="vl" type="checkbox"/><span>Je choisis le versement libératoire de l'impôt<small>1,7 % du chiffre d'affaires, et l'impôt sur ce revenu est réglé. Sous conditions de revenus du foyer.</small></span></label>
+</div></details>
+</section>
+<span class="pinceau bleu">EST-CE QUE C'EST FAISABLE ?</span>
+<section class="faisable">
+<div class="combos">
+<p class="combos-titre" id="combos-titre"></p><p class="faisability-context">Trois façons possibles d’atteindre ce volume : choisis l’exemple qui t’aide à te projeter.</p>
+<div class="combo-liste">
+<div class="combo"><span class="x">COLLECTION ×5</span><b id="c5"></b><small>clients qui prennent<br/>une collection</small></div>
+<div class="combo"><span class="x">GRANDE ACTION ×3</span><b id="c3"></b><small>clients qui prennent<br/>une grande action</small></div>
+<div class="combo"><span class="x">MOYENNE ACTION ×2</span><b id="c2"></b><small>clients qui prennent<br/>une moyenne action</small></div>
+</div>
+<div class="heure">
+<div class="heure-tete"><span>ET À L'HEURE ?</span>
+<div aria-label="Heures sur le terrain par jour" class="heures" role="group">
+<button aria-pressed="false" data-h="4" type="button">4 h</button><button aria-pressed="true" data-h="6" type="button">6 h</button><button aria-pressed="false" data-h="8" type="button">8 h</button>
+</div></div>
+<p class="heure-chiffre"><span id="ph"></span> <small>parfums par heure</small></p>
+<p class="heure-txt" id="heure-txt"></p>
+</div>
+</div>
+</section>
+<div class="demo" id="demo"></div>
+<p class="motiv" id="motiv"></p>
+<span class="pinceau bleu">TOUT CE QU'IL FAUT SAVOIR</span>
+<section class="savoir">
+<details><summary>Ce qui t'est fourni</summary><div class="contenu">Tu n'avances rien. On te fournit :
         <ul><li>ta formation, financée par l'association ;</li><li>le kit et le stock de parfums ;</li><li>les moyens de paiement et le logiciel d'encaissement ;</li><li>ta tenue réglementaire (veste).</li></ul></div></details>
-      <details><summary>Quand et comment tu es payé</summary><div class="contenu"><b>Porteur de projet :</b> chaque mois, l'association règle les factures liées à ton projet, dans la limite du montant atteint.<br><b>Gagner de l'argent :</b> en auto-entrepreneur, tu factures chaque mois tes commissions à Form'Com, qui te règle par virement.<br><b>Pass Étudiant :</b> tu choisis la voie qui te convient. Avant 18 ans, c'est la voie Porteur de projet.</div></details>
-      <details><summary>Où va l'argent d'un parfum ?</summary><div class="contenu">C'est une levée de fonds solidaire : une partie finance ton projet (ou ta rémunération), et une partie finance les projets solidaires de l'association. Ton client repart avec un produit qu'il apprécie : tout le monde y gagne.</div></details>
-      <details><summary>Primes, challenges et voyages</summary><div class="contenu">Ton engagement mérite d’être reconnu. Selon les challenges, les récompenses pourront prendre différentes formes : cadeaux, voyages ou primes, en fonction de ton parcours et des règles du concours. Les résultats comptent, mais aussi l’assiduité, l’enthousiasme et la progression. Ces récompenses ne sont pas incluses dans le calcul.</div></details>
-      <details><summary>Ce qu'on attend de toi</summary><div class="contenu">
-        <ul><li>Respecter la charte éthique de Form'Com : honnêteté envers les clients, respect, aucune pression à l'achat.</li>
-        <li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie Porteur de projet uniquement).</li></ul></div></details>
-      <details><summary>Comment c'est calculé ?</summary><div class="contenu" id="t-calcul"></div></details>
-      <details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Je me lance », dans le message WhatsApp que tu envoies toi-même.</div></details>
-    </section>
-
-    <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME LANCE</a>
-    <p class="cta-sous">Premières ventes prises en compte · Formation financée · Découverte sans engagement</p>
-
-    <button class="vers-benev" type="button" id="vers-benev">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
-    <p class="note">* Montants indicatifs, non garantis. Tout le fonctionnement t'est expliqué en entretien.</p>
-    <p class="pied">LEVEL UP by Form'Com · Association & organisme de formation<br><a href="index.html">Découvrir le site Form’Com</a></p>
-  </main>
+<details><summary>Quand et comment tu es payé</summary><div class="contenu"><b>Porteur de projet :</b> chaque mois, l'association règle les factures liées à ton projet, dans la limite du montant atteint.<br/><b>Gagner de l'argent :</b> en auto-entrepreneur, tu factures chaque mois tes commissions à Form'Com, qui te règle par virement.<br/><b>Pass Étudiant :</b> tu choisis la voie qui te convient. Avant 18 ans, c'est la voie Porteur de projet.</div></details>
+<details><summary>Où va l'argent d'un parfum ?</summary><div class="contenu">C'est une levée de fonds solidaire : une partie finance ton projet (ou ta rémunération), et une partie finance les projets solidaires de l'association. Ton client repart avec un produit qu'il apprécie : tout le monde y gagne.</div></details>
+<details><summary>Primes, challenges et voyages</summary><div class="contenu">Ton engagement mérite d’être reconnu. Selon les challenges, les récompenses pourront prendre différentes formes : cadeaux, voyages ou primes, en fonction de ton parcours et des règles du concours. Les résultats comptent, mais aussi l’assiduité, l’enthousiasme et la progression. Ces récompenses ne sont pas incluses dans le calcul.</div></details>
+<details><summary>Ce qu'on attend de toi</summary><div class="contenu">
+<ul><li>Respecter la charte éthique de Form'Com : honnêteté envers les clients, respect, aucune pression à l'achat.</li>
+<li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie Porteur de projet uniquement).</li></ul></div></details>
+<details><summary>Comment c'est calculé ?</summary><div class="contenu" id="t-calcul"></div></details>
+<details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Je me lance », dans le message WhatsApp que tu envoies toi-même.</div></details>
+</section>
+<a class="cta" href="#" id="cta" rel="noopener" target="_blank"><span aria-hidden="true" class="play"></span>JE ME LANCE</a>
+<p class="cta-sous">Premières ventes prises en compte · Formation financée · Découverte sans engagement</p>
+<button class="vers-benev" id="vers-benev" type="button">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
+<p class="note">* Montants indicatifs, non garantis. Tout le fonctionnement t'est expliqué en entretien.</p>
+<p class="pied">LEVEL UP by Form'Com · Association &amp; organisme de formation<br/><a href="index.html">Découvrir le site Form’Com</a></p>
+</main>
 </div>
-<div class="barre-bas" role="status" aria-live="polite">
-  <div class="barre-bas-in">
-    <div class="bb-medal" id="bb-medal" aria-hidden="true">★</div>
-    <div class="bb-txt"><small id="bb-lib">Pour ton projet, jusqu'à</small><b id="bb-montant">0 €</b></div>
-    <a class="bb-cta" id="bb-cta" href="#" target="_blank" rel="noopener">▶ JE ME LANCE</a>
-  </div>
+<div aria-live="polite" class="barre-bas" role="status">
+<div class="barre-bas-in">
+<div aria-hidden="true" class="bb-medal" id="bb-medal">★</div>
+<div class="bb-txt"><small id="bb-lib">Pour ton projet, jusqu'à</small><b id="bb-montant">0 €</b></div>
+<a class="bb-cta" href="#" id="bb-cta" rel="noopener" target="_blank">▶ JE ME LANCE</a>
 </div>
-
-<script src="assets/simulator-core.js"></script><script>
+</div>
+<script src="assets/simulator-core.js?v=parcours-20261015"></script><script>
   /* ===== CONFIG ===== */
   const PAR_PARFUM = 4;                 // montant par parfum diffusé (non affiché)
   const PRIX_PUBLIC = 10;               // prix de vente public d'un parfum (impact des bénévoles)
@@ -939,5 +930,4 @@
 </script>
 </body>
 </html>
-
 </body></html>
